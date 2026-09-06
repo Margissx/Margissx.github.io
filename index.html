@@ -1,143 +1,251 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli&amp;display=swap">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio profesional de una Ingeniera en Sistemas especializada en análisis de datos y sistemas.">
+  <title>Mary Gissel Alvarado Raudales | Analista de Datos y Sistemas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+<body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js'); document.body.appendChild(portfolioScript);">
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">&lt;/&gt;</span>
+        <span>Portafolio<span class="brand-dot">.</span></span>
+      </a>
 
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="56">
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand" href="#page-top">Giselle</a><button data-bs-toggle="collapse" data-bs-target="#navbarResponsive" class="navbar-toggler float-end" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="main-menu">
+        <a class="nav-link active" href="#inicio">Inicio</a>
+        <a class="nav-link" href="#perfil">Perfil</a>
+        <a class="nav-link" href="#habilidades">Habilidades</a>
+        <a class="nav-link" href="#proyectos">Proyectos</a>
+        <a class="nav-link nav-contact" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+      </div>
     </nav>
-    <header class="masthead" style="background: url('assets/img/bg-pattern.png'), linear-gradient(to left, #7b4397, #dc2430);">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-7 my-auto">
-                    <div class="mx-auto header-content">
-                        <h1 class="mb-5">Ingeniera en Ciencias de la Computacion</h1><a class="btn btn-outline-warning btn-xl" role="button" href="#download">Ver mi curriculum</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 my-auto">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device" style="background-image:url('assets/img/iphone_6_plus_white_port.png');">
-                                <div class="screen"><img class="img-fluid" src="assets/img/demo-screen-1.jpg"></div>
-                                <div class="button"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="iphone-mockup"></div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="text-center bg-primary download" id="download">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h2 class="section-heading">Discover what all the buzz is about!</h2>
-                    <p>Our app is available on any mobile device! Download now to get started!</p>
-                    <div class="badges"><a class="badge-link" href="#"><img src="assets/img/google-play-badge.svg"></a><a class="badge-link" href="#"><img src="assets/img/app-store-badge.svg"></a></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="features" class="features">
-        <div class="container">
-            <div class="text-center section-heading">
-                <h2>Unlimited Features, Unlimited Fun</h2>
-                <p class="text-muted">Check out what you can do with this app theme!</p>
-                <hr>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 my-auto">
-                    <div class="device-container">
-                        <div class="device-mockup iphone6_plus portrait white">
-                            <div class="device" style="background-image:url('assets/img/iphone_6_plus_white_port.png');">
-                                <div class="screen"><img class="img-fluid" src="assets/img/89.jpeg"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 my-auto">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="feature-item"><i class="icon-screen-smartphone text-primary"></i>
-                                    <h3>Device Mockups</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feature-item"><i class="icon-camera text-primary"></i>
-                                    <h3>Flexible Use</h3>
-                                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feature-item"><i class="icon-present text-primary"></i>
-                                    <h3>Free to Use</h3>
-                                    <p class="text-muted">As always, this theme is free to download and use for any purpose!</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="feature-item"><i class="icon-lock-open text-primary"></i>
-                                    <h3>Open Source</h3>
-                                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="cta" style="background-image:url('assets/img/bg-cta.jpg');">
-        <div class="cta-content">
-            <div class="container">
-                <h2>Stop waiting.<br>Start building.<br></h2><a class="btn btn-outline-warning btn-xl" role="button" href="#contact">Let's Get Started!</a>
-            </div>
-        </div>
-        <div class="overlay"></div>
-    </section>
-    <section class="bg-primary contact" id="contact">
-        <div class="container">
-            <h2><span>Sigueme&nbsp;</span><i class="fa fa-heart"></i><span></span></h2>
-            <ul class="list-inline list-social">
-                <li class="list-inline-item social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="list-inline-item social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="list-inline-item social-google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            </ul>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>©&nbsp;Brand 2022. All Rights Reserved.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="#">Privacy</a></li>
-                <li class="list-inline-item"><a href="#">Terms</a></li>
-                <li class="list-inline-item"><a href="#">FAQ</a></li>
-            </ul>
-        </div>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/new-age.js"></script>
-</body>
+  </header>
 
+  <main>
+    <section class="hero section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="status-dot"></span> Disponible para nuevos proyectos</p>
+          <h1>Datos que se convierten en <span class="highlight">decisiones.</span></h1>
+          <p class="hero-description">
+            Soy Ingeniera en Sistemas y Analista de Datos. Transformo información compleja en soluciones claras, medibles y útiles para hacer crecer los negocios.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a>
+            <a class="button button-ghost" href="#contacto">Contáctame</a>
+          </div>
+          <div class="hero-meta" aria-label="Áreas de experiencia">
+            <span>Analítica</span>
+            <span class="meta-separator">•</span>
+            <span>Sistemas</span>
+            <span class="meta-separator">•</span>
+            <span>Automatización</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Visualización decorativa de datos">
+          <div class="visual-glow"></div>
+          <div class="dashboard-card">
+            <div class="card-topline">
+              <div>
+                <p class="card-label">Resumen de rendimiento</p>
+                <p class="card-period">Últimos 6 meses <span>⌄</span></p>
+              </div>
+              <span class="card-menu">•••</span>
+            </div>
+            <div class="metric-row">
+              <div>
+                <strong>+38.6<span>%</span></strong>
+                <small>crecimiento</small>
+              </div>
+              <div class="trend-badge">↗ 12.4%</div>
+            </div>
+            <div class="chart" aria-hidden="true">
+              <div class="chart-y-axis"><span>100k</span><span>50k</span><span>0</span></div>
+              <div class="chart-area">
+                <div class="chart-gridline line-one"></div>
+                <div class="chart-gridline line-two"></div>
+                <div class="chart-gridline line-three"></div>
+                <svg viewBox="0 0 350 130" preserveAspectRatio="none" role="img" aria-label="Gráfico de tendencia ascendente">
+                  <defs>
+                    <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#8ce8cb" stop-opacity=".27"/>
+                      <stop offset="100%" stop-color="#8ce8cb" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path class="chart-fill" d="M0,108 C23,102 28,80 50,88 S82,94 101,65 S130,82 148,62 S177,72 196,45 S227,59 244,37 S280,52 299,20 S332,30 350,5 V130 H0 Z"/>
+                  <path class="chart-line" d="M0,108 C23,102 28,80 50,88 S82,94 101,65 S130,82 148,62 S177,72 196,45 S227,59 244,37 S280,52 299,20 S332,30 350,5"/>
+                  <circle cx="299" cy="20" r="4" fill="#0e1b2f" stroke="#8ce8cb" stroke-width="3"/>
+                </svg>
+                <div class="chart-labels"><span>ENE</span><span>FEB</span><span>MAR</span><span>ABR</span><span>MAY</span><span>JUN</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-chip chip-data"><span class="chip-icon">✦</span> Data driven</div>
+          <div class="floating-chip chip-sql"><span class="chip-icon">&lt;/&gt;</span> SQL</div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#perfil" aria-label="Desplazarse al perfil"><span>↓</span> Explorar perfil</a>
+    </section>
+
+    <section class="profile section section-light" id="perfil">
+      <div class="container profile-grid">
+        <div class="section-intro">
+          <p class="eyebrow eyebrow-dark">01 — Perfil</p>
+          <h2>Una mirada analítica para resolver lo que importa.</h2>
+        </div>
+        <div class="profile-content">
+          <p class="lead">Combino pensamiento estratégico, curiosidad y criterio técnico para entender los retos detrás de los datos.</p>
+          <p>Mi trabajo conecta las necesidades del negocio con soluciones de sistemas que simplifican procesos, revelan oportunidades y ayudan a tomar mejores decisiones. Disfruto convertir preguntas en análisis accionables y resultados que pueden medirse.</p>
+          <div class="profile-stats">
+            <div class="stat"><strong>+3</strong><span>Años de<br>aprendizaje continuo</span></div>
+            <div class="stat"><strong>05</strong><span>Áreas técnicas<br>principales</span></div>
+            <div class="stat"><strong>100%</strong><span>Compromiso con<br>cada proyecto</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills section" id="habilidades">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 — Habilidades</p>
+            <h2>Herramientas para dar<br><span>claridad a los datos.</span></h2>
+          </div>
+          <p class="heading-note">Tecnología aplicada con enfoque en resultados, orden y eficiencia.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card skill-featured">
+            <div class="skill-number">01</div>
+            <div class="skill-icon icon-python">Py</div>
+            <h3>Python</h3>
+            <p>Análisis, automatización y visualización para descubrir patrones y optimizar tareas.</p>
+            <div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+          </article>
+          <article class="skill-card">
+            <div class="skill-number">02</div>
+            <div class="skill-icon icon-sql">⌘</div>
+            <h3>SQL</h3>
+            <p>Consultas precisas para convertir grandes volúmenes de datos en información útil.</p>
+            <div class="skill-tags"><span>Queries</span><span>Joins</span><span>ETL</span></div>
+          </article>
+          <article class="skill-card">
+            <div class="skill-number">03</div>
+            <div class="skill-icon icon-powerbi">▥</div>
+            <h3>Power BI</h3>
+            <p>Dashboards interactivos que hacen visibles los indicadores clave del negocio.</p>
+            <div class="skill-tags"><span>DAX</span><span>KPIs</span><span>Reports</span></div>
+          </article>
+          <article class="skill-card">
+            <div class="skill-number">04</div>
+            <div class="skill-icon icon-excel">▦</div>
+            <h3>Excel</h3>
+            <p>Organización, modelado y análisis para resolver necesidades del día a día.</p>
+            <div class="skill-tags"><span>Power Query</span><span>Macros</span></div>
+          </article>
+          <article class="skill-card">
+            <div class="skill-number">05</div>
+            <div class="skill-icon icon-db">◈</div>
+            <h3>Bases de datos</h3>
+            <p>Diseño y gestión de estructuras confiables para información consistente.</p>
+            <div class="skill-tags"><span>MySQL</span><span>PostgreSQL</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects section section-light" id="proyectos">
+      <div class="container">
+        <div class="section-heading projects-heading">
+          <div>
+            <p class="eyebrow eyebrow-dark">03 — Proyectos</p>
+            <h2>Trabajo que habla<br><span>por sí mismo.</span></h2>
+          </div>
+          <p class="heading-note">Una selección de proyectos enfocados en mejorar la visibilidad y el rendimiento.</p>
+        </div>
+        <div class="projects-list">
+          <article class="project-card">
+            <div class="project-visual project-visual-dashboard">
+              <div class="mini-dashboard">
+                <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="mini-line"></div>
+                <div class="mini-legend"><span></span><span></span><span></span></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-type">Visualización de datos</p>
+              <h3>Dashboard de indicadores comerciales</h3>
+              <p>Panel interactivo para visualizar ventas, metas y tendencias en tiempo real.</p>
+              <div class="project-footer"><span>Power BI · SQL</span><a href="#contacto" aria-label="Consultar sobre Dashboard de indicadores comerciales">Ver proyecto ↗</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual project-visual-automation">
+              <div class="terminal-window">
+                <div class="terminal-dots"><i></i><i></i><i></i><span>data_cleaner.py</span></div>
+                <div class="terminal-code"><span class="code-purple">def</span> <span class="code-green">clean_data</span>(data):<br>&nbsp;&nbsp;<span class="code-purple">return</span> data.<span class="code-blue">dropna</span>()<br><br><span class="code-comment"># ready to analyze</span></div>
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-type">Automatización</p>
+              <h3>Flujo de limpieza de datos</h3>
+              <p>Proceso automatizado para preparar y estandarizar datos antes de su análisis.</p>
+              <div class="project-footer"><span>Python · Pandas</span><a href="#contacto" aria-label="Consultar sobre Flujo de limpieza de datos">Ver proyecto ↗</a></div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual project-visual-database">
+              <div class="database-visual"><span class="db-circle">◈</span><i></i><div class="db-table"><b>ID</b><b>NAME</b><b>VALUE</b><span>001</span><span>Ventas</span><span>98.4</span><span>002</span><span>Clientes</span><span>76.2</span></div></div>
+            </div>
+            <div class="project-info">
+              <p class="project-type">Sistemas y datos</p>
+              <h3>Modelo de base de datos</h3>
+              <p>Estructura relacional para organizar información y facilitar consultas eficientes.</p>
+              <div class="project-footer"><span>SQL · PostgreSQL</span><a href="#contacto" aria-label="Consultar sobre Modelo de base de datos">Ver proyecto ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contacto">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">04 — Contacto</p>
+          <h2>Hagamos que tus<br><span>datos trabajen mejor.</span></h2>
+        </div>
+        <div class="contact-content">
+          <p>¿Tienes un reto de datos, un proceso para mejorar o una idea que quieres convertir en realidad? Me encantará escucharte.</p>
+          <a class="email-link" href="mailto:giss98alvarado@gmail.com">giss98alvarado@gmail.com <span>↗</span></a>
+          <div class="contact-socials">
+            <a href="https://www.linkedin.com/public-profile/settings/?trk=d_flagship3_profile_self_view_public_profile&amp;lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BoRwrp7tFQgGXXdw2%2BYksNg%3D%3D" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a>
+            <a href="https://github.com/Margissx" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="current-year">2026</span> Mary Gissel Alvarado Raudales. Diseñado con intención.</p>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+</body>
 </html>
