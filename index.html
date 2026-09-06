@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js'); document.body.appendChild(portfolioScript);">
   <header class="site-header">
@@ -128,41 +128,41 @@
           </div>
           <p class="heading-note">Tecnología aplicada con enfoque en resultados, orden y eficiencia.</p>
         </div>
-        <div class="skills-grid">
-          <article class="skill-card skill-featured">
-            <div class="skill-number">01</div>
-            <div class="skill-icon icon-python">Py</div>
-            <h3>Python</h3>
-            <p>Análisis, automatización y visualización para descubrir patrones y optimizar tareas.</p>
-            <div class="skill-tags"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div>
+        <div class="skills-groups">
+          <article class="skill-cluster skill-cluster-featured">
+            <div class="cluster-header"><span class="skill-number">01</span><span class="cluster-icon">⌘</span></div>
+            <h3>Lenguajes y desarrollo</h3>
+            <div class="skill-subgroup"><h4>Lenguajes de programación</h4><div class="tag-cloud"><span>Python</span><span>C++</span><span>C#</span><span>JavaScript</span><span>TypeScript</span><span>Java</span><span>C</span><span>R</span><span>PHP</span><span>Bash</span><span>PowerShell</span></div></div>
+            <div class="skill-subgroup"><h4>Desarrollo web</h4><div class="tag-cloud"><span>HTML5</span><span>CSS3</span><span>React</span><span>Angular</span><span>Vue.js</span><span>Next.js</span><span>Svelte</span><span>Bootstrap</span><span>Tailwind CSS</span><span>Sass</span><span>Less</span></div></div>
+            <div class="skill-subgroup"><h4>Backend y APIs</h4><div class="tag-cloud"><span>.NET</span><span>Node.js</span><span>Express.js</span><span>FastAPI</span><span>Flask</span><span>Django</span><span>Spring Boot</span><span>Laravel</span><span>NestJS</span><span>REST</span><span>GraphQL</span><span>SOAP</span><span>WebSockets</span><span>Webhooks</span><span>OpenAPI</span><span>Swagger</span></div></div>
+            <div class="skill-subgroup"><h4>Herramientas y control de versiones</h4><div class="tag-cloud"><span>Visual Studio</span><span>VS Code</span><span>Postman</span><span>npm</span><span>Yarn</span><span>Vite</span><span>Webpack</span><span>Git</span><span>GitHub</span><span>GitLab</span><span>GitHub Actions</span></div></div>
           </article>
-          <article class="skill-card">
-            <div class="skill-number">02</div>
-            <div class="skill-icon icon-sql">⌘</div>
-            <h3>SQL</h3>
-            <p>Consultas precisas para convertir grandes volúmenes de datos en información útil.</p>
-            <div class="skill-tags"><span>Queries</span><span>Joins</span><span>ETL</span></div>
+
+          <article class="skill-cluster">
+            <div class="cluster-header"><span class="skill-number">02</span><span class="cluster-icon">◈</span></div>
+            <h3>Datos e ingeniería</h3>
+            <div class="skill-subgroup"><h4>Consulta y análisis de datos</h4><div class="tag-cloud"><span>SQL</span><span>T-SQL</span><span>PL/SQL</span><span>DAX</span><span>M (Power Query)</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Scikit-learn</span><span>Jupyter</span><span>Estadística</span><span>Data Cleaning</span><span>Data Mining</span><span>Machine Learning</span></div></div>
+            <div class="skill-subgroup"><h4>Bases de datos relacionales</h4><div class="tag-cloud"><span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>Oracle</span><span>MariaDB</span><span>SQLite</span><span>Access</span></div></div>
+            <div class="skill-subgroup"><h4>Bases de datos no relacionales</h4><div class="tag-cloud"><span>MongoDB</span><span>Redis</span><span>Cassandra</span><span>DynamoDB</span><span>CouchDB</span><span>Neo4j</span><span>Firebase</span></div></div>
+            <div class="skill-subgroup"><h4>Ingeniería y gestión de datos</h4><div class="tag-cloud"><span>ETL</span><span>ELT</span><span>SSIS</span><span>Apache Airflow</span><span>Apache Spark</span><span>Apache Kafka</span><span>Hadoop</span><span>dbt</span><span>Databricks</span><span>Azure Data Factory</span><span>Modelado de datos</span><span>Optimización de consultas</span></div></div>
           </article>
-          <article class="skill-card">
-            <div class="skill-number">03</div>
-            <div class="skill-icon icon-powerbi">▥</div>
-            <h3>Power BI</h3>
-            <p>Dashboards interactivos que hacen visibles los indicadores clave del negocio.</p>
-            <div class="skill-tags"><span>DAX</span><span>KPIs</span><span>Reports</span></div>
+
+          <article class="skill-cluster">
+            <div class="cluster-header"><span class="skill-number">03</span><span class="cluster-icon">▥</span></div>
+            <h3>Inteligencia y automatización</h3>
+            <div class="skill-subgroup"><h4>Business intelligence</h4><div class="tag-cloud"><span>Power BI</span><span>Metabase</span><span>Tableau</span><span>Looker</span><span>Looker Studio</span><span>Superset</span><span>SSRS</span><span>SSAS</span><span>Microsoft Fabric</span><span>Dashboards</span><span>KPIs</span></div></div>
+            <div class="skill-subgroup"><h4>Automatización</h4><div class="tag-cloud"><span>Python</span><span>Power Automate</span><span>VBA</span><span>Bash</span><span>PowerShell</span><span>Apache Airflow</span><span>Celery</span></div></div>
+            <div class="skill-subgroup"><h4>Sistemas de información geográfica</h4><div class="tag-cloud"><span>QGIS</span><span>SIG</span><span>Análisis geoespacial</span><span>Cartografía digital</span><span>Datos geográficos</span></div></div>
+            <div class="skill-subgroup"><h4>APIs y servicios</h4><div class="tag-cloud"><span>JSON</span><span>XML</span><span>Web Services</span><span>OAuth 2.0</span><span>JWT</span><span>gRPC</span></div></div>
           </article>
-          <article class="skill-card">
-            <div class="skill-number">04</div>
-            <div class="skill-icon icon-excel">▦</div>
-            <h3>Excel</h3>
-            <p>Organización, modelado y análisis para resolver necesidades del día a día.</p>
-            <div class="skill-tags"><span>Power Query</span><span>Macros</span></div>
-          </article>
-          <article class="skill-card">
-            <div class="skill-number">05</div>
-            <div class="skill-icon icon-db">◈</div>
-            <h3>Bases de datos</h3>
-            <p>Diseño y gestión de estructuras confiables para información consistente.</p>
-            <div class="skill-tags"><span>MySQL</span><span>PostgreSQL</span></div>
+
+          <article class="skill-cluster">
+            <div class="cluster-header"><span class="skill-number">04</span><span class="cluster-icon">✦</span></div>
+            <h3>Infraestructura y gestión</h3>
+            <div class="skill-subgroup"><h4>Testing y calidad</h4><div class="tag-cloud"><span>Testing</span><span>Debugging</span><span>Selenium</span><span>Cypress</span><span>Playwright</span><span>Jest</span><span>pytest</span><span>JUnit</span><span>NUnit</span><span>SonarQube</span></div></div>
+            <div class="skill-subgroup"><h4>Cloud, DevOps y contenedores</h4><div class="tag-cloud"><span>Microsoft Azure</span><span>AWS</span><span>Google Cloud</span><span>Docker</span><span>Docker Compose</span><span>Kubernetes</span><span>Helm</span><span>Terraform</span><span>Ansible</span><span>Jenkins</span><span>CI/CD</span></div></div>
+            <div class="skill-subgroup"><h4>Sistemas y ciberseguridad</h4><div class="tag-cloud"><span>Linux</span><span>Ubuntu</span><span>Windows Server</span><span>Apache</span><span>Nginx</span><span>SSH</span><span>Ciberseguridad</span><span>Hacking ético</span><span>Auditoría informática</span><span>LDAP</span><span>Active Directory</span><span>VPN</span><span>SSL/TLS</span></div></div>
+            <div class="skill-subgroup"><h4>Arquitectura y gestión</h4><div class="tag-cloud"><span>Microservicios</span><span>MVC</span><span>CRUD</span><span>ORM</span><span>UML</span><span>Scrum</span><span>Agile</span><span>Trello</span><span>Jira</span><span>Notion</span><span>Figma</span><span>Canva</span></div></div>
           </article>
         </div>
       </div>
