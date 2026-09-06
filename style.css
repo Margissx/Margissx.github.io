@@ -1,6 +1,6 @@
 :root {
-  --navy: #164452;
-  --navy-deep: #103844;
+  --navy: #75c1d7;
+  --navy-deep: #7bc7de;
   --ink: #17343f;
   --muted: #59717b;
   --line: #75c1d7;
@@ -148,3 +148,39 @@ h1 .highlight, h2 span { color: var(--mint); }
   .project-visual { height: 200px; }.contact-content { padding-top: 0; }.email-link { font-size: 18px; }.footer-inner { align-items: flex-start; gap: 20px; }.footer-inner p { max-width: 200px; }
 }
 @media (max-width: 390px) { .skills-grid { grid-template-columns: 1fr; }.skill-card { min-height: auto; }.skill-card p { min-height: auto; }.hero-actions { flex-direction: column; align-items: stretch; }.button { width: 100%; }.hero-visual { transform: scale(.78); margin-bottom: -65px; } }
+
+/* Soft light-blue theme */
+.site-header, .hero, .skills, .contact { color: var(--ink); }
+.brand-mark { border-color: rgba(23, 52, 63, .42); }
+.nav-link { color: rgba(23, 52, 63, .68); }
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+.nav-contact { border-color: rgba(23, 52, 63, .42); color: var(--ink); }
+.nav-contact:hover { background: rgba(242, 243, 244, .36); color: var(--ink); }
+.menu-toggle span { background: var(--ink); }
+.hero-description { color: rgba(23, 52, 63, .72); }
+.button-primary { color: var(--ink); }
+.button-ghost { border-color: rgba(23, 52, 63, .32); color: var(--ink); }
+.button-ghost:hover { background: rgba(242, 243, 244, .42); }
+.hero-meta { color: rgba(23, 52, 63, .62); }
+.dashboard-card { border-color: rgba(23, 52, 63, .16); background: rgba(242, 243, 244, .82); box-shadow: 20px 25px 60px rgba(23, 52, 63, .14); }
+.card-label, .card-period, .metric-row small { color: rgba(23, 52, 63, .62); }
+.card-menu { color: rgba(23, 52, 63, .55); }
+.chart-y-axis, .chart-labels { color: rgba(23, 52, 63, .54); }
+.chart-gridline { border-color: rgba(23, 52, 63, .12); }
+.floating-chip { border-color: rgba(23, 52, 63, .2); background: rgba(242, 243, 244, .88); color: rgba(23, 52, 63, .78); box-shadow: 0 15px 30px rgba(23, 52, 63, .13); }
+.scroll-cue { color: rgba(23, 52, 63, .64); }
+.scroll-cue span { border-color: rgba(23, 52, 63, .42); }
+.heading-note { color: rgba(23, 52, 63, .68); }
+.skill-card { border-color: rgba(23, 52, 63, .18); background: rgba(242, 243, 244, .22); }
+.skill-card:hover { background: rgba(242, 243, 244, .46); }
+.skill-featured { border-color: rgba(27, 112, 130, .45); background: rgba(242, 243, 244, .34); }
+.skill-number { color: rgba(23, 52, 63, .55); }
+.skill-card p { color: rgba(23, 52, 63, .7); }
+.skill-tags span { border-color: rgba(23, 52, 63, .22); color: rgba(23, 52, 63, .68); }
+.contact-content > p { color: rgba(23, 52, 63, .72); }
+.contact-socials a { color: rgba(23, 52, 63, .68); }
+.contact-socials a:hover { color: var(--ink); }
+.site-footer { border-top-color: rgba(23, 52, 63, .18); color: rgba(23, 52, 63, .65); }
+.footer-inner a { color: rgba(23, 52, 63, .78); }
+.footer-inner a:hover { color: var(--ink); }
+.nav-links { background: rgba(242, 243, 244, .96); }
