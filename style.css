@@ -204,3 +204,14 @@ h1 .highlight, h2 span { color: var(--mint); }
   .skill-cluster { padding: 22px 18px; }
   .skill-cluster h3 { font-size: 21px; }
 }
+
+
+/* Refuerzo visual de la portada y firma profesional */
+.hero { background: radial-gradient(circle at 78% 45%, rgba(27, 209, 232, .1), transparent 31%), var(--navy); }
+.hero-copy { max-width: 570px; }
+.signature-lockup { width: min(100%, 326px); margin: 0 0 30px; padding: 12px 17px 14px; border: 1px solid rgba(27, 209, 232, .42); background: var(--ink); box-shadow: 12px 16px 32px rgba(23, 52, 63, .16); }
+.signature-label { display: block; margin-bottom: 5px; color: var(--mint); font-size: 9px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.signature-lockup img { display: block; width: 100%; height: auto; }
+.skill-cluster { min-width: 0; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.skill-cluster:hover { transform: translateY(-4px); border-color: rgba(27, 209, 232, .6); box-shadow: 0 14px 30px rgba(23, 52, 63, .08); }
+@media (max-width: 680px) { .signature-lockup { width: min(100%, 300px); margin-bottom: 26px; } }
