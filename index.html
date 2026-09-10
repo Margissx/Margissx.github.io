@@ -13,6 +13,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png?v=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=8">
 </head>
@@ -130,54 +131,513 @@
     </section>
 
     <section class="skills section" id="habilidades">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">02 — Habilidades</p>
-            <h2>Herramientas para dar<br><span>claridad a los datos.</span></h2>
-          </div>
-          <p class="heading-note">Tecnología aplicada con enfoque en resultados, orden y eficiencia.</p>
-        </div>
-        <div class="skills-groups">
-          <article class="skill-cluster skill-cluster-featured">
-            <div class="cluster-header"><span class="skill-number">01</span><span class="cluster-icon">💻</span></div>
-            <h3>Lenguajes y desarrollo</h3>
-            <div class="skill-subgroup"><h4>Lenguajes de programación</h4><div class="tag-cloud"><span>Python</span><span>C++</span><span>C#</span><span>JavaScript</span><span>TypeScript</span><[...]
-            <div class="skill-subgroup"><h4>Desarrollo web</h4><div class="tag-cloud"><span>HTML5</span><span>CSS3</span><span>React</span><span>Angular</span><span>Vue.js</span><span>Next.js</sp[...]
-            <div class="skill-subgroup"><h4>Backend y APIs</h4><div class="tag-cloud"><span>.NET</span><span>Node.js</span><span>Express.js</span><span>FastAPI</span><span>Flask</span><span>Djang[...]
-            <div class="skill-subgroup"><h4>Herramientas y control de versiones</h4><div class="tag-cloud"><span>Visual Studio</span><span>VS Code</span><span>Postman</span><span>npm</span><span>[...]
-          </article>
+  <div class="container">
 
-          <article class="skill-cluster">
-            <div class="cluster-header"><span class="skill-number">02</span><span class="cluster-icon">📊</span></div>
-            <h3>Datos e ingeniería</h3>
-            <div class="skill-subgroup"><h4>Consulta y análisis de datos</h4><div class="tag-cloud"><span>SQL</span><span>T-SQL</span><span>PL/SQL</span><span>DAX</span><span>M (Power Query)</sp[...]
-            <div class="skill-subgroup"><h4>Bases de datos relacionales</h4><div class="tag-cloud"><span>MySQL</span><span>PostgreSQL</span><span>SQL Server</span><span>Oracle</span><span>MariaDB[...]
-            <div class="skill-subgroup"><h4>Bases de datos no relacionales</h4><div class="tag-cloud"><span>MongoDB</span><span>Redis</span><span>Cassandra</span><span>DynamoDB</span><span>CouchD[...]
-            <div class="skill-subgroup"><h4>Ingeniería y gestión de datos</h4><div class="tag-cloud"><span>ETL</span><span>ELT</span><span>SSIS</span><span>Apache Airflow</span><span>Apache Spa[...]
-          </article>
-
-          <article class="skill-cluster">
-            <div class="cluster-header"><span class="skill-number">03</span><span class="cluster-icon">⚡</span></div>
-            <h3>Inteligencia y automatización</h3>
-            <div class="skill-subgroup"><h4>Business intelligence</h4><div class="tag-cloud"><span>Power BI</span><span>Metabase</span><span>Tableau</span><span>Looker</span><span>Looker Studio</[...]
-            <div class="skill-subgroup"><h4>Automatización</h4><div class="tag-cloud"><span>Python</span><span>Power Automate</span><span>VBA</span><span>Bash</span><span>PowerShell</span><span>[...]
-            <div class="skill-subgroup"><h4>Sistemas de información geográfica</h4><div class="tag-cloud"><span>QGIS</span><span>SIG</span><span>Análisis geoespacial</span><span>Cartografía d[...]
-            <div class="skill-subgroup"><h4>APIs y servicios</h4><div class="tag-cloud"><span>JSON</span><span>XML</span><span>Web Services</span><span>OAuth 2.0</span><span>JWT</span><span>gRPC[...]
-          </article>
-
-          <article class="skill-cluster">
-            <div class="cluster-header"><span class="skill-number">04</span><span class="cluster-icon">🛠️</span></div>
-            <h3>Infraestructura y gestión</h3>
-            <div class="skill-subgroup"><h4>Testing y calidad</h4><div class="tag-cloud"><span>Testing</span><span>Debugging</span><span>Selenium</span><span>Cypress</span><span>Playwright</span>[...]
-            <div class="skill-subgroup"><h4>Cloud, DevOps y contenedores</h4><div class="tag-cloud"><span>Microsoft Azure</span><span>AWS</span><span>Google Cloud</span><span>Docker</span><span>D[...]
-            <div class="skill-subgroup"><h4>Sistemas y ciberseguridad</h4><div class="tag-cloud"><span>Linux</span><span>Ubuntu</span><span>Windows Server</span><span>Apache</span><span>Nginx</sp[...]
-            <div class="skill-subgroup"><h4>Arquitectura y gestión</h4><div class="tag-cloud"><span>Microservicios</span><span>MVC</span><span>CRUD</span><span>ORM</span><span>UML</span><span>Sc[...]
-          </article>
-        </div>
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">02 — Habilidades</p>
+        <h2>Herramientas para dar<br><span>claridad a los datos.</span></h2>
       </div>
-    </section>
 
+      <p class="heading-note">
+        Tecnología aplicada con enfoque en resultados, orden y eficiencia.
+      </p>
+    </div>
+
+    <div class="skills-groups">
+
+      <!-- 01 — LENGUAJES Y DESARROLLO -->
+      <article class="skill-cluster skill-cluster-featured">
+
+        <div class="cluster-header">
+          <span class="skill-number">01</span>
+          <span class="cluster-icon">
+            <i class="bi bi-code-slash"></i>
+          </span>
+        </div>
+
+        <h3>Lenguajes y desarrollo</h3>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-braces"></i>
+            Lenguajes de programación
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Python</span>
+            <span>C++</span>
+            <span>C#</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>Java</span>
+            <span>C</span>
+            <span>R</span>
+            <span>PHP</span>
+            <span>Bash</span>
+            <span>PowerShell</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-window"></i>
+            Desarrollo web
+          </h4>
+
+          <div class="tag-cloud">
+            <span>HTML5</span>
+            <span>CSS3</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>React</span>
+            <span>Angular</span>
+            <span>Vue.js</span>
+            <span>Next.js</span>
+            <span>Svelte</span>
+            <span>Bootstrap</span>
+            <span>Tailwind CSS</span>
+            <span>Sass</span>
+            <span>Less</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-server"></i>
+            Desarrollo backend
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Python</span>
+            <span>C#</span>
+            <span>.NET</span>
+            <span>Node.js</span>
+            <span>Express.js</span>
+            <span>FastAPI</span>
+            <span>Flask</span>
+            <span>Django</span>
+            <span>Spring Boot</span>
+            <span>Laravel</span>
+            <span>Symfony</span>
+            <span>NestJS</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-diagram-3"></i>
+            APIs y servicios
+          </h4>
+
+          <div class="tag-cloud">
+            <span>APIs RESTful</span>
+            <span>REST</span>
+            <span>GraphQL</span>
+            <span>SOAP</span>
+            <span>Web Services</span>
+            <span>JSON</span>
+            <span>XML</span>
+            <span>WebSockets</span>
+            <span>Webhooks</span>
+            <span>OpenAPI</span>
+            <span>Swagger</span>
+            <span>OAuth 2.0</span>
+            <span>JWT</span>
+            <span>gRPC</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-git"></i>
+            Herramientas y control de versiones
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Visual Studio</span>
+            <span>Visual Studio Code</span>
+            <span>Postman</span>
+            <span>Swagger UI</span>
+            <span>Maven</span>
+            <span>Gradle</span>
+            <span>npm</span>
+            <span>Yarn</span>
+            <span>Vite</span>
+            <span>Webpack</span>
+            <span>Babel</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>GitLab</span>
+            <span>GitLab CI/CD</span>
+            <span>GitHub Actions</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- 02 — DATOS E INGENIERÍA -->
+      <article class="skill-cluster">
+
+        <div class="cluster-header">
+          <span class="skill-number">02</span>
+          <span class="cluster-icon">
+            <i class="bi bi-database"></i>
+          </span>
+        </div>
+
+        <h3>Datos e ingeniería</h3>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-search"></i>
+            Consulta y análisis de datos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>SQL</span>
+            <span>T-SQL</span>
+            <span>PL/SQL</span>
+            <span>DAX</span>
+            <span>M (Power Query)</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-database"></i>
+            Bases de datos relacionales
+          </h4>
+
+          <div class="tag-cloud">
+            <span>MySQL</span>
+            <span>PostgreSQL</span>
+            <span>Microsoft SQL Server</span>
+            <span>Oracle Database</span>
+            <span>MariaDB</span>
+            <span>SQLite</span>
+            <span>Microsoft Access</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-database-add"></i>
+            Bases de datos no relacionales
+          </h4>
+
+          <div class="tag-cloud">
+            <span>MongoDB</span>
+            <span>Redis</span>
+            <span>Cassandra</span>
+            <span>DynamoDB</span>
+            <span>CouchDB</span>
+            <span>Neo4j</span>
+            <span>Firebase</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-sliders"></i>
+            Herramientas de bases de datos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>MySQL Workbench</span>
+            <span>pgAdmin</span>
+            <span>DBeaver</span>
+            <span>SQL Server Management Studio</span>
+            <span>Oracle SQL Developer</span>
+            <span>SQL*Plus</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-diagram-2"></i>
+            Administración de bases de datos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Backup y recuperación</span>
+            <span>Gestión de usuarios</span>
+            <span>Seguridad de bases de datos</span>
+            <span>Índices</span>
+            <span>Procedimientos almacenados</span>
+            <span>Triggers</span>
+            <span>Vistas</span>
+            <span>Optimización de consultas</span>
+            <span>Integridad de datos</span>
+            <span>Modelado de bases de datos</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-bar-chart-steps"></i>
+            Ingeniería de datos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>ETL</span>
+            <span>ELT</span>
+            <span>SSIS</span>
+            <span>Apache Airflow</span>
+            <span>Apache Spark</span>
+            <span>Apache Kafka</span>
+            <span>Hadoop</span>
+            <span>dbt</span>
+            <span>Databricks</span>
+            <span>Delta Lake</span>
+            <span>Azure Data Factory</span>
+            <span>Azure Synapse</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- 03 — INTELIGENCIA Y AUTOMATIZACIÓN -->
+      <article class="skill-cluster">
+
+        <div class="cluster-header">
+          <span class="skill-number">03</span>
+          <span class="cluster-icon">
+            <i class="bi bi-cpu"></i>
+          </span>
+        </div>
+
+        <h3>Inteligencia y automatización</h3>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-bar-chart-line"></i>
+            Análisis de datos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Python</span>
+            <span>R</span>
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Matplotlib</span>
+            <span>Scikit-learn</span>
+            <span>Jupyter Notebook</span>
+            <span>JupyterLab</span>
+            <span>Anaconda</span>
+            <span>Estadística</span>
+            <span>Data Cleaning</span>
+            <span>Data Mining</span>
+            <span>Modelado estadístico</span>
+            <span>Machine Learning</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-pie-chart"></i>
+            Business intelligence
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Power BI</span>
+            <span>Metabase</span>
+            <span>Tableau</span>
+            <span>Looker</span>
+            <span>Looker Studio</span>
+            <span>Apache Superset</span>
+            <span>SSRS</span>
+            <span>SSAS</span>
+            <span>Microsoft Fabric</span>
+            <span>Dashboards</span>
+            <span>KPIs</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-lightning-charge"></i>
+            Automatización
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Python</span>
+            <span>Power Automate</span>
+            <span>VBA</span>
+            <span>Bash</span>
+            <span>PowerShell</span>
+            <span>Apache Airflow</span>
+            <span>Celery</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-geo-alt"></i>
+            Sistemas de información geográfica
+          </h4>
+
+          <div class="tag-cloud">
+            <span>QGIS</span>
+            <span>SIG</span>
+            <span>Análisis geoespacial</span>
+            <span>Cartografía digital</span>
+            <span>Datos geográficos</span>
+          </div>
+        </div>
+
+      </article>
+
+
+      <!-- 04 — INFRAESTRUCTURA Y GESTIÓN -->
+      <article class="skill-cluster">
+
+        <div class="cluster-header">
+          <span class="skill-number">04</span>
+          <span class="cluster-icon">
+            <i class="bi bi-tools"></i>
+          </span>
+        </div>
+
+        <h3>Infraestructura y gestión</h3>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-check2-circle"></i>
+            Testing y calidad
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Testing</span>
+            <span>Debugging</span>
+            <span>Selenium</span>
+            <span>Cypress</span>
+            <span>Playwright</span>
+            <span>Jest</span>
+            <span>pytest</span>
+            <span>JUnit</span>
+            <span>NUnit</span>
+            <span>SonarQube</span>
+            <span>Postman</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-cloud"></i>
+            Cloud, DevOps y contenedores
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Microsoft Azure</span>
+            <span>AWS</span>
+            <span>Google Cloud Platform</span>
+            <span>Azure Data Factory</span>
+            <span>Azure Synapse</span>
+            <span>Amazon S3</span>
+            <span>BigQuery</span>
+            <span>Snowflake</span>
+            <span>Redshift</span>
+            <span>Docker</span>
+            <span>Docker Compose</span>
+            <span>Kubernetes</span>
+            <span>Helm</span>
+            <span>Terraform</span>
+            <span>Ansible</span>
+            <span>Jenkins</span>
+            <span>CI/CD</span>
+            <span>Azure DevOps</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-shield-check"></i>
+            Sistemas y ciberseguridad
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Linux</span>
+            <span>Ubuntu</span>
+            <span>Debian</span>
+            <span>CentOS</span>
+            <span>Red Hat Enterprise Linux</span>
+            <span>Windows Server</span>
+            <span>IIS</span>
+            <span>Apache</span>
+            <span>Nginx</span>
+            <span>Apache Tomcat</span>
+            <span>SSH</span>
+            <span>Ciberseguridad</span>
+            <span>Hacking ético</span>
+            <span>Auditoría informática</span>
+            <span>Forense digital</span>
+            <span>Seguridad de aplicaciones</span>
+            <span>OAuth 2.0</span>
+            <span>OpenID Connect</span>
+            <span>LDAP</span>
+            <span>Active Directory</span>
+            <span>VPN</span>
+            <span>SSL/TLS</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-diagram-3"></i>
+            Arquitectura y metodologías
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Arquitectura de software</span>
+            <span>Microservicios</span>
+            <span>MVC</span>
+            <span>CRUD</span>
+            <span>ORM</span>
+            <span>UML</span>
+            <span>Scrum</span>
+            <span>Agile</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-kanban"></i>
+            Gestión de proyectos
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Trello</span>
+            <span>Jira</span>
+            <span>Confluence</span>
+            <span>Microsoft Project</span>
+            <span>Notion</span>
+            <span>Miro</span>
+            <span>Slack</span>
+            <span>ServiceNow</span>
+          </div>
+        </div>
+
+        <div class="skill-subgroup">
+          <h4>
+            <i class="bi bi-palette"></i>
+            Diseño y prototipado
+          </h4>
+
+          <div class="tag-cloud">
+            <span>Figma</span>
+            <span>Canva</span>
+            <span>WordPress</span>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+</section>
     <section class="projects section section-light" id="proyectos">
       <div class="container">
         <div class="section-heading projects-heading">
