@@ -1085,6 +1085,8 @@ h1 .highlight::after {
 .chip-data {
   bottom: 80px;
   left: 10px;
+  font-size: 8px;
+}
 
   animation-delay: 0s;
 }
