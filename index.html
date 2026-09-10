@@ -3,715 +3,996 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio profesional de una Ingeniera en Ciencias de la Computación, enfocado en el desarrollo de soluciones tecnológicas, programación, sistemas, datos y a[...]
-">
-  <title>Portafolio </title>
+
+  <meta
+    name="description"
+    content="Portafolio profesional de una Ingeniera en Ciencias de la Computación, enfocado en desarrollo de soluciones tecnológicas, programación, sistemas, análisis de datos y automatización."
+  >
+
+  <title>Portafolio | Ingeniera en Ciencias de la Computación</title>
+
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico?v=1" sizes="any">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1">
   <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png?v=1">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png?v=1">
+
+  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
-<body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js'); document.body.appendChild(portfolioScript);">
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
+
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <span class="brand-mark">&lt;/&gt;</span>
-        <span>Portafolio<span class="brand-dot">.</span></span>
+        <span>
+          Portafolio<span class="brand-dot">.</span>
+        </span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="main-menu"
+      >
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <div class="nav-links" id="main-menu">
-        <a class="nav-link active" href="#inicio">Inicio</a>
-        <a class="nav-link" href="#perfil">Perfil</a>
-        <a class="nav-link" href="#habilidades">Habilidades</a>
-        <a class="nav-link" href="#proyectos">Proyectos</a>
-        <a class="nav-link nav-contact" href="#contacto">Hablemos <span aria-hidden="true">↗</span></a>
+
+        <a class="nav-link active" href="#inicio">
+          Inicio
+        </a>
+
+        <a class="nav-link" href="#perfil">
+          Perfil
+        </a>
+
+        <a class="nav-link" href="#habilidades">
+          Habilidades
+        </a>
+
+        <a class="nav-link" href="#proyectos">
+          Proyectos
+        </a>
+
+        <a class="nav-link nav-contact" href="#contacto">
+          Hablemos <span aria-hidden="true">↗</span>
+        </a>
+
       </div>
+
     </nav>
   </header>
 
+
   <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
     <section class="hero section" id="inicio">
+
       <div class="container hero-grid">
+
         <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot"></span> Disponible para nuevos proyectos</p>
-          <h1>Datos que se convierten en <span class="highlight">decisiones.</span></h1>
-          <p class="hero-description">
-           Soy Ingeniera en Ciencias de la Computación. Creo soluciones tecnológicas que combinan programación, desarrollo de sistemas, análisis de datos y automatización para resolver problemas, optimizar procesos y transformar información en resultados útiles. Me enfoco en desarrollar soluciones eficientes, escalables y orientadas a las necesidades de cada proyecto.
+
+          <p class="eyebrow">
+            <span class="status-dot"></span>
+            Disponible para nuevos proyectos
           </p>
+
+          <h1>
+            Datos que se convierten en
+            <span class="highlight">decisiones.</span>
+          </h1>
+
+          <p class="hero-description">
+            Soy Ingeniera en Ciencias de la Computación. Creo soluciones
+            tecnológicas que combinan programación, desarrollo de sistemas,
+            análisis de datos y automatización para resolver problemas,
+            optimizar procesos y transformar información en resultados útiles.
+            Me enfoco en desarrollar soluciones eficientes, escalables y
+            orientadas a las necesidades de cada proyecto.
+          </p>
+
           <div class="hero-actions">
-            <a class="button button-primary" href="#proyectos">Ver proyectos <span aria-hidden="true">↗</span></a>
-            <a class="button button-ghost" href="#contacto">Contáctame</a>
+
+            <a class="button button-primary" href="#proyectos">
+              Ver proyectos
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="button button-ghost" href="#contacto">
+              Contáctame
+            </a>
+
           </div>
+
           <div class="hero-meta" aria-label="Áreas de experiencia">
+
             <span>Analítica</span>
+
             <span class="meta-separator">•</span>
+
             <span>Sistemas</span>
+
             <span class="meta-separator">•</span>
+
             <span>Automatización</span>
+
           </div>
+
         </div>
 
-        <div class="hero-visual" aria-label="Visualización decorativa de datos">
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+        <div
+          class="hero-visual"
+          aria-label="Visualización decorativa de datos"
+        >
+
           <div class="visual-glow"></div>
+
           <div class="dashboard-card">
-            <div class="card-topline">
+
+            <div class="dashboard-header">
+
               <div>
-                <p class="card-label">Resumen de rendimiento</p>
-                <p class="card-period">Últimos 6 meses <span>⌄</span></p>
+                <span class="dashboard-label">
+                  Rendimiento
+                </span>
+
+                <strong>
+                  +28.4%
+                </strong>
               </div>
-              <span class="card-menu">•••</span>
+
+              <span class="dashboard-badge">
+                <i class="bi bi-graph-up-arrow"></i>
+              </span>
+
             </div>
-            <div class="metric-row">
-              <div>
-                <strong>+38.6<span>%</span></strong>
-                <small>crecimiento</small>
-              </div>
-              <div class="trend-badge">↗ 12.4%</div>
-            </div>
+
+
             <div class="chart" aria-hidden="true">
-              <div class="chart-y-axis"><span>100k</span><span>50k</span><span>0</span></div>
+
+              <div class="chart-y-axis">
+                <span>100k</span>
+                <span>50k</span>
+                <span>0</span>
+              </div>
+
               <div class="chart-area">
-                <div class="chart-gridline line-one"></div>
-                <div class="chart-gridline line-two"></div>
-                <div class="chart-gridline line-three"></div>
-                <svg viewBox="0 0 350 130" preserveAspectRatio="none" role="img" aria-label="Gráfico de tendencia ascendente">
+
+                <div class="chart-grid">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <svg
+                  viewBox="0 0 350 130"
+                  preserveAspectRatio="none"
+                  role="img"
+                  aria-label="Gráfico de tendencia ascendente"
+                >
+
                   <defs>
-                    <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
-                      <stop offset="0%" stop-color="#1BD1E8" stop-opacity=".27"/>
-                      <stop offset="100%" stop-color="#1BD1E8" stop-opacity="0"/>
+
+                    <linearGradient
+                      id="chartFill"
+                      x1="0"
+                      x2="0"
+                      y1="0"
+                      y2="1"
+                    >
+                      <stop
+                        offset="0%"
+                        stop-color="#1BD1E8"
+                        stop-opacity=".27"
+                      />
+
+                      <stop
+                        offset="100%"
+                        stop-color="#1BD1E8"
+                        stop-opacity="0"
+                      />
                     </linearGradient>
+
                   </defs>
-                  <path class="chart-fill" d="M0,108 C23,102 28,80 50,88 S82,94 101,65 S130,82 148,62 S177,72 196,45 S227,59 244,37 S280,52 299,20 S332,30 350,5 V130 H0 Z"/>
-                  <path class="chart-line" d="M0,108 C23,102 28,80 50,88 S82,94 101,65 S130,82 148,62 S177,72 196,45 S227,59 244,37 S280,52 299,20 S332,30 350,5"/>
-                  <circle cx="299" cy="20" r="4" fill="#103844" stroke="#1BD1E8" stroke-width="3"/>
+
+                  <path
+                    class="chart-fill"
+                    d="M0,110
+                       C35,105 45,95 70,98
+                       C95,101 110,75 135,80
+                       C160,85 170,65 195,68
+                       C220,71 230,50 255,55
+                       C280,60 290,25 315,30
+                       C330,32 340,20 350,18
+                       L350,130
+                       L0,130 Z"
+                  ></path>
+
+                  <path
+                    class="chart-line"
+                    d="M0,110
+                       C35,105 45,95 70,98
+                       C95,101 110,75 135,80
+                       C160,85 170,65 195,68
+                       C220,71 230,50 255,55
+                       C280,60 290,25 315,30
+                       C330,32 340,20 350,18"
+                  ></path>
+
+                  <!-- ÚNICO COLOR OSCURO ELIMINADO -->
+                  <circle
+                    cx="299"
+                    cy="20"
+                    r="4"
+                    fill="#76C2D8"
+                    stroke="#1BD1E8"
+                    stroke-width="3"
+                  ></circle>
+
                 </svg>
-                <div class="chart-labels"><span>ENE</span><span>FEB</span><span>MAR</span><span>ABR</span><span>MAY</span><span>JUN</span></div>
+
               </div>
+
             </div>
+
           </div>
-          <div class="floating-chip chip-data"><span class="chip-icon">✦</span> Data driven</div>
-          <div class="floating-chip chip-sql"><span class="chip-icon">&lt;/&gt;</span> SQL</div>
+
         </div>
+
       </div>
-      <a class="scroll-cue" href="#perfil" aria-label="Desplazarse al perfil"><span>↓</span> Explorar perfil</a>
+
     </section>
 
+
+    <!-- =========================
+         PERFIL
+    ========================== -->
     <section class="profile section section-light" id="perfil">
-      <div class="container profile-grid">
-        <div class="section-intro">
-          <p class="eyebrow eyebrow-dark">01 — Perfil</p>
-          <h2>Transformo datos y tecnología en soluciones que generan resultados.</h2>
-        </div>
-        <div class="profile-content">
-          <p class="lead">Combino análisis de datos, desarrollo de sistemas y pensamiento estratégico para convertir necesidades complejas en soluciones prácticas.</p>
-          <p>Ayudo a <strong>automatizar procesos, analizar información, desarrollar soluciones digitales y transformar datos en decisiones</strong>, combinando tecnología, análisis y eficiencia para crear soluciones que generan resultados y aportan valor.</p>
-          <div class="profile-stats">
-            <div class="stat"><strong>+3</strong><span>Años de experiencia<br>y aprendizaje aplicado</span></div>
-            <div class="stat"><strong>05</strong><span>Áreas técnicas de<br>especialización</span></div>
-            <div class="stat"><strong>100%</strong><span>Compromiso con<br>soluciones de calidad</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="skills section" id="habilidades">
-  <div class="container">
-
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">02 — Habilidades</p>
-        <h2>Herramientas para dar<br><span>claridad a los datos.</span></h2>
-      </div>
-
-      <p class="heading-note">
-        Tecnología aplicada con enfoque en resultados, orden y eficiencia.
-      </p>
-    </div>
-
-    <div class="skills-groups">
-
-      <!-- 01 — LENGUAJES Y DESARROLLO -->
-      <article class="skill-cluster skill-cluster-featured">
-
-        <div class="cluster-header">
-          <span class="skill-number">01</span>
-          <span class="cluster-icon">
-            <i class="bi bi-code-slash"></i>
-          </span>
-        </div>
-
-        <h3>Lenguajes y desarrollo</h3>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-braces"></i>
-            Lenguajes de programación
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Python</span>
-            <span>C++</span>
-            <span>C#</span>
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>Java</span>
-            <span>C</span>
-            <span>R</span>
-            <span>PHP</span>
-            <span>Bash</span>
-            <span>PowerShell</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-window"></i>
-            Desarrollo web
-          </h4>
-
-          <div class="tag-cloud">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>React</span>
-            <span>Angular</span>
-            <span>Vue.js</span>
-            <span>Next.js</span>
-            <span>Svelte</span>
-            <span>Bootstrap</span>
-            <span>Tailwind CSS</span>
-            <span>Sass</span>
-            <span>Less</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-server"></i>
-            Desarrollo backend
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Python</span>
-            <span>C#</span>
-            <span>.NET</span>
-            <span>Node.js</span>
-            <span>Express.js</span>
-            <span>FastAPI</span>
-            <span>Flask</span>
-            <span>Django</span>
-            <span>Spring Boot</span>
-            <span>Laravel</span>
-            <span>Symfony</span>
-            <span>NestJS</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-diagram-3"></i>
-            APIs y servicios
-          </h4>
-
-          <div class="tag-cloud">
-            <span>APIs RESTful</span>
-            <span>REST</span>
-            <span>GraphQL</span>
-            <span>SOAP</span>
-            <span>Web Services</span>
-            <span>JSON</span>
-            <span>XML</span>
-            <span>WebSockets</span>
-            <span>Webhooks</span>
-            <span>OpenAPI</span>
-            <span>Swagger</span>
-            <span>OAuth 2.0</span>
-            <span>JWT</span>
-            <span>gRPC</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-git"></i>
-            Herramientas y control de versiones
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Visual Studio</span>
-            <span>Visual Studio Code</span>
-            <span>Postman</span>
-            <span>Swagger UI</span>
-            <span>Maven</span>
-            <span>Gradle</span>
-            <span>npm</span>
-            <span>Yarn</span>
-            <span>Vite</span>
-            <span>Webpack</span>
-            <span>Babel</span>
-            <span>Git</span>
-            <span>GitHub</span>
-            <span>GitLab</span>
-            <span>GitLab CI/CD</span>
-            <span>GitHub Actions</span>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 02 — DATOS E INGENIERÍA -->
-      <article class="skill-cluster">
-
-        <div class="cluster-header">
-          <span class="skill-number">02</span>
-          <span class="cluster-icon">
-            <i class="bi bi-database"></i>
-          </span>
-        </div>
-
-        <h3>Datos e ingeniería</h3>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-search"></i>
-            Consulta y análisis de datos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>SQL</span>
-            <span>T-SQL</span>
-            <span>PL/SQL</span>
-            <span>DAX</span>
-            <span>M (Power Query)</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-database"></i>
-            Bases de datos relacionales
-          </h4>
-
-          <div class="tag-cloud">
-            <span>MySQL</span>
-            <span>PostgreSQL</span>
-            <span>Microsoft SQL Server</span>
-            <span>Oracle Database</span>
-            <span>MariaDB</span>
-            <span>SQLite</span>
-            <span>Microsoft Access</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-database-add"></i>
-            Bases de datos no relacionales
-          </h4>
-
-          <div class="tag-cloud">
-            <span>MongoDB</span>
-            <span>Redis</span>
-            <span>Cassandra</span>
-            <span>DynamoDB</span>
-            <span>CouchDB</span>
-            <span>Neo4j</span>
-            <span>Firebase</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-sliders"></i>
-            Herramientas de bases de datos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>MySQL Workbench</span>
-            <span>pgAdmin</span>
-            <span>DBeaver</span>
-            <span>SQL Server Management Studio</span>
-            <span>Oracle SQL Developer</span>
-            <span>SQL*Plus</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-diagram-2"></i>
-            Administración de bases de datos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Backup y recuperación</span>
-            <span>Gestión de usuarios</span>
-            <span>Seguridad de bases de datos</span>
-            <span>Índices</span>
-            <span>Procedimientos almacenados</span>
-            <span>Triggers</span>
-            <span>Vistas</span>
-            <span>Optimización de consultas</span>
-            <span>Integridad de datos</span>
-            <span>Modelado de bases de datos</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-bar-chart-steps"></i>
-            Ingeniería de datos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>ETL</span>
-            <span>ELT</span>
-            <span>SSIS</span>
-            <span>Apache Airflow</span>
-            <span>Apache Spark</span>
-            <span>Apache Kafka</span>
-            <span>Hadoop</span>
-            <span>dbt</span>
-            <span>Databricks</span>
-            <span>Delta Lake</span>
-            <span>Azure Data Factory</span>
-            <span>Azure Synapse</span>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 03 — INTELIGENCIA Y AUTOMATIZACIÓN -->
-      <article class="skill-cluster">
-
-        <div class="cluster-header">
-          <span class="skill-number">03</span>
-          <span class="cluster-icon">
-            <i class="bi bi-cpu"></i>
-          </span>
-        </div>
-
-        <h3>Inteligencia y automatización</h3>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-bar-chart-line"></i>
-            Análisis de datos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Python</span>
-            <span>R</span>
-            <span>Pandas</span>
-            <span>NumPy</span>
-            <span>Matplotlib</span>
-            <span>Scikit-learn</span>
-            <span>Jupyter Notebook</span>
-            <span>JupyterLab</span>
-            <span>Anaconda</span>
-            <span>Estadística</span>
-            <span>Data Cleaning</span>
-            <span>Data Mining</span>
-            <span>Modelado estadístico</span>
-            <span>Machine Learning</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-pie-chart"></i>
-            Business intelligence
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Power BI</span>
-            <span>Metabase</span>
-            <span>Tableau</span>
-            <span>Looker</span>
-            <span>Looker Studio</span>
-            <span>Apache Superset</span>
-            <span>SSRS</span>
-            <span>SSAS</span>
-            <span>Microsoft Fabric</span>
-            <span>Dashboards</span>
-            <span>KPIs</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-lightning-charge"></i>
-            Automatización
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Python</span>
-            <span>Power Automate</span>
-            <span>VBA</span>
-            <span>Bash</span>
-            <span>PowerShell</span>
-            <span>Apache Airflow</span>
-            <span>Celery</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-geo-alt"></i>
-            Sistemas de información geográfica
-          </h4>
-
-          <div class="tag-cloud">
-            <span>QGIS</span>
-            <span>SIG</span>
-            <span>Análisis geoespacial</span>
-            <span>Cartografía digital</span>
-            <span>Datos geográficos</span>
-          </div>
-        </div>
-
-      </article>
-
-
-      <!-- 04 — INFRAESTRUCTURA Y GESTIÓN -->
-      <article class="skill-cluster">
-
-        <div class="cluster-header">
-          <span class="skill-number">04</span>
-          <span class="cluster-icon">
-            <i class="bi bi-tools"></i>
-          </span>
-        </div>
-
-        <h3>Infraestructura y gestión</h3>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-check2-circle"></i>
-            Testing y calidad
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Testing</span>
-            <span>Debugging</span>
-            <span>Selenium</span>
-            <span>Cypress</span>
-            <span>Playwright</span>
-            <span>Jest</span>
-            <span>pytest</span>
-            <span>JUnit</span>
-            <span>NUnit</span>
-            <span>SonarQube</span>
-            <span>Postman</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-cloud"></i>
-            Cloud, DevOps y contenedores
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Microsoft Azure</span>
-            <span>AWS</span>
-            <span>Google Cloud Platform</span>
-            <span>Azure Data Factory</span>
-            <span>Azure Synapse</span>
-            <span>Amazon S3</span>
-            <span>BigQuery</span>
-            <span>Snowflake</span>
-            <span>Redshift</span>
-            <span>Docker</span>
-            <span>Docker Compose</span>
-            <span>Kubernetes</span>
-            <span>Helm</span>
-            <span>Terraform</span>
-            <span>Ansible</span>
-            <span>Jenkins</span>
-            <span>CI/CD</span>
-            <span>Azure DevOps</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-shield-check"></i>
-            Sistemas y ciberseguridad
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Linux</span>
-            <span>Ubuntu</span>
-            <span>Debian</span>
-            <span>CentOS</span>
-            <span>Red Hat Enterprise Linux</span>
-            <span>Windows Server</span>
-            <span>IIS</span>
-            <span>Apache</span>
-            <span>Nginx</span>
-            <span>Apache Tomcat</span>
-            <span>SSH</span>
-            <span>Ciberseguridad</span>
-            <span>Hacking ético</span>
-            <span>Auditoría informática</span>
-            <span>Forense digital</span>
-            <span>Seguridad de aplicaciones</span>
-            <span>OAuth 2.0</span>
-            <span>OpenID Connect</span>
-            <span>LDAP</span>
-            <span>Active Directory</span>
-            <span>VPN</span>
-            <span>SSL/TLS</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-diagram-3"></i>
-            Arquitectura y metodologías
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Arquitectura de software</span>
-            <span>Microservicios</span>
-            <span>MVC</span>
-            <span>CRUD</span>
-            <span>ORM</span>
-            <span>UML</span>
-            <span>Scrum</span>
-            <span>Agile</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-kanban"></i>
-            Gestión de proyectos
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Trello</span>
-            <span>Jira</span>
-            <span>Confluence</span>
-            <span>Microsoft Project</span>
-            <span>Notion</span>
-            <span>Miro</span>
-            <span>Slack</span>
-            <span>ServiceNow</span>
-          </div>
-        </div>
-
-        <div class="skill-subgroup">
-          <h4>
-            <i class="bi bi-palette"></i>
-            Diseño y prototipado
-          </h4>
-
-          <div class="tag-cloud">
-            <span>Figma</span>
-            <span>Canva</span>
-            <span>WordPress</span>
-          </div>
-        </div>
-
-      </article>
-
-    </div>
-  </div>
-</section>
-    <section class="projects section section-light" id="proyectos">
       <div class="container">
-        <div class="section-heading projects-heading">
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            01
+          </span>
+
           <div>
-            <p class="eyebrow eyebrow-dark">03 — Proyectos</p>
-            <h2>Trabajo que habla<br><span>por sí mismo.</span></h2>
+            <p class="eyebrow">
+              Perfil profesional
+            </p>
+
+            <h2>
+              Tecnología con propósito.
+            </h2>
           </div>
-          <p class="heading-note">Una selección de proyectos enfocados en mejorar la visibilidad y el rendimiento.</p>
+
         </div>
-        <div class="projects-list">
-          <article class="project-card">
-            <div class="project-visual project-visual-dashboard">
-              <div class="mini-dashboard">
-                <div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="mini-line"></div>
-                <div class="mini-legend"><span></span><span></span><span></span></div>
-              </div>
+
+
+        <div class="profile-grid">
+
+          <div class="profile-content">
+
+            <p class="profile-lead">
+              Combino análisis de datos, desarrollo de sistemas y pensamiento
+              estratégico para convertir necesidades complejas en soluciones
+              prácticas.
+            </p>
+
+            <p>
+              Ayudo a <strong>automatizar procesos, analizar información,
+              desarrollar soluciones digitales y transformar datos en
+              decisiones</strong>, combinando tecnología, análisis y eficiencia
+              para crear soluciones que generan resultados y aportan valor.
+            </p>
+
+          </div>
+
+
+          <div class="profile-card">
+
+            <div class="profile-card-icon">
+              <i class="bi bi-cpu"></i>
             </div>
-            <div class="project-info">
-              <p class="project-type">Visualización de datos</p>
-              <h3>Dashboard de indicadores comerciales</h3>
-              <p>Panel interactivo para visualizar ventas, metas y tendencias en tiempo real.</p>
-              <div class="project-footer"><span>Power BI · SQL</span><a href="#contacto" aria-label="Consultar sobre Dashboard de indicadores comerciales">Ver proyecto ↗</a></div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-visual project-visual-automation">
-              <div class="terminal-window">
-                <div class="terminal-dots"><i></i><i></i><i></i><span>data_cleaner.py</span></div>
-                <div class="terminal-code"><span class="code-purple">def</span> <span class="code-green">clean_data</span>(data):<br>&nbsp;&nbsp;<span class="code-purple">return</span> data.<span[...]
-              </div>
-            </div>
-            <div class="project-info">
-              <p class="project-type">Automatización</p>
-              <h3>Flujo de limpieza de datos</h3>
-              <p>Proceso automatizado para preparar y estandarizar datos antes de su análisis.</p>
-              <div class="project-footer"><span>Python · Pandas</span><a href="#contacto" aria-label="Consultar sobre Flujo de limpieza de datos">Ver proyecto ↗</a></div>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-visual project-visual-database">
-              <div class="database-visual"><span class="db-circle">📁</span><i></i><div class="db-table"><b>ID</b><b>NAME</b><b>VALUE</b><span>001</span><span>Ventas</span><span>98.4</span><spa[...]
-            </div>
-            <div class="project-info">
-              <p class="project-type">Sistemas y datos</p>
-              <h3>Modelo de base de datos</h3>
-              <p>Estructura relacional para organizar información y facilitar consultas eficientes.</p>
-              <div class="project-footer"><span>SQL · PostgreSQL</span><a href="#contacto" aria-label="Consultar sobre Modelo de base de datos">Ver proyecto ↗</a></div>
-            </div>
-          </article>
+
+            <h3>
+              Ingeniería + datos
+            </h3>
+
+            <p>
+              Desarrollo soluciones orientadas a mejorar procesos, organizar
+              información y facilitar la toma de decisiones.
+            </p>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="contact section" id="contacto">
-      <div class="container contact-grid">
-        <div>
-          <p class="eyebrow">04 — Contacto</p>
-          <h2>Hagamos que tus<br><span>datos trabajen mejor.</span></h2>
-        </div>
-        <div class="contact-content">
-          <p>¿Tienes un reto de datos, un proceso para mejorar o una idea que quieres convertir en realidad? Me encantará escucharte.</p>
-          <a class="email-link" href="mailto:giss98alvarado@gmail.com">giss98alvarado@gmail.com <span>↗</span></a>
-          <div class="contact-socials">
-            <a href="https://www.linkedin.com/public-profile/settings/?trk=d_flagship3_profile_self_view_public_profile&amp;lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BoRwrp7tFQgGXXdw2[...]
-            <a href="https://github.com/Margissx" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+
+    <!-- =========================
+         HABILIDADES
+    ========================== -->
+    <section class="skills section" id="habilidades">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            02
+          </span>
+
+          <div>
+            <p class="eyebrow">
+              Stack tecnológico
+            </p>
+
+            <h2>
+              Herramientas para construir soluciones.
+            </h2>
           </div>
+
         </div>
+
+
+        <div class="skills-grid">
+
+          <!-- Programación -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+
+            <h3>
+              Programación
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Python</span>
+              <span>C++</span>
+              <span>C#</span>
+              <span>JavaScript</span>
+              <span>TypeScript</span>
+              <span>Java</span>
+              <span>C</span>
+              <span>R</span>
+              <span>PHP</span>
+              <span>Bash</span>
+              <span>PowerShell</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Desarrollo web -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-window"></i>
+            </div>
+
+            <h3>
+              Desarrollo web
+            </h3>
+
+            <div class="skill-list">
+
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>React</span>
+              <span>Angular</span>
+              <span>Vue.js</span>
+              <span>Next.js</span>
+              <span>Svelte</span>
+              <span>Bootstrap</span>
+              <span>Tailwind CSS</span>
+              <span>Sass</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Backend -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-server"></i>
+            </div>
+
+            <h3>
+              Backend y APIs
+            </h3>
+
+            <div class="skill-list">
+
+              <span>.NET</span>
+              <span>Node.js</span>
+              <span>Express.js</span>
+              <span>FastAPI</span>
+              <span>Flask</span>
+              <span>Django</span>
+              <span>REST</span>
+              <span>GraphQL</span>
+              <span>JSON</span>
+              <span>XML</span>
+              <span>OpenAPI</span>
+              <span>Swagger</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Bases de datos -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-database"></i>
+            </div>
+
+            <h3>
+              Bases de datos
+            </h3>
+
+            <div class="skill-list">
+
+              <span>SQL</span>
+              <span>T-SQL</span>
+              <span>PL/SQL</span>
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>SQL Server</span>
+              <span>Oracle</span>
+              <span>MariaDB</span>
+              <span>SQLite</span>
+              <span>MongoDB</span>
+              <span>Redis</span>
+              <span>Access</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Datos -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-bar-chart-line"></i>
+            </div>
+
+            <h3>
+              Datos y analítica
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Matplotlib</span>
+              <span>Scikit-learn</span>
+              <span>Jupyter</span>
+              <span>Estadística</span>
+              <span>Limpieza de datos</span>
+              <span>Minería de datos</span>
+              <span>Modelado estadístico</span>
+              <span>Machine Learning</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- BI -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-pie-chart"></i>
+            </div>
+
+            <h3>
+              Business Intelligence
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Power BI</span>
+              <span>Metabase</span>
+              <span>Tableau</span>
+              <span>Looker</span>
+              <span>Looker Studio</span>
+              <span>Power Query</span>
+              <span>DAX</span>
+              <span>KPIs</span>
+              <span>Dashboards</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Automatización -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-lightning-charge"></i>
+            </div>
+
+            <h3>
+              Automatización
+            </h3>
+
+            <div class="skill-list">
+
+              <span>ETL</span>
+              <span>ELT</span>
+              <span>Power Automate</span>
+              <span>VBA</span>
+              <span>Celery</span>
+              <span>Python Automation</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Herramientas -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-tools"></i>
+            </div>
+
+            <h3>
+              Herramientas
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>GitLab</span>
+              <span>VS Code</span>
+              <span>Visual Studio</span>
+              <span>Postman</span>
+              <span>Jira</span>
+              <span>Trello</span>
+              <span>Notion</span>
+              <span>Figma</span>
+              <span>Canva</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Testing -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+
+            <h3>
+              Testing y calidad
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Testing</span>
+              <span>Debugging</span>
+              <span>Selenium</span>
+              <span>Cypress</span>
+              <span>Playwright</span>
+              <span>Jest</span>
+              <span>pytest</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Cloud -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-cloud"></i>
+            </div>
+
+            <h3>
+              Cloud y DevOps
+            </h3>
+
+            <div class="skill-list">
+
+              <span>Azure</span>
+              <span>AWS</span>
+              <span>GCP</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>Terraform</span>
+              <span>CI/CD</span>
+
+            </div>
+
+          </article>
+
+
+          <!-- Geoespacial -->
+          <article class="skill-group">
+
+            <div class="cluster-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <h3>
+              Geoespacial
+            </h3>
+
+            <div class="skill-list">
+
+              <span>QGIS</span>
+              <span>SIG</span>
+              <span>Análisis geoespacial</span>
+
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================
+         PROYECTOS
+    ========================== -->
+    <section class="projects section section-light" id="proyectos">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="section-number">
+            03
+          </span>
+
+          <div>
+            <p class="eyebrow">
+              Proyectos
+            </p>
+
+            <h2>
+              Soluciones aplicadas a problemas reales.
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+          <!-- Proyecto 1 -->
+          <article class="project-card">
+
+            <div class="project-visual">
+
+              <div class="mini-dashboard">
+
+                <div class="mini-dashboard-header">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <div class="mini-bars">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-tag">
+                Analítica
+              </span>
+
+              <h3>
+                Análisis y visualización de datos
+              </h3>
+
+              <p>
+                Procesamiento, análisis y visualización de información para
+                facilitar la interpretación de indicadores y apoyar la toma
+                de decisiones.
+              </p>
+
+              <div class="project-tools">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>Power BI</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Proyecto 2 -->
+          <article class="project-card">
+
+            <div class="project-visual">
+
+              <div class="terminal-window">
+
+                <div class="terminal-dots">
+
+                  <i></i>
+                  <i></i>
+                  <i></i>
+
+                  <span>
+                    data_cleaner.py
+                  </span>
+
+                </div>
+
+                <div class="terminal-code">
+
+                  <span class="code-purple">def</span>
+                  <span class="code-green">clean_data</span>(data):
+
+                  <br>
+
+                  &nbsp;&nbsp;data =
+                  <span class="code-green">remove_duplicates</span>(data)
+
+                  <br>
+
+                  &nbsp;&nbsp;<span class="code-purple">return</span> data
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-tag">
+                Automatización
+              </span>
+
+              <h3>
+                Automatización de procesos
+              </h3>
+
+              <p>
+                Desarrollo de scripts para automatizar tareas repetitivas,
+                reducir tiempos de procesamiento y mejorar la calidad de
+                la información.
+              </p>
+
+              <div class="project-tools">
+                <span>Python</span>
+                <span>ETL</span>
+                <span>Automatización</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- Proyecto 3 -->
+          <article class="project-card">
+
+            <div class="project-visual">
+
+              <div class="database-visual">
+
+                <span class="db-circle">
+                  <i class="bi bi-folder2-open"></i>
+                </span>
+
+                <span class="db-line"></span>
+
+                <span class="db-node">
+                  <i class="bi bi-database"></i>
+                </span>
+
+                <span class="db-line"></span>
+
+                <span class="db-node">
+                  <i class="bi bi-bar-chart-line"></i>
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="project-content">
+
+              <span class="project-tag">
+                Sistemas
+              </span>
+
+              <h3>
+                Soluciones digitales
+              </h3>
+
+              <p>
+                Diseño y desarrollo de soluciones digitales integrando
+                interfaces, bases de datos y servicios para responder a
+                necesidades específicas.
+              </p>
+
+              <div class="project-tools">
+                <span>HTML5</span>
+                <span>CSS3</span>
+                <span>APIs RESTful</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACTO
+    ========================== -->
+    <section class="contact section" id="contacto">
+
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div class="contact-content">
+
+            <p class="eyebrow">
+              ¿Tienes un proyecto?
+            </p>
+
+            <h2>
+              Hablemos de cómo convertir una idea en una solución.
+            </h2>
+
+            <p>
+              Estoy disponible para proyectos relacionados con desarrollo,
+              automatización, análisis de datos y soluciones tecnológicas.
+            </p>
+
+          </div>
+
+
+          <div class="contact-actions">
+
+            <a
+              class="button button-primary"
+              href="mailto:giss98alvarado@gmail.com"
+            >
+              Escribirme
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              class="button button-ghost"
+              href="https://github.com/Margissx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer class="site-footer">
+
     <div class="container footer-inner">
-      <p>© <span id="current-year">2026</span> Mary Gissel Alvarado Raudales. Diseñado con intención.</p>
-      <a href="#inicio">Volver arriba ↑</a>
+
+      <p>
+        © <span id="current-year"></span>
+        Portafolio profesional.
+      </p>
+
+      <div class="footer-links">
+
+        <a
+          href="https://github.com/Margissx"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="mailto:giss98alvarado@gmail.com"
+        >
+          Email
+        </a>
+
+      </div>
+
     </div>
+
   </footer>
+
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 
 </body>
 </html>
