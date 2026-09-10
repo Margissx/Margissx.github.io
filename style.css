@@ -14,14 +14,14 @@
   --white: #ffffff;
 
   --primary: #1bd1e8;
-  --primary-dark: #0aaabd;
+  --primary-dark: #75C1D7;
   --primary-soft: #7bc7de;
   --primary-light: #a5e6f0;
 
-  --text: #17343f;
-  --text-dark: #102b34;
-  --text-soft: #4b626a;
-  --muted: #667d85;
+  --text: #75C1D7;
+  --text-dark: #1BD1E8;
+  --text-soft: #A8A8A8;
+  --muted: #A8A8A8;
 
   --line: rgba(23, 52, 63, 0.10);
   --line-strong: rgba(23, 52, 63, 0.16);
