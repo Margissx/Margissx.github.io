@@ -535,7 +535,7 @@ h1 {
 
 h1 .highlight,
 h2 span {
-  color: #159db0;
+  color: #1BD1E8;
 }
 
 h1 .highlight {
@@ -603,8 +603,8 @@ h1 .highlight::after {
   background:
     linear-gradient(
       135deg,
-      #17343f,
-      #102c35
+      #1BD1E8,
+      #F2F3F4
     );
 
   box-shadow:
@@ -959,7 +959,7 @@ h1 .highlight::after {
   background:
     rgba(27, 209, 232, 0.06);
 
-  color: #167f91;
+  color: #75C1D7;
 
   font-size: 9px;
   font-weight: 600;
@@ -2205,8 +2205,8 @@ h1 .highlight::after {
     ),
     linear-gradient(
       135deg,
-      #17343f,
-      #102c35
+      #75C1D7,
+      #a8def0
     );
 
   color: var(--white);
