@@ -471,7 +471,8 @@ h3 {
 
 .hero-copy,
 .hero-visual {
-  min-width: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-copy {
@@ -793,6 +794,8 @@ h1 .highlight::after {
 
 .visual-glow {
   position: absolute;
+  z-index: 0;
+}
 
   top: 50%;
   left: 50%;
@@ -824,9 +827,9 @@ h1 .highlight::after {
    ========================================================= */
 
 .dashboard-card {
-  position: absolute;
-
+  position: relative;
   z-index: 2;
+}
 
   top: 15px;
   left: 50%;
@@ -1048,8 +1051,10 @@ h1 .highlight::after {
    CHIPS
    ========================================================= */
 
-.floating-chip {
-  position: absolute;
+  .floating-chip {
+   position: absolute;
+  z-index: 10;
+}
 
   display: inline-flex;
   align-items: center;
