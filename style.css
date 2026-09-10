@@ -1051,9 +1051,10 @@ h1 .highlight::after {
    CHIPS
    ========================================================= */
 
-  .floating-chip {
-   position: absolute;
-  z-index: 10;
+ .floating-chip {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 9px 13px;
 }
 
   display: inline-flex;
