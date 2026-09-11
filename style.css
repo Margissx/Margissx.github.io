@@ -534,6 +534,29 @@ h1 { color: #A8A8A8; }
   .process-number { float: left; margin: 0 14px 20px 0; }
 }
 
+/* Frequently asked questions */
+.faq { position: relative; background: #F2F3F4; }
+.faq-layout { display: grid; grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr); align-items: start; gap: clamp(44px, 8vw, 110px); }
+.faq-intro h2 { max-width: 430px; color: #4B4B4B; font-size: clamp(34px, 4vw, 52px); }
+.faq-intro > p:last-child { max-width: 380px; margin-top: 20px; color: #4B4B4B; font-size: 12px; line-height: 1.7; }
+.faq-list { border-top: 1px solid rgba(168, 168, 168, .48); }
+.faq-item { border-bottom: 1px solid rgba(168, 168, 168, .48); }
+.faq-item summary { position: relative; padding: 20px 44px 20px 0; color: #4B4B4B; font-family: var(--font-display); font-size: 17px; font-weight: 600; line-height: 1.35; cursor: pointer; list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { position: absolute; top: 17px; right: 0; display: grid; place-items: center; width: 29px; height: 29px; border-radius: 10px; background: rgba(27, 209, 232, .14); color: var(--mint); content: "+"; font-family: var(--font-body); font-size: 19px; font-weight: 500; transition: background .2s ease, transform .2s ease; }
+.faq-item[open] summary::after { background: var(--mint); color: #ffffff; content: "−"; transform: rotate(180deg); }
+.faq-item p { max-width: 680px; margin: -4px 44px 20px 0; color: #4B4B4B; font-size: 12px; line-height: 1.75; }
+.faq-item[open] { background: linear-gradient(90deg, rgba(27, 209, 232, .055), transparent 65%); }
+
+@media (max-width: 850px) {
+  .faq-layout { grid-template-columns: 1fr; gap: 34px; }
+}
+
+@media (max-width: 520px) {
+  .faq-item summary { font-size: 15px; }
+  .faq-item p { margin-right: 0; }
+}
+
 /* Service plans */
 .services-grid.plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
 .plan-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px 24px 22px; }
