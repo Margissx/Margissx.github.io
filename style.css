@@ -1716,3 +1716,541 @@ h1 .highlight::after {
     text-align: center;
   }
 }
+```css
+/* =========================================================
+   PERFIL — ESTRUCTURA PROFESIONAL
+   ========================================================= */
+
+.profile-intro {
+  margin-bottom: 45px;
+}
+
+.profile-intro .lead {
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   BIOGRAFÍA
+   ========================================================= */
+
+.profile-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-top: 35px;
+}
+
+.bio-block {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.bio-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(27, 209, 232, 0.25);
+  border-radius: 12px;
+
+  background: rgba(27, 209, 232, 0.06);
+
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bio-block h3 {
+  margin: 0 0 10px;
+
+  color: #A8A8A8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bio-block p {
+  margin-bottom: 16px;
+
+  color: #A8A8A8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.bio-block p:last-child {
+  margin-bottom: 0;
+}
+
+.bio-block strong {
+  color: #A8A8A8;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+   ========================================================= */
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin-top: 50px;
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(27, 209, 232, 0.12);
+}
+
+.stat {
+  min-width: 0;
+}
+
+.stat strong {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--primary);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+
+  color: #A8A8A8;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MISIÓN Y VISIÓN
+   ========================================================= */
+
+.profile-purpose {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  margin-top: 50px;
+}
+
+.purpose-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 26px;
+
+  border: 1px solid rgba(27, 209, 232, 0.15);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(27, 209, 232, 0.35);
+
+  box-shadow:
+    0 15px 35px rgba(23, 52, 63, 0.08);
+}
+
+.purpose-icon {
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(27, 209, 232, 0.08);
+
+  color: var(--primary);
+  font-size: 19px;
+}
+
+.purpose-card h3 {
+  margin: 0 0 10px;
+
+  color: #A8A8A8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.purpose-card p {
+  margin: 0;
+
+  color: #A8A8A8;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .profile-purpose {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .profile-intro {
+    margin-bottom: 35px;
+  }
+
+  .profile-bio {
+    gap: 28px;
+  }
+
+  .bio-block {
+    grid-template-columns: 42px 1fr;
+    gap: 15px;
+  }
+
+  .bio-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bio-block h3 {
+    font-size: 17px;
+  }
+
+  .bio-block p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .profile-purpose {
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .purpose-card {
+    padding: 22px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .bio-block {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .bio-number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .purpose-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+}
+```css
+/* =========================================================
+   PERFIL — ESTRUCTURA PROFESIONAL
+   ========================================================= */
+
+.profile-intro {
+  margin-bottom: 45px;
+}
+
+.profile-intro .lead {
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   BIOGRAFÍA
+   ========================================================= */
+
+.profile-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  margin-top: 35px;
+}
+
+.bio-block {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.bio-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid rgba(27, 209, 232, 0.25);
+  border-radius: 12px;
+
+  background: rgba(27, 209, 232, 0.06);
+
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.bio-block h3 {
+  margin: 0 0 10px;
+
+  color: #A8A8A8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bio-block p {
+  margin-bottom: 16px;
+
+  color: #A8A8A8;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.bio-block p:last-child {
+  margin-bottom: 0;
+}
+
+.bio-block strong {
+  color: #A8A8A8;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   ESTADÍSTICAS
+   ========================================================= */
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  margin-top: 50px;
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(27, 209, 232, 0.12);
+}
+
+.stat {
+  min-width: 0;
+}
+
+.stat strong {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--primary);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat span {
+  display: block;
+
+  color: #A8A8A8;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   MISIÓN Y VISIÓN
+   ========================================================= */
+
+.profile-purpose {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  margin-top: 50px;
+}
+
+.purpose-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  padding: 26px;
+
+  border: 1px solid rgba(27, 209, 232, 0.15);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(27, 209, 232, 0.35);
+
+  box-shadow:
+    0 15px 35px rgba(23, 52, 63, 0.08);
+}
+
+.purpose-icon {
+  flex: 0 0 44px;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: rgba(27, 209, 232, 0.08);
+
+  color: var(--primary);
+  font-size: 19px;
+}
+
+.purpose-card h3 {
+  margin: 0 0 10px;
+
+  color: #A8A8A8;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.purpose-card p {
+  margin: 0;
+
+  color: #A8A8A8;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+  .profile-purpose {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .profile-intro {
+    margin-bottom: 35px;
+  }
+
+  .profile-bio {
+    gap: 28px;
+  }
+
+  .bio-block {
+    grid-template-columns: 42px 1fr;
+    gap: 15px;
+  }
+
+  .bio-number {
+    width: 38px;
+    height: 38px;
+  }
+
+  .bio-block h3 {
+    font-size: 17px;
+  }
+
+  .bio-block p {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .profile-purpose {
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .purpose-card {
+    padding: 22px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .bio-block {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .bio-number {
+    width: 36px;
+    height: 36px;
+  }
+
+  .purpose-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+}
+```
+
