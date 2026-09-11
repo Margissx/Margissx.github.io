@@ -379,3 +379,28 @@ h1 .highlight, h2 span { color: var(--mint); }
   .profile-bio { gap: 14px; margin-top: 0; }
   .bio-block { grid-template-columns: 28px 1fr; }
 }
+
+/* Contrast and visual polish */
+:root { --ink: #4B4B4B; }
+body, h2, h4, small, .profile-content p, .bio-block p, .heading-note, .tag-cloud span, .project-info > p:not(.project-type) { color: #4B4B4B; }
+.site-header, .hero, .skills, .contact { color: #4B4B4B; }
+.nav-link, .nav-link:hover, .nav-link.active, .nav-contact, .button-ghost, .footer-inner a { color: #4B4B4B; }
+.section-intro h2, .section-heading h2, .contact h2, .profile-content .lead { color: #4B4B4B; }
+.skill-subgroup h4, .bio-block h3, .bio-block strong { color: #4B4B4B; }
+.cluster-icon, .skill-icon { color: #ffffff; }
+.skill-subgroup h4 { display: flex; align-items: center; gap: 6px; }
+.skill-subgroup h4 i { display: inline-grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; background: var(--mint); color: #ffffff; font-size: 10px; }
+.skills { position: relative; isolation: isolate; overflow: hidden; background-image: radial-gradient(circle at 92% 8%, rgba(27, 209, 232, .12), transparent 25%), linear-gradient(135deg, rgba(118, 194, 216, .08), transparent 42%); }
+.skills::after { position: absolute; z-index: -1; right: -140px; bottom: -190px; width: 440px; height: 440px; border: 1px solid rgba(27, 209, 232, .18); border-radius: 50%; box-shadow: 0 0 0 36px rgba(27, 209, 232, .04), 0 0 0 72px rgba(27, 209, 232, .025); content: ""; }
+.section-heading h2::after { display: block; width: 56px; height: 3px; margin-top: 18px; background: var(--mint); content: ""; }
+.skill-cluster { position: relative; overflow: hidden; border-color: rgba(168, 168, 168, .38); background: rgba(242, 243, 244, .84); }
+.skill-cluster::before { position: absolute; top: 0; right: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--mint), var(--blue)); content: ""; opacity: .7; }
+.skill-cluster-featured { background: rgba(255, 255, 255, .72); }
+.tag-cloud span { border-color: rgba(168, 168, 168, .35); background: rgba(255, 255, 255, .42); }
+.tag-cloud span:hover { color: #4B4B4B; }
+.profile-bio .bio-block { border-top-color: rgba(168, 168, 168, .55); }
+.contact { background-image: linear-gradient(120deg, rgba(118, 194, 216, .08), transparent 48%); }
+.contact h2 span { color: var(--mint); }
+.contact-label { color: var(--mint); }
+.project-card { box-shadow: 0 12px 26px rgba(168, 168, 168, .1); transition: transform .25s ease, box-shadow .25s ease; }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 18px 34px rgba(168, 168, 168, .18); }
