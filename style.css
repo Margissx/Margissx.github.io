@@ -1740,7 +1740,105 @@ h1 .highlight::after {
 .profile-intro .lead {
   margin-bottom: 20px;
 }
+.profile-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+}
 
+.profile-column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.profile-block h3 {
+  margin: 0 0 14px;
+  color: var(--text-dark);
+  font-size: 20px;
+}
+
+.profile-block p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.profile-block p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-number {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.profile-purpose {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  margin-top: 55px;
+  padding-top: 35px;
+  border-top: 1px solid rgba(23, 52, 63, 0.1);
+}
+
+.purpose-item h3 {
+  margin: 0 0 12px;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+.purpose-item p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 45px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(23, 52, 63, 0.1);
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stat strong {
+  color: var(--primary);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .profile-columns,
+  .profile-purpose {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .profile-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
 
 /* =========================================================
    BIOGRAFÍA
