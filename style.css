@@ -717,6 +717,20 @@ h1 { color: #A8A8A8; }
 .profile { background: #F2F3F4; }
 .profile::before, .profile::after { display: none; background: none; content: none; }
 
+/* Expanded professional services table */
+.technical-services-table th:first-child { width: 24%; }
+.technical-services-table th:nth-child(2) { width: 35%; }
+.technical-services-table th:nth-child(3) { width: 26%; }
+.technical-services-table th:last-child { width: 15%; }
+.technical-services-table td:nth-child(3) { font-size: 9px; }
+.service-cost-list { display: grid; gap: 4px; }
+.service-cost-list span { display: block; }
+
+@media (max-width: 680px) {
+  .technical-services-table td:nth-child(2), .technical-services-table td:nth-child(3) { grid-column: 1 / -1; }
+  .technical-services-table td:nth-child(3)::before { color: #A8A8A8; content: "Dirigido a: "; font-size: 8px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+}
+
 /* Service plans */
 .services-grid.plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
 .plan-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px 24px 22px; }
