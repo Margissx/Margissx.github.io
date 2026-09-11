@@ -711,6 +711,8 @@ h1 { color: #A8A8A8; }
   .profile .bio-block { padding: 18px 15px; }
 }
 
+.hero-description, .hero-meta, .hero-meta .meta-separator { color: #4B4B4B; }
+
 /* Service plans */
 .services-grid.plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
 .plan-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px 24px 22px; }
