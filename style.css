@@ -638,6 +638,23 @@ h1 { color: #A8A8A8; }
   .social-links a { justify-content: flex-start; }
 }
 
+/* Marketing and graphic design skills */
+.skill-cluster-wide { grid-column: 1 / -1; background: linear-gradient(135deg, rgba(242, 243, 244, .94), rgba(118, 194, 216, .13)); }
+.skill-cluster-wide .cluster-icon { background: var(--blue); }
+.skill-cluster-content { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.skill-cluster-wide .skill-subgroup { padding: 17px 16px; border: 1px solid rgba(168, 168, 168, .3); border-radius: 14px; background: rgba(255, 255, 255, .48); }
+.skill-cluster-wide .skill-subgroup + .skill-subgroup { margin-top: 0; }
+.skill-cluster-wide .tag-cloud span { background: rgba(242, 243, 244, .76); }
+
+@media (max-width: 900px) {
+  .skill-cluster-content { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 680px) {
+  .skill-cluster-wide { grid-column: auto; }
+  .skill-cluster-wide .skill-subgroup { padding: 15px 13px; }
+}
+
 /* Service plans */
 .services-grid.plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
 .plan-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px 24px 22px; }
