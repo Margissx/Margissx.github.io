@@ -231,6 +231,8 @@ h1 .highlight, h2 span { color: var(--mint); }
 .hero { min-height: 760px; padding: 154px 0 112px; background: radial-gradient(circle at 82% 38%, rgba(27, 209, 232, .14), transparent 32%), var(--navy); }
 .hero-grid { grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr); gap: clamp(38px, 6vw, 82px); }
 .hero-copy { max-width: 590px; }
+.hero-logo { display: grid; place-items: center; width: 70px; height: 70px; margin-bottom: 20px; border: 1px solid rgba(27, 209, 232, .55); background: rgba(242, 243, 244, .78); box-shadow: 0 12px 24px rgba(168, 168, 168, .16); }
+.hero-logo img { display: block; width: 48px; height: 48px; object-fit: contain; }
 .hero-description { color: rgba(168, 168, 168, .72); }
 .hero-meta { color: rgba(168, 168, 168, .62); }
 .hero-visual { min-height: 430px; }
