@@ -1150,10 +1150,11 @@ h1 .highlight::after {
 .profile-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
-  gap: 70px;
+  gap: 60px;
   align-items: center;
-  min-height: 420px;
+  min-height: 480px;
 }
+
 .section-intro {
   position: static;
   display: flex;
@@ -1161,20 +1162,20 @@ h1 .highlight::after {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
+  transform: translateY(-25px);
 }
 
 .section-intro p {
-  margin-bottom: 14px;
+  margin: 0 0 12px;
 }
 
 .section-intro h2 {
-  max-width: 650px;
+  max-width: 500px;
   margin: 0;
-  font-size: clamp(28px, 3vw, 42px);
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  font-size: clamp(30px, 3vw, 44px);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
 }
-
 .eyebrow-dark {
   color: #A8A8A8;
 }
