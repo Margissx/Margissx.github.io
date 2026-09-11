@@ -713,6 +713,10 @@ h1 { color: #A8A8A8; }
 
 .hero-description, .hero-meta, .hero-meta .meta-separator { color: #4B4B4B; }
 
+/* Clean profile background */
+.profile { background: #F2F3F4; }
+.profile::before, .profile::after { display: none; background: none; content: none; }
+
 /* Service plans */
 .services-grid.plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; }
 .plan-card { display: flex; min-height: 100%; flex-direction: column; padding: 26px 24px 22px; }
