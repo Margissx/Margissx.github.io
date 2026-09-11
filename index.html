@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js?v=3'); document.body.appendChild(portfolioScript);">
   <header class="site-header">
@@ -735,35 +735,109 @@
     <div class="section-heading">
       <div>
         <p class="eyebrow eyebrow-dark">04 — Servicios</p>
-        <h2>De la necesidad<br><span>a una solución útil.</span></h2>
+        <h2>Planes para convertir<br><span>ideas en soluciones.</span></h2>
       </div>
-      <p class="heading-note">Acompañamiento técnico y estratégico para ordenar, automatizar y aprovechar mejor la información.</p>
+      <p class="heading-note">Opciones claras para emprendedores, profesionales y empresas que necesitan crecer y digitalizar sus procesos.</p>
     </div>
 
-    <div class="services-grid">
-      <article class="service-card">
-        <span class="service-number">01</span>
-        <span class="service-icon">⌁</span>
-        <h3>Análisis de datos</h3>
-        <p>Exploración, limpieza e interpretación de datos para encontrar patrones y orientar mejores decisiones.</p>
+    <div class="services-grid plan-grid">
+      <article class="service-card plan-card">
+        <div class="plan-header">
+          <div><span class="plan-label">Plan 01</span><h3>Emprendedor</h3></div>
+          <div class="plan-price">L 3,500</div>
+        </div>
+        <p class="plan-includes">Incluye</p>
+        <ul class="plan-features">
+          <li>Página web de 1 sección.</li>
+          <li>Diseño personalizado con la imagen del negocio.</li>
+          <li>Adaptación para celular, tablet y computadora.</li>
+          <li>Información del negocio, servicios o productos.</li>
+          <li>Botón directo a WhatsApp.</li>
+          <li>Enlaces a redes sociales.</li>
+          <li>Formulario de contacto.</li>
+          <li>Integración con Google Maps.</li>
+          <li>Publicación del sitio web.</li>
+        </ul>
+        <p class="plan-audience"><strong>Dirigido a:</strong> emprendedores, profesionales independientes, tiendas pequeñas, salones, restaurantes y negocios que están comenzando.</p>
+        <a class="plan-action" href="#contacto">Solicitar este plan</a>
       </article>
-      <article class="service-card">
-        <span class="service-number">02</span>
-        <span class="service-icon">&lt;/&gt;</span>
-        <h3>Desarrollo de sistemas</h3>
-        <p>Diseño y construcción de soluciones digitales claras, escalables y alineadas con la operación real.</p>
+
+      <article class="service-card plan-card plan-card-featured">
+        <div class="plan-header">
+          <div><span class="plan-label">Plan 02 · Recomendado</span><h3>Profesional</h3></div>
+          <div class="plan-price">L 8,500</div>
+        </div>
+        <p class="plan-includes">Incluye</p>
+        <ul class="plan-features">
+          <li>Sitio web de hasta 5 secciones.</li>
+          <li>Diseño personalizado.</li>
+          <li>Diseño adaptable a celular, tablet y computadora.</li>
+          <li>Página de inicio.</li>
+          <li>Sección de servicios o productos.</li>
+          <li>Sección “Sobre nosotros”.</li>
+          <li>Galería de imágenes.</li>
+          <li>Formulario de contacto.</li>
+          <li>Botón de WhatsApp.</li>
+          <li>Integración con redes sociales.</li>
+          <li>Google Maps.</li>
+          <li>Integración con servicios externos mediante API.</li>
+          <li>SEO básico.</li>
+          <li>Publicación del sitio web.</li>
+        </ul>
+        <p class="plan-audience"><strong>Dirigido a:</strong> profesionales, emprendimientos y pequeñas empresas que necesitan una presencia digital más completa.</p>
+        <a class="plan-action" href="#contacto">Solicitar este plan</a>
       </article>
-      <article class="service-card">
-        <span class="service-number">03</span>
-        <span class="service-icon">◎</span>
-        <h3>Automatización</h3>
-        <p>Optimización de tareas repetitivas para reducir errores, ahorrar tiempo y mejorar la trazabilidad.</p>
+
+      <article class="service-card plan-card">
+        <div class="plan-header">
+          <div><span class="plan-label">Plan 03</span><h3>Empresarial</h3></div>
+          <div class="plan-price">L 18,000</div>
+        </div>
+        <p class="plan-includes">Incluye</p>
+        <ul class="plan-features">
+          <li>Desarrollo de sistema web personalizado.</li>
+          <li>Diseño de interfaz.</li>
+          <li>Inicio de sesión para usuarios.</li>
+          <li>Diferentes tipos de usuario y permisos.</li>
+          <li>Base de datos.</li>
+          <li>Registro, modificación y eliminación de información.</li>
+          <li>Panel de administración.</li>
+          <li>Formularios personalizados.</li>
+          <li>Búsqueda y filtros de información.</li>
+          <li>Generación de reportes.</li>
+          <li>Dashboard con indicadores.</li>
+          <li>Integración con APIs.</li>
+          <li>Diseño adaptable a computadora, tablet y celular.</li>
+          <li>Publicación y configuración del sistema.</li>
+        </ul>
+        <p class="plan-audience"><strong>Dirigido a:</strong> empresas y negocios que quieren digitalizar y organizar sus procesos internos.</p>
+        <a class="plan-action" href="#contacto">Solicitar este plan</a>
       </article>
-      <article class="service-card">
-        <span class="service-number">04</span>
-        <span class="service-icon">▦</span>
-        <h3>Dashboards y reportes</h3>
-        <p>Visualizaciones ejecutivas que presentan indicadores relevantes de forma simple, ordenada y accionable.</p>
+
+      <article class="service-card plan-card plan-card-custom">
+        <div class="plan-header">
+          <div><span class="plan-label">Plan 04</span><h3>Personalizado</h3></div>
+          <div class="plan-price"><small>Desde</small>L 35,000</div>
+        </div>
+        <p class="plan-includes">Incluye</p>
+        <ul class="plan-features">
+          <li>Análisis de las necesidades del negocio.</li>
+          <li>Diseño de la solución tecnológica.</li>
+          <li>Desarrollo de sistema a la medida.</li>
+          <li>Base de datos.</li>
+          <li>Usuarios, roles y permisos.</li>
+          <li>APIs e integración entre sistemas.</li>
+          <li>Automatización de procesos.</li>
+          <li>Dashboards e indicadores.</li>
+          <li>Reportes personalizados.</li>
+          <li>Importación y procesamiento de datos.</li>
+          <li>Funcionalidades específicas según el proyecto.</li>
+          <li>Diseño adaptable.</li>
+          <li>Pruebas del sistema.</li>
+          <li>Implementación y puesta en producción.</li>
+        </ul>
+        <p class="plan-audience"><strong>Dirigido a:</strong> empresas que necesitan una solución tecnológica hecha específicamente para sus procesos.</p>
+        <a class="plan-action" href="#contacto">Solicitar este plan</a>
       </article>
     </div>
   </div>
@@ -772,7 +846,7 @@
 <section class="contact section" id="contacto">
   <div class="container contact-grid">
     <div>
-      <p class="eyebrow">04 — Contacto</p>
+      <p class="eyebrow">05 — Contacto</p>
       <h2>Hagamos que tus<br><span>datos trabajen mejor.</span></h2>
     </div>
     <div class="contact-content">
