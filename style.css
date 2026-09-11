@@ -1149,30 +1149,40 @@ h1 .highlight::after {
 
 .profile-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-
-  gap: 60px;
-  align-items: start;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items: center;
+  min-height: 420px;
 }
-
 .section-intro {
-  position: sticky;
-
-  top: 150px;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .section-intro p {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-intro h2 {
-  margin-bottom: 0;
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
 }
 
 .eyebrow-dark {
   color: #A8A8A8;
 }
-
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .profile-content p {
   margin-bottom: 22px;
 
@@ -1602,12 +1612,13 @@ h1 .highlight::after {
 
   .profile-grid {
     grid-template-columns: 1fr;
+    gap: 45px;
+    min-height: auto;
   }
-
   .section-intro {
-    position: static;
+    align-items: flex-start;
+    text-align: left;
   }
-
   .profile-stats {
     grid-template-columns: repeat(2, 1fr);
   }
