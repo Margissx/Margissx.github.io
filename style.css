@@ -299,6 +299,7 @@ h1 .highlight, h2 span { color: var(--mint); }
 .menu-toggle:hover { background: rgba(27, 209, 232, .12); border-color: var(--mint); transform: translateY(-1px); }
 .menu-toggle:focus-visible { outline: 3px solid rgba(27, 209, 232, .32); outline-offset: 3px; }
 .nav-links { z-index: 25; }
+.nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); visibility: visible; }
 
 @media (max-width: 680px) {
   .menu-toggle { display: grid; place-content: center; width: 44px; height: 44px; padding: 8px; }
