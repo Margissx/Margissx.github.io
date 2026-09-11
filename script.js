@@ -8,17 +8,39 @@ if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
 }
 
-menuToggle?.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
+const setMenuState = (isOpen) => {
+  if (!menuToggle || !navLinks) return;
+  navLinks.classList.toggle("open", isOpen);
   menuToggle.setAttribute("aria-expanded", String(isOpen));
   menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
-});
+};
+
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    setMenuState(!navLinks.classList.contains("open"));
+  });
+
+  menuToggle.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setMenuState(!navLinks.classList.contains("open"));
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      setMenuState(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
+  });
+}
 
 navItems.forEach((item) => {
   item.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-    menuToggle?.setAttribute("aria-label", "Abrir menú");
+    setMenuState(false);
   });
 });
 
