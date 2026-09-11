@@ -718,17 +718,24 @@ h1 { color: #A8A8A8; }
 .profile::before, .profile::after { display: none; background: none; content: none; }
 
 /* Expanded professional services table */
-.technical-services-table th:first-child { width: 24%; }
-.technical-services-table th:nth-child(2) { width: 35%; }
-.technical-services-table th:nth-child(3) { width: 26%; }
-.technical-services-table th:last-child { width: 15%; }
+.technical-services-table th:first-child { width: 23%; }
+.technical-services-table th:nth-child(2) { width: 32%; }
+.technical-services-table th:nth-child(3) { width: 24%; }
+.technical-services-table th:last-child { width: 21%; }
 .technical-services-table td:nth-child(3) { font-size: 9px; }
 .service-cost-list { display: grid; gap: 4px; }
 .service-cost-list span { display: block; }
+.service-maintenance td { padding-top: 17px; padding-bottom: 17px; }
+.service-maintenance td:last-child { padding-right: 18px; padding-left: 18px; text-align: left; }
+.service-maintenance .service-cost-list { gap: 7px; }
+.service-maintenance .service-cost-list span { padding: 7px 9px; border-left: 2px solid var(--mint); border-radius: 7px; background: rgba(27, 209, 232, .08); font-size: 9px; line-height: 1.35; }
+.service-maintenance .service-cost-list span + span { border-left-color: var(--blue); }
 
 @media (max-width: 680px) {
   .technical-services-table td:nth-child(2), .technical-services-table td:nth-child(3) { grid-column: 1 / -1; }
   .technical-services-table td:nth-child(3)::before { color: #A8A8A8; content: "Dirigido a: "; font-size: 8px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .service-maintenance td:last-child { grid-column: 1 / -1; grid-row: auto; padding: 5px 0 0; text-align: left; }
+  .service-maintenance td:last-child::before { display: block; margin-bottom: 7px; color: #A8A8A8; content: "Precios mensuales"; font-size: 8px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 }
 
 /* Service plans */
