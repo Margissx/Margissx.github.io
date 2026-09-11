@@ -1839,6 +1839,22 @@ h1 .highlight::after {
     gap: 20px;
   }
 }
+.profile-bio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.bio-block {
+  display: flex;
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .profile-bio {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* =========================================================
    BIOGRAFÍA
