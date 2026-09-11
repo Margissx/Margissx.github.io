@@ -4,6 +4,7 @@ const navItems = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("main section[id]");
 const currentYear = document.querySelector("#current-year");
 const chart = document.querySelector(".chart");
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
@@ -23,6 +24,49 @@ if (chart) {
   } else {
     showChart();
   }
+}
+
+const progressBar = document.createElement("div");
+progressBar.className = "scroll-progress";
+progressBar.setAttribute("aria-hidden", "true");
+document.body.appendChild(progressBar);
+
+let progressTicking = false;
+const updateScrollProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+  progressBar.style.transform = `scaleX(${progress})`;
+  progressTicking = false;
+};
+
+window.addEventListener("scroll", () => {
+  if (!progressTicking) {
+    window.requestAnimationFrame(updateScrollProgress);
+    progressTicking = true;
+  }
+}, { passive: true });
+updateScrollProgress();
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+  document.body.classList.add("motion-ready");
+  const revealItems = document.querySelectorAll(
+    ".section-heading, .profile-pillar, .bio-block, .skill-cluster, .process-step, .project-card, .technical-services-table, .plan-card, .faq-item, .contact-grid"
+  );
+  revealItems.forEach((item, index) => {
+    item.classList.add("reveal-item");
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+
+  revealItems.forEach((item) => revealObserver.observe(item));
 }
 
 const setMenuState = (isOpen) => {
