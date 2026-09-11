@@ -504,3 +504,7 @@ body, h2, h4, small, .profile-content p, .bio-block p, .heading-note, .tag-cloud
   .chart-line { stroke-dashoffset: 0; }
   .chart-fill { opacity: .34; }
 }
+
+.site-footer { background: #F2F3F4; color: #4B4B4B; border-top-color: rgba(168, 168, 168, .35); }
+.footer-inner p, .footer-inner a { color: #4B4B4B; }
+.footer-inner a:hover { color: var(--mint); }
