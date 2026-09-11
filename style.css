@@ -455,3 +455,52 @@ body, h2, h4, small, .profile-content p, .bio-block p, .heading-note, .tag-cloud
   .hero::after { right: -210px; width: 300px; height: 300px; }
   .eyebrow { font-size: 9px; }
 }
+
+/* Animated chart */
+.chart-line { stroke-dasharray: 900; stroke-dashoffset: 900; animation: draw-chart 1.8s cubic-bezier(.2, .8, .2, 1) .2s forwards; }
+.chart-fill { opacity: 0; animation: reveal-chart-fill 1.3s ease-out .55s forwards; }
+.trend-badge { animation: badge-enter .7s ease-out .9s both; }
+@keyframes draw-chart { to { stroke-dashoffset: 0; } }
+@keyframes reveal-chart-fill { from { opacity: 0; } to { opacity: .34; } }
+@keyframes badge-enter { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Projects and services */
+.projects { background: var(--cream); }
+.projects-heading { align-items: end; }
+.projects-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.project-card { border-radius: 18px; }
+.project-visual { position: relative; height: 190px; background: linear-gradient(135deg, var(--blue), var(--mint)); }
+.project-visual-automation { background: linear-gradient(135deg, var(--mint-bright), var(--mint)); }
+.project-visual-database { background: linear-gradient(135deg, var(--cream), var(--blue)); }
+.project-symbol { display: grid; place-items: center; width: 76px; height: 76px; border: 1px solid rgba(255, 255, 255, .7); border-radius: 22px; background: rgba(255, 255, 255, .18); color: #ffffff; font-family: var(--font-display); font-size: 26px; font-weight: 700; box-shadow: 0 15px 28px rgba(168, 168, 168, .2); transform: rotate(-6deg); }
+.project-index { position: absolute; top: 18px; left: 20px; color: rgba(255, 255, 255, .78); font-family: var(--font-display); font-size: 12px; font-weight: 700; letter-spacing: .12em; }
+.project-info { background: rgba(255, 255, 255, .84); }
+.project-info h3 { color: #4B4B4B; }
+.project-footer a { color: #4B4B4B; }
+
+.services { background: var(--navy-deep); }
+.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.service-card { position: relative; min-height: 235px; padding: 24px 20px 20px; overflow: hidden; border: 1px solid rgba(168, 168, 168, .38); border-radius: 18px; background: rgba(242, 243, 244, .82); box-shadow: 0 12px 24px rgba(168, 168, 168, .1); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.service-card::after { position: absolute; right: -26px; bottom: -38px; width: 110px; height: 110px; border: 1px solid rgba(27, 209, 232, .28); border-radius: 50%; content: ""; }
+.service-card:hover { border-color: rgba(27, 209, 232, .65); transform: translateY(-5px); box-shadow: 0 18px 30px rgba(168, 168, 168, .16); }
+.service-number { color: var(--mint); font-family: var(--font-display); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.service-icon { display: grid; place-items: center; width: 40px; height: 40px; margin: 24px 0 18px; border-radius: 13px; background: var(--mint); color: #ffffff; font-size: 17px; }
+.service-card h3 { margin-bottom: 9px; color: #4B4B4B; font-size: 18px; letter-spacing: -.03em; }
+.service-card p { margin: 0; color: #4B4B4B; font-size: 11px; line-height: 1.65; }
+
+@media (max-width: 1000px) {
+  .projects-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .projects-list, .services-grid { grid-template-columns: 1fr; }
+  .project-visual { height: 165px; }
+  .service-card { min-height: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-line, .chart-fill, .trend-badge, .project-card, .service-card { animation: none; transition: none; }
+  .chart-line { stroke-dashoffset: 0; }
+  .chart-fill { opacity: .34; }
+}

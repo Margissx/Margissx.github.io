@@ -3,9 +3,26 @@ const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll("main section[id]");
 const currentYear = document.querySelector("#current-year");
+const chart = document.querySelector(".chart");
 
 if (currentYear) {
   currentYear.textContent = new Date().getFullYear();
+}
+
+if (chart) {
+  const showChart = () => chart.classList.add("is-visible");
+
+  if ("IntersectionObserver" in window) {
+    const chartObserver = new IntersectionObserver((entries, observer) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        showChart();
+        observer.disconnect();
+      }
+    }, { threshold: 0.25 });
+    chartObserver.observe(chart);
+  } else {
+    showChart();
+  }
 }
 
 const setMenuState = (isOpen) => {

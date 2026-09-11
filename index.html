@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
-<body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js?v=2'); document.body.appendChild(portfolioScript);">
+<body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js?v=3'); document.body.appendChild(portfolioScript);">
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
@@ -35,7 +35,9 @@
         <a class="nav-link active" href="#inicio">Inicio</a>
         <a class="nav-link" href="#perfil">Perfil</a>
         <a class="nav-link" href="#habilidades">Habilidades</a>
-        <a class="nav-link nav-contact" href="#contacto">Hablemos</a>
+        <a class="nav-link" href="#proyectos">Proyectos</a>
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link nav-contact" href="#contacto">Contacto</a>
       </div>
     </nav>
   </header>
@@ -674,6 +676,99 @@
     </div>
 </div>
 </section>
+
+<section class="projects section" id="proyectos">
+  <div class="container">
+    <div class="section-heading projects-heading">
+      <div>
+        <p class="eyebrow">03 — Proyectos</p>
+        <h2>Soluciones que convierten<br><span>información en acción.</span></h2>
+      </div>
+      <p class="heading-note">Una selección de ideas y soluciones enfocadas en datos, eficiencia y decisiones claras.</p>
+    </div>
+
+    <div class="projects-list">
+      <article class="project-card">
+        <div class="project-visual project-visual-dashboard">
+          <span class="project-index">01</span>
+          <span class="project-symbol">BI</span>
+        </div>
+        <div class="project-info">
+          <p class="project-type">Analítica y visualización</p>
+          <h3>Dashboard de indicadores</h3>
+          <p>Panel ejecutivo para convertir métricas comerciales en una lectura clara del rendimiento y las oportunidades.</p>
+          <div class="project-footer"><span>Power BI · SQL</span><a href="#contacto">Ver proyecto</a></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual project-visual-automation">
+          <span class="project-index">02</span>
+          <span class="project-symbol">ETL</span>
+        </div>
+        <div class="project-info">
+          <p class="project-type">Automatización de datos</p>
+          <h3>Flujo de limpieza de datos</h3>
+          <p>Proceso reproducible para preparar, validar y transformar información con menos trabajo manual y mayor trazabilidad.</p>
+          <div class="project-footer"><span>Python · Pandas</span><a href="#contacto">Ver proyecto</a></div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-visual project-visual-database">
+          <span class="project-index">03</span>
+          <span class="project-symbol">DB</span>
+        </div>
+        <div class="project-info">
+          <p class="project-type">Sistemas y arquitectura</p>
+          <h3>Modelo de datos para reporting</h3>
+          <p>Estructura organizada para conectar fuentes, facilitar consultas y sostener reportes consistentes.</p>
+          <div class="project-footer"><span>SQL · PostgreSQL</span><a href="#contacto">Ver proyecto</a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services section section-light" id="servicios">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow eyebrow-dark">04 — Servicios</p>
+        <h2>De la necesidad<br><span>a una solución útil.</span></h2>
+      </div>
+      <p class="heading-note">Acompañamiento técnico y estratégico para ordenar, automatizar y aprovechar mejor la información.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <span class="service-number">01</span>
+        <span class="service-icon">⌁</span>
+        <h3>Análisis de datos</h3>
+        <p>Exploración, limpieza e interpretación de datos para encontrar patrones y orientar mejores decisiones.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-number">02</span>
+        <span class="service-icon">&lt;/&gt;</span>
+        <h3>Desarrollo de sistemas</h3>
+        <p>Diseño y construcción de soluciones digitales claras, escalables y alineadas con la operación real.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-number">03</span>
+        <span class="service-icon">↻</span>
+        <h3>Automatización</h3>
+        <p>Optimización de tareas repetitivas para reducir errores, ahorrar tiempo y mejorar la trazabilidad.</p>
+      </article>
+      <article class="service-card">
+        <span class="service-number">04</span>
+        <span class="service-icon">▦</span>
+        <h3>Dashboards y reportes</h3>
+        <p>Visualizaciones ejecutivas que presentan indicadores relevantes de forma simple, ordenada y accionable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section class="contact section" id="contacto">
   <div class="container contact-grid">
     <div>
