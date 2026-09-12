@@ -840,3 +840,12 @@ h1 { color: #A8A8A8; }
 .professional-title-link { color: #4B4B4B; font-size: 10px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--mint); text-underline-offset: 3px; }
 .professional-title-link:hover { color: var(--mint); }
 @media (max-width: 680px) { .cert-in-profile { margin-top: 18px; padding-top: 22px; } .professional-title-block { align-items: flex-start; padding: 15px; } }
+
+
+/* Título profesional separado de las certificaciones */
+.professional-title-section { grid-column: 1 / -1; margin-top: 18px; }
+.professional-title-heading { margin-bottom: 13px; }
+.professional-title-heading .eyebrow { margin-bottom: 8px; }
+.professional-title-heading h3 { margin: 0; color: #4B4B4B; font-family: var(--font-display); font-size: 25px; letter-spacing: -.04em; }
+.professional-title-section .professional-title-block { margin-top: 0; }
+@media (max-width: 680px) { .professional-title-section { margin-top: 14px; } }
