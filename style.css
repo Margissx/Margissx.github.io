@@ -797,3 +797,36 @@ h1 { color: #A8A8A8; }
 .badge-link:hover { background: var(--mint); color: #ffffff; transform: translateY(-2px); }
 @media (max-width: 950px) { .badges-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .licenses-block { margin-top: 0; } .badges-grid { grid-template-columns: 1fr; } .badge-card-featured { grid-column: auto; } .badge-card-featured h4 { font-size: 18px; } .badge-facts div { align-items: start; flex-direction: column; gap: 2px; } .badge-facts dd { text-align: left; } }
+
+
+/* Disponibilidad */
+.availability-block { padding: 20px 21px 18px; border: 1px solid rgba(168, 168, 168, .34); border-radius: 16px; background: rgba(255, 255, 255, .5); box-shadow: 0 10px 22px rgba(168, 168, 168, .08); }
+.availability-block-profile { grid-column: 1 / -1; margin-top: 8px; }
+.availability-block-contact { margin-top: 28px; background: rgba(255, 255, 255, .32); }
+.availability-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
+.availability-heading h3 { margin: 0; color: #4B4B4B; font-family: var(--font-display); font-size: 19px; letter-spacing: -.03em; }
+.availability-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px; background: var(--mint); color: #ffffff; font-size: 20px; }
+.availability-list { display: grid; gap: 6px; }
+.availability-list p { margin: 0; color: #4B4B4B; font-size: 11px; line-height: 1.5; }
+
+/* Certificaciones complementarias */
+.cert-section { background: #F2F3F4; }
+.cert-heading { margin-bottom: 32px; }
+.cert-heading h2 { margin: 0; color: #4B4B4B; font-size: clamp(34px, 4vw, 52px); line-height: 1.08; }
+.cert-heading h2 span { color: var(--mint); }
+.cert-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
+.cert-card { grid-column: span 2; display: flex; min-width: 0; flex-direction: column; padding: 21px 18px 18px; border: 1px solid rgba(168, 168, 168, .36); border-radius: 16px; background: rgba(255, 255, 255, .62); box-shadow: 0 10px 22px rgba(168, 168, 168, .09); }
+.cert-card:nth-child(4) { grid-column: 2 / span 2; }
+.cert-card:nth-child(5) { grid-column: 4 / span 2; }
+.cert-icon { display: grid; place-items: center; width: 40px; height: 40px; margin-bottom: 15px; border-radius: 12px; background: var(--mint); color: #ffffff; font-size: 19px; box-shadow: 0 8px 16px rgba(27, 209, 232, .18); }
+.cert-card-content { display: flex; flex: 1; flex-direction: column; }
+.cert-card h3 { min-height: 48px; margin: 0 0 10px; color: #4B4B4B; font-family: var(--font-display); font-size: 17px; line-height: 1.25; letter-spacing: -.03em; }
+.cert-issuer { min-height: 35px; margin: 0 0 15px; color: #4B4B4B; font-size: 11px; font-weight: 600; line-height: 1.45; }
+.cert-facts { display: grid; gap: 7px; margin: 0 0 18px; }
+.cert-facts div { display: flex; justify-content: space-between; gap: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(168, 168, 168, .22); }
+.cert-facts dt { color: #A8A8A8; font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.cert-facts dd { margin: 0; color: #4B4B4B; font-size: 10px; font-weight: 600; text-align: right; }
+.cert-button { align-self: flex-start; margin-top: auto; padding: 8px 14px; border: 1px solid var(--mint); border-radius: 999px; background: transparent; color: #4B4B4B; font: inherit; font-size: 10px; font-weight: 700; opacity: 1; }
+.cert-button:disabled { cursor: not-allowed; }
+@media (max-width: 950px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cert-card, .cert-card:nth-child(4), .cert-card:nth-child(5) { grid-column: auto; } }
+@media (max-width: 680px) { .availability-block-profile { margin-top: 0; } .availability-block-contact { margin-top: 24px; } .cert-grid { grid-template-columns: 1fr; } .cert-card h3 { min-height: 0; } .cert-facts div { align-items: start; flex-direction: column; gap: 2px; } .cert-facts dd { text-align: left; } }
