@@ -829,3 +829,14 @@ h1 { color: #A8A8A8; }
 .cert-button:disabled { cursor: not-allowed; }
 @media (max-width: 950px) { .cert-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cert-card, .cert-card:nth-child(4), .cert-card:nth-child(5) { grid-column: auto; } }
 @media (max-width: 680px) { .availability-block-profile { margin-top: 0; } .availability-block-contact { margin-top: 24px; } .cert-grid { grid-template-columns: 1fr; } .cert-card h3 { min-height: 0; } .cert-facts div { align-items: start; flex-direction: column; gap: 2px; } .cert-facts dd { text-align: left; } }
+
+
+/* Certificaciones integradas en Perfil y título profesional */
+.cert-in-profile { grid-column: 1 / -1; margin-top: 24px; padding-top: 27px; border-top: 1px solid rgba(168, 168, 168, .4); background: transparent; }
+.cert-button { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; cursor: pointer; }
+.professional-title-block { grid-column: 1 / -1; display: flex; align-items: center; gap: 13px; margin-top: 16px; padding: 17px 19px; border: 1px solid rgba(168, 168, 168, .34); border-radius: 16px; background: rgba(255, 255, 255, .5); }
+.professional-title-icon { display: grid; place-items: center; width: 36px; height: 36px; flex: 0 0 auto; border-radius: 11px; background: var(--mint); color: #ffffff; font-size: 17px; }
+.professional-title-block h3 { margin: 0 0 5px; color: #4B4B4B; font-family: var(--font-display); font-size: 17px; letter-spacing: -.03em; }
+.professional-title-link { color: #4B4B4B; font-size: 10px; font-weight: 700; text-decoration: underline; text-decoration-color: var(--mint); text-underline-offset: 3px; }
+.professional-title-link:hover { color: var(--mint); }
+@media (max-width: 680px) { .cert-in-profile { margin-top: 18px; padding-top: 22px; } .professional-title-block { align-items: flex-start; padding: 15px; } }
