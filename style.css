@@ -801,7 +801,6 @@ h1 { color: #A8A8A8; }
 
 /* Disponibilidad */
 .availability-block { padding: 20px 21px 18px; border: 1px solid rgba(168, 168, 168, .34); border-radius: 16px; background: rgba(255, 255, 255, .5); box-shadow: 0 10px 22px rgba(168, 168, 168, .08); }
-.availability-block-profile { grid-column: 1 / -1; margin-top: 8px; }
 .availability-block-contact { margin-top: 28px; background: rgba(255, 255, 255, .32); }
 .availability-heading { display: flex; align-items: center; gap: 11px; margin-bottom: 12px; }
 .availability-heading h3 { margin: 0; color: #4B4B4B; font-family: var(--font-display); font-size: 19px; letter-spacing: -.03em; }
