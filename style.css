@@ -774,3 +774,26 @@ h1 { color: #A8A8A8; }
   .plan-price small { text-align: left; }
   .plan-features { grid-template-columns: 1fr; }
 }
+
+/* Licencias y certificaciones: insignias */
+.licenses-block { grid-column: 1 / -1; margin-top: 8px; }
+.licenses-heading { margin-bottom: 22px; }
+.licenses-heading .eyebrow { margin-bottom: 10px; }
+.licenses-heading h3 { margin: 0; color: #4B4B4B; font-family: var(--font-display); font-size: clamp(26px, 3vw, 36px); line-height: 1.1; letter-spacing: -.04em; }
+.badges-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.badge-card { display: flex; min-width: 0; flex-direction: column; padding: 20px 18px 18px; border: 1px solid rgba(168, 168, 168, .36); border-radius: 16px; background: rgba(255, 255, 255, .62); box-shadow: 0 10px 22px rgba(168, 168, 168, .09); transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease; }
+.badge-card:hover { border-color: rgba(27, 209, 232, .65); box-shadow: 0 16px 28px rgba(168, 168, 168, .15); transform: translateY(-4px); }
+.badge-card-featured { grid-column: span 2; padding: 24px 22px 21px; border-color: rgba(27, 209, 232, .62); background: linear-gradient(145deg, rgba(255, 255, 255, .78), rgba(118, 194, 216, .12)); }
+.badge-icon { display: grid; place-items: center; width: 42px; height: 42px; margin-bottom: 16px; border-radius: 13px; background: var(--mint); color: #ffffff; font-family: var(--font-display); font-size: 22px; font-weight: 700; box-shadow: 0 8px 16px rgba(27, 209, 232, .2); }
+.badge-card-featured .badge-icon { width: 49px; height: 49px; margin-bottom: 18px; font-size: 25px; }
+.badge-card-content { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.badge-card h4 { margin: 0 0 16px; color: #4B4B4B; font-family: var(--font-display); font-size: 17px; line-height: 1.25; letter-spacing: -.03em; }
+.badge-card-featured h4 { font-size: 20px; }
+.badge-facts { display: grid; gap: 8px; margin: 0 0 18px; }
+.badge-facts div { display: flex; justify-content: space-between; gap: 12px; padding-bottom: 7px; border-bottom: 1px solid rgba(168, 168, 168, .22); }
+.badge-facts dt { color: #A8A8A8; font-size: 9px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.badge-facts dd { margin: 0; color: #4B4B4B; font-size: 10px; font-weight: 600; text-align: right; }
+.badge-link { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; margin-top: auto; padding: 8px 14px; border: 1px solid var(--mint); border-radius: 999px; color: #4B4B4B; font-size: 10px; font-weight: 700; transition: background .2s ease, color .2s ease, transform .2s ease; }
+.badge-link:hover { background: var(--mint); color: #ffffff; transform: translateY(-2px); }
+@media (max-width: 950px) { .badges-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .licenses-block { margin-top: 0; } .badges-grid { grid-template-columns: 1fr; } .badge-card-featured { grid-column: auto; } .badge-card-featured h4 { font-size: 18px; } .badge-facts div { align-items: start; flex-direction: column; gap: 2px; } .badge-facts dd { text-align: left; } }
