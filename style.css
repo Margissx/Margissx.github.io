@@ -1029,3 +1029,69 @@ h1 { color: #A8A8A8; }
   color: #ffffff;
   box-shadow: 0 13px 26px rgba(27, 209, 232, .28);
 }
+
+
+/* Programmed welcome message */
+.welcome-code {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  overflow: hidden;
+  border: 1px solid rgba(27, 209, 232, .32);
+  border-radius: 12px;
+  background: rgba(27, 209, 232, .08);
+  box-shadow: 0 8px 20px rgba(27, 209, 232, .08);
+  animation: welcomeCodeIn .75s cubic-bezier(.22, 1, .36, 1) .15s both;
+}
+
+.welcome-code::after {
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 32%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--mint), transparent);
+  content: "";
+  animation: welcomeCodeScan 3.8s ease-in-out 1s infinite;
+}
+
+.welcome-code-mark {
+  flex: 0 0 auto;
+  color: var(--mint);
+  font: 800 14px/1.5 monospace;
+}
+
+.welcome-code-line {
+  min-width: 0;
+  color: var(--ink);
+  font: 600 11px/1.55 monospace;
+  letter-spacing: -.02em;
+  overflow-wrap: anywhere;
+}
+
+.welcome-code-keyword { color: #9a58c7; }
+.welcome-code-function { color: #078e9f; }
+.welcome-code-string { color: #a66a08; }
+.welcome-code-punctuation { color: rgba(75, 75, 75, .7); }
+.welcome-code-caret { display: inline-block; width: 5px; height: 14px; margin-left: 4px; vertical-align: -2px; background: var(--mint); animation: welcomeCodeCaret .85s steps(2, start) infinite; }
+
+@keyframes welcomeCodeIn { from { opacity: 0; transform: translateY(12px) scale(.96); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes welcomeCodeScan { 0%, 25% { left: -40%; } 65%, 100% { left: 110%; } }
+@keyframes welcomeCodeCaret { 50% { opacity: 0; } }
+
+@media (max-width: 600px) {
+  .welcome-code { display: flex; width: 100%; margin-bottom: 18px; }
+  .welcome-code-line { font-size: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-code,
+  .welcome-code::after,
+  .welcome-code-caret {
+    animation: none;
+  }
+}
