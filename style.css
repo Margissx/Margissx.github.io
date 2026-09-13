@@ -1123,3 +1123,17 @@ h1 { color: #A8A8A8; }
   from { opacity: 1; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+
+/* Light welcome terminal palette */
+.welcome-code {
+  border-color: rgba(27, 209, 232, .38);
+  background: rgba(27, 209, 232, .08);
+  box-shadow: 0 8px 20px rgba(168, 168, 168, .12);
+  color: var(--muted);
+}
+
+.welcome-code-line { color: var(--muted); }
+.welcome-code-string { color: var(--mint); }
+.welcome-code-punctuation { color: var(--ink); }
+.welcome-code-mark { color: var(--mint); }
