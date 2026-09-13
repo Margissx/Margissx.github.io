@@ -1013,3 +1013,19 @@ h1 { color: #A8A8A8; }
   .code-body p { opacity: 1; transform: none; }
   .code-window-footer strong { opacity: 1; transform: none; }
 }
+
+
+/* Solid sky-blue hero actions */
+.hero-actions .button.button-ghost {
+  border-color: var(--mint);
+  background: var(--mint);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgba(27, 209, 232, .2);
+}
+
+.hero-actions .button.button-ghost:hover {
+  border-color: var(--mint-bright);
+  background: var(--mint-bright);
+  color: #ffffff;
+  box-shadow: 0 13px 26px rgba(27, 209, 232, .28);
+}
