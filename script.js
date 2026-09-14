@@ -148,28 +148,40 @@ updateActiveLink();
 })();
 
 
-// Footer legal links reveal their corresponding content
+// Footer legal links open an internal document window
 (() => {
   const toggles = document.querySelectorAll('.footer-legal-toggle');
-  if (!toggles.length) return;
+  const modal = document.querySelector('#legal-modal');
+  const modalTitle = document.querySelector('#legal-modal-title');
+  const modalContent = document.querySelector('#legal-modal-content');
+  if (!toggles.length || !modal || !modalTitle || !modalContent) return;
+  let lastTrigger = null;
+
+  const closeModal = () => {
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('legal-modal-open');
+    if (lastTrigger) lastTrigger.focus();
+  };
 
   toggles.forEach((toggle) => {
     toggle.addEventListener('click', (event) => {
       event.preventDefault();
-      const targetId = toggle.getAttribute('aria-controls');
-      const panel = document.getElementById(targetId);
-      if (!panel) return;
-      const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
-
-      toggles.forEach((otherToggle) => {
-        const otherPanel = document.getElementById(otherToggle.getAttribute('aria-controls'));
-        otherToggle.setAttribute('aria-expanded', 'false');
-        if (otherPanel) otherPanel.setAttribute('aria-hidden', 'true');
-      });
-
-      toggle.setAttribute('aria-expanded', String(willOpen));
-      panel.setAttribute('aria-hidden', String(!willOpen));
-      if (willOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      const source = document.getElementById(toggle.getAttribute('aria-controls'));
+      const sourceContent = source?.querySelector('.privacy-policy-content');
+      if (!sourceContent) return;
+      lastTrigger = toggle;
+      modalTitle.textContent = toggle.textContent.trim();
+      modalContent.innerHTML = sourceContent.innerHTML;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('legal-modal-open');
+      modal.querySelector('.legal-modal-close').focus();
     });
+  });
+
+  modal.querySelectorAll('[data-legal-close="true"]').forEach((element) => {
+    element.addEventListener('click', closeModal);
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
   });
 })();
