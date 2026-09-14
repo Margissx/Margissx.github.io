@@ -1290,3 +1290,7 @@ h1 { color: #A8A8A8; }
 @media (max-width: 680px) {
   .footer-legal { grid-template-columns: 1fr; margin-top: 18px; }
 }
+
+
+/* Celestial blue footer name */
+.footer-logo span { color: var(--mint); }
