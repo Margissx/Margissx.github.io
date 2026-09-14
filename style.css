@@ -1403,3 +1403,10 @@ body.legal-modal-open { overflow: hidden; }
 .credentials-panel .badge-facts div, .credentials-panel .cert-facts div { display: grid; grid-template-columns: minmax(90px, auto) 1fr; align-items: baseline; gap: 8px; }
 .credentials-panel .badge-link, .credentials-panel .cert-button { justify-self: start; align-self: start; }
 .credentials-panel .professional-title-block { grid-template-columns: 1fr; gap: 7px; }
+
+
+/* White plan cards and white plans introduction */
+.services .service-card, .services .plan-card, .services .plan-card-featured, .services .plan-card-custom { background: #ffffff; }
+.services .section-heading h2 { color: #ffffff; }
+.services .section-heading h2 span { color: #96C9DD; }
+.services .section-heading .heading-note { color: #ffffff; }
