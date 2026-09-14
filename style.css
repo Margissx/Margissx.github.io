@@ -1551,7 +1551,11 @@ body { top: 0 !important; }
 
 
 /* Environmental complaint form controls */
-.feedback-form input[type="file"] { padding: 7px 9px; color: #A8A8A8; font-size: 10px; cursor: pointer; }
+.feedback-form input[type="file"] { padding: 7px 9px; border-color: rgba(168,168,168,.45); background: #F2F3F4; color: #A8A8A8; font-size: 10px; cursor: pointer; }
+.feedback-form input[type="file"]::file-selector-button { margin-right: 9px; padding: 6px 10px; border: 0; border-radius: 7px; background: #A8A8A8; color: #ffffff; font: inherit; font-size: 10px; cursor: pointer; }
+.feedback-form input[type="file"]::file-selector-button:hover { background: #96C9DD; }
 .feedback-form .terms-check { display: flex; align-items: flex-start; gap: 8px; margin-top: 4px; color: #A8A8A8; font-size: 10px; font-weight: 400; letter-spacing: 0; line-height: 1.5; text-transform: none; cursor: pointer; }
-.feedback-form .terms-check input[type="checkbox"] { flex: 0 0 auto; width: 15px; height: 15px; margin: 1px 0 0; padding: 0; accent-color: #96C9DD; cursor: pointer; }
+.feedback-form .terms-check input[type="checkbox"] { flex: 0 0 auto; appearance: none; -webkit-appearance: none; width: 15px; height: 15px; margin: 1px 0 0; padding: 0; border: 1px solid #96C9DD; border-radius: 4px; background: #ffffff; cursor: pointer; }
+.feedback-form .terms-check input[type="checkbox"]:checked { border-color: #96C9DD; background-color: #96C9DD; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.2 4.7 9 10 3' fill='none' stroke='%23ffffff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; background-size: 11px 11px; }
+.feedback-form .terms-check input[type="checkbox"]:focus-visible { outline: 2px solid rgba(150,201,221,.55); outline-offset: 2px; }
 .feedback-form .terms-check span { flex: 1; }
