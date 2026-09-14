@@ -1417,3 +1417,12 @@ body.legal-modal-open { overflow: hidden; }
 .contact-quick-facts > div { display: grid; gap: 4px; padding: 10px 12px; border: 1px solid rgba(168, 168, 168, .24); border-radius: 10px; background: #ffffff; }
 .contact-quick-facts strong { color: #A8A8A8; font-size: 10px; font-weight: 600; }
 @media (max-width: 480px) { .contact-quick-facts { grid-template-columns: 1fr; } }
+
+
+/* Left-aligned single-column complementary certificates */
+.credentials-panel .cert-grid, .credentials-panel .cert-card, .credentials-panel .cert-card-content { width: 100%; }
+.credentials-panel .cert-card, .credentials-panel .cert-card-content { justify-items: start; align-items: start; text-align: left; }
+.credentials-panel .cert-card h3, .credentials-panel .cert-issuer, .credentials-panel .cert-facts, .credentials-panel .cert-button { justify-self: start; text-align: left; }
+.credentials-panel .cert-facts { grid-template-columns: 1fr; width: 100%; }
+.credentials-panel .cert-facts div { display: grid; grid-template-columns: 1fr; justify-items: start; gap: 1px; width: 100%; }
+.credentials-panel .cert-facts dt, .credentials-panel .cert-facts dd { width: 100%; text-align: left; }
