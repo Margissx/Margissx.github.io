@@ -122,3 +122,27 @@ const updateActiveLink = () => {
 
 window.addEventListener("scroll", updateActiveLink, { passive: true });
 updateActiveLink();
+
+// Projects carousel controls
+(() => {
+  const carousel = document.querySelector('#projects-carousel');
+  const previous = document.querySelector('.carousel-prev');
+  const next = document.querySelector('.carousel-next');
+  if (!carousel || !previous || !next) return;
+
+  const moveCarousel = (direction) => {
+    carousel.scrollBy({ left: direction * carousel.clientWidth, behavior: 'smooth' });
+  };
+
+  const updateControls = () => {
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth - 2;
+    previous.disabled = carousel.scrollLeft <= 2;
+    next.disabled = carousel.scrollLeft >= maxScroll;
+  };
+
+  previous.addEventListener('click', () => moveCarousel(-1));
+  next.addEventListener('click', () => moveCarousel(1));
+  carousel.addEventListener('scroll', updateControls, { passive: true });
+  window.addEventListener('resize', updateControls);
+  updateControls();
+})();

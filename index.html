@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=69">
+  <link rel="stylesheet" href="style.css?v=70">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     window.addEventListener("pageshow", () => {
@@ -907,7 +907,11 @@
       <p class="heading-note">Una selección de ideas y soluciones enfocadas en datos, eficiencia y decisiones claras.</p>
     </div>
 
-    <div class="projects-list">
+    <div class="projects-carousel">
+      <button class="carousel-control carousel-prev" type="button" aria-label="Proyecto anterior">
+        <i class="bi bi-chevron-left" aria-hidden="true"></i>
+      </button>
+      <div class="carousel-container" id="projects-carousel" aria-label="Carrusel de proyectos">
       <article class="project-card">
         <div class="project-visual project-visual-dashboard">
           <span class="project-index">01</span>
@@ -985,6 +989,10 @@
           <div class="project-footer"><span>HTML5 · CSS3 · JavaScript</span><a href="https://github.com/Margissx/hotel-web" target="_blank" rel="noopener noreferrer">Ver proyecto</a></div>
         </div>
       </article>
+      </div>
+      <button class="carousel-control carousel-next" type="button" aria-label="Siguiente proyecto">
+        <i class="bi bi-chevron-right" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 </section>
