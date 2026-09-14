@@ -252,6 +252,8 @@ updateActiveLink();
   const launcher = document.querySelector('#a11y-launcher');
   const panel = document.querySelector('#a11y-panel');
   if (!launcher || !panel) return;
+  const widget = launcher.closest('.a11y-widget');
+  const hideAtEnd = panel.querySelector('#a11y-hide-at-end');
   const body = document.body;
   const buttons = Array.from(panel.querySelectorAll('[data-a11y-action]'));
   let textLevel = 0;
@@ -289,6 +291,12 @@ updateActiveLink();
   const clearTextSize = () => document.querySelectorAll('[data-a11y-base-size]').forEach((element) => { element.style.removeProperty('font-size'); delete element.dataset.a11yBaseSize; });
   const openPanel = () => { panel.classList.add('is-open'); panel.setAttribute('aria-hidden', 'false'); launcher.setAttribute('aria-expanded', 'true'); };
   const closePanel = () => { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true'); launcher.setAttribute('aria-expanded', 'false'); };
+  const updateEndVisibility = (isAtEnd) => {
+    if (!widget || !hideAtEnd) return;
+    const shouldHide = isAtEnd && hideAtEnd.checked;
+    if (shouldHide) closePanel();
+    widget.classList.toggle('is-hidden-at-end', shouldHide);
+  };
   const chooseEnglish = () => { const combo = document.querySelector('.goog-te-combo'); if (combo) { combo.value = 'en'; combo.dispatchEvent(new Event('change')); translationReady = true; } };
   const loadTranslation = () => {
     if (window.google?.translate?.TranslateElement) { chooseEnglish(); return; }
@@ -308,7 +316,17 @@ updateActiveLink();
     if (action === 'light') { body.classList.toggle('a11y-light-background'); updateButtonState(action, body.classList.contains('a11y-light-background')); }
     if (action === 'underline') { body.classList.toggle('a11y-underline-links'); updateButtonState(action, body.classList.contains('a11y-underline-links')); }
     if (action === 'font') { body.classList.toggle('a11y-readable-font'); updateButtonState(action, body.classList.contains('a11y-readable-font')); }
-    if (action === 'reset') { body.classList.remove('a11y-grayscale','a11y-high-contrast','a11y-negative','a11y-light-background','a11y-underline-links','a11y-readable-font'); textLevel = 0; clearTextSize(); buttons.forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-pressed', 'false'); }); const combo = document.querySelector('.goog-te-combo'); if (combo) { combo.value = 'es'; combo.dispatchEvent(new Event('change')); } }
+    if (action === 'reset') { body.classList.remove('a11y-grayscale','a11y-high-contrast','a11y-negative','a11y-light-background','a11y-underline-links','a11y-readable-font'); textLevel = 0; clearTextSize(); buttons.forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-pressed', 'false'); }); if (hideAtEnd) hideAtEnd.checked = true; const combo = document.querySelector('.goog-te-combo'); if (combo) { combo.value = 'es'; combo.dispatchEvent(new Event('change')); } }
   }));
+  const endSections = [document.querySelector('#contacto'), document.querySelector('.site-footer')].filter(Boolean);
+  if (endSections.length && 'IntersectionObserver' in window) {
+    const endVisibility = new Map(endSections.map((section) => [section, false]));
+    const endObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => endVisibility.set(entry.target, entry.isIntersecting));
+      updateEndVisibility(Array.from(endVisibility.values()).some(Boolean));
+    }, { threshold: 0.01 });
+    endSections.forEach((section) => endObserver.observe(section));
+    hideAtEnd?.addEventListener('change', () => updateEndVisibility(Array.from(endVisibility.values()).some(Boolean)));
+  }
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && panel.classList.contains('is-open')) { closePanel(); launcher.focus(); } });
 })();
