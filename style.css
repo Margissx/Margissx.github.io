@@ -1350,3 +1350,11 @@ body.legal-modal-open { overflow: hidden; }
 .hero h1 { color: #A8A8A8; }
 .hero h1 .highlight { color: #96C9DD; }
 .hero-description { color: #A8A8A8; }
+
+
+/* Mobile menu alignment and white tools section */
+@media (max-width: 950px) {
+  .nav-links .nav-contact { justify-content: flex-start; margin: 0; }
+}
+.skills { background: #ffffff; }
+.skill-cluster, .skill-cluster-featured, .skill-cluster-wide { background: #ffffff; }

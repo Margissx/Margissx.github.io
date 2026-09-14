@@ -185,3 +185,17 @@ updateActiveLink();
     if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
   });
 })();
+
+// Skill groups behave as a single accordion
+(() => {
+  const groups = Array.from(document.querySelectorAll('.skills-groups > .skill-cluster'));
+  if (!groups.length) return;
+  groups.forEach((group) => {
+    group.addEventListener('toggle', () => {
+      if (!group.open) return;
+      groups.forEach((otherGroup) => {
+        if (otherGroup !== group) otherGroup.open = false;
+      });
+    });
+  });
+})();
