@@ -409,12 +409,26 @@ body, h2, h4, small, .profile-content p, .bio-block p, .heading-note, .tag-cloud
 .profile-pillar { padding: 16px 17px 15px; border-left: 3px solid var(--mint); background: rgba(255, 255, 255, .72); }
 .pillar-label { display: block; margin-bottom: 8px; color: var(--mint); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .profile-pillar p { margin: 0; color: #A8A8A8; font-size: 11px; line-height: 1.6; }
+.professional-values { margin-top: 24px; padding: 18px; border: 1px solid rgba(150, 201, 221, .42); border-radius: 15px; background: linear-gradient(135deg, rgba(255, 255, 255, .78), rgba(150, 201, 221, .1)); }
+.professional-values-heading { display: grid; grid-template-columns: minmax(0, 1fr) minmax(170px, .8fr); align-items: end; gap: 4px 18px; margin-bottom: 14px; }
+.professional-values-heading .pillar-label { grid-column: 1 / -1; margin-bottom: 1px; }
+.professional-values-heading h3 { margin: 0; color: #A8A8A8; font-size: 19px; line-height: 1.15; }
+.professional-values-heading h3 span { color: var(--mint); }
+.professional-values-heading > p { margin: 0; color: rgba(168, 168, 168, .78); font-size: 10px; line-height: 1.45; }
+.professional-values-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.professional-value { display: flex; align-items: flex-start; gap: 8px; min-width: 0; padding: 10px; border: 1px solid rgba(168, 168, 168, .23); border-radius: 10px; background: rgba(255, 255, 255, .62); }
+.professional-value-icon { display: grid; flex: 0 0 25px; place-items: center; width: 25px; height: 25px; border-radius: 8px; background: rgba(150, 201, 221, .22); color: #167f91; font-size: 13px; }
+.professional-value h4 { margin: 0 0 3px; color: #A8A8A8; font-size: 10px; line-height: 1.2; }
+.professional-value p { margin: 0; color: rgba(168, 168, 168, .78); font-size: 9px; line-height: 1.4; }
 .profile-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 24px; padding-top: 17px; border-top: 1px solid rgba(168, 168, 168, .38); }
 .stat strong { color: var(--mint); font-family: var(--font-display); font-size: 28px; letter-spacing: -.05em; }
 .stat span { color: #A8A8A8; font-size: 10px; line-height: 1.4; }
 
 @media (max-width: 680px) {
   .profile-pillars { grid-template-columns: 1fr; }
+  .professional-values { padding: 15px; }
+  .professional-values-heading { grid-template-columns: 1fr; gap: 7px; }
+  .professional-values-grid { grid-template-columns: 1fr; }
   .profile-stats { gap: 10px; }
   .stat strong { font-size: 24px; }
 }
