@@ -1484,6 +1484,7 @@
       <a class="footer-legal-toggle" href="#terminos-condiciones" aria-controls="terminos-condiciones" aria-expanded="false">Términos y Condiciones</a>
       <a class="footer-legal-toggle" href="#objetivos-estrategicos" aria-controls="objetivos-estrategicos" aria-expanded="false">Objetivos Estratégicos</a>
       <a class="footer-legal-toggle" href="#quejas-recomendaciones" aria-controls="quejas-recomendaciones" aria-expanded="false">Quejas y Recomendaciones</a>
+      <a class="footer-legal-toggle" href="#quejas-medio-ambientales" aria-controls="quejas-medio-ambientales" aria-expanded="false">Quejas Medio Ambientales</a>
       <a class="footer-legal-toggle" href="#encuesta-satisfaccion" aria-controls="encuesta-satisfaccion" aria-expanded="false">Encuesta de Satisfacción</a>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
@@ -1546,6 +1547,32 @@
               <label for="feedback-email">Correo electrónico</label><input id="feedback-email" name="Correo electrónico" type="email" placeholder="tu@correo.com" autocomplete="email" required>
               <label for="feedback-message">Mensaje</label><textarea id="feedback-message" name="Mensaje" rows="5" placeholder="Escribe aquí tu queja o recomendación" required></textarea>
               <button type="submit"><i class="bi bi-send" aria-hidden="true"></i><span>Enviar mensaje</span></button><small>El mensaje será enviado a giss98alvarado@gmail.com.</small>
+            </form>
+          </div>
+        </div>
+        <div class="privacy-policy legal-disclosure footer-legal-panel" id="quejas-medio-ambientales" aria-hidden="true">
+          <div class="privacy-policy-content">
+            <p>Este formulario permite registrar de manera anónima cualquier reporte, queja, reclamo o incidente relacionado con aspectos ambientales.</p>
+            <p>La información proporcionada será tratada con confidencialidad y utilizada únicamente para la atención y seguimiento correspondiente.</p>
+            <form class="feedback-form environmental-form" action="https://formsubmit.co/giss98alvarado@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="Nuevo reporte ambiental del portafolio">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://margissx.github.io/#quejas-medio-ambientales">
+              <label for="environmental-type">Tipo de reporte</label>
+              <select id="environmental-type" name="Tipo de reporte" required><option value="">Selecciona una opción</option><option value="Reporte">Reporte</option><option value="Queja">Queja</option><option value="Reclamo">Reclamo</option><option value="Incidente">Incidente</option></select>
+              <label for="environmental-aspect">Aspecto ambiental relacionado</label>
+              <select id="environmental-aspect" name="Aspecto ambiental relacionado" required><option value="">Selecciona una opción</option><option value="Residuos y disposición">Residuos y disposición</option><option value="Contaminación">Contaminación</option><option value="Agua">Agua</option><option value="Energía">Energía</option><option value="Biodiversidad y áreas verdes">Biodiversidad y áreas verdes</option><option value="Otro aspecto ambiental">Otro aspecto ambiental</option></select>
+              <label for="environmental-location">Ubicación aproximada <span>(opcional)</span></label>
+              <input id="environmental-location" name="Ubicación aproximada" type="text" placeholder="Lugar o zona relacionada">
+              <label for="environmental-date">Fecha del hecho <span>(opcional)</span></label>
+              <input id="environmental-date" name="Fecha del hecho" type="date">
+              <label for="environmental-priority">Nivel de atención</label>
+              <select id="environmental-priority" name="Nivel de atención" required><option value="">Selecciona una opción</option><option value="Informativo">Informativo</option><option value="Requiere seguimiento">Requiere seguimiento</option><option value="Urgente">Urgente</option></select>
+              <label for="environmental-description">Descripción del reporte</label>
+              <textarea id="environmental-description" name="Descripción del reporte" rows="6" placeholder="Describe lo ocurrido, sus posibles efectos y cualquier detalle útil para el seguimiento." required></textarea>
+              <button type="submit"><i class="bi bi-send" aria-hidden="true"></i><span>Enviar reporte ambiental</span></button>
+              <small>El reporte no solicita nombre ni correo electrónico. La información será enviada de forma confidencial a giss98alvarado@gmail.com.</small>
             </form>
           </div>
         </div>
