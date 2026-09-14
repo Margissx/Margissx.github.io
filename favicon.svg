@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gray base vertical bar -->
+  <rect x="128" y="512" width="128" height="384" rx="40" fill="#CCCCCC"/>
+  
+  <!-- Gray base bottom section -->
+  <rect x="128" y="768" width="512" height="128" rx="40" fill="#CCCCCC"/>
+  
+  <!-- Cyan top-left square -->
+  <rect x="256" y="256" width="256" height="256" rx="48" fill="#1BD1E8"/>
+  
+  <!-- Teal top-middle square -->
+  <rect x="384" y="128" width="256" height="256" rx="48" fill="#4A8FB5"/>
+  
+  <!-- Cyan top-right square -->
+  <rect x="512" y="256" width="256" height="256" rx="48" fill="#1BD1E8"/>
+  
+  <!-- Cyan bottom arrow -->
+  <path d="M 384 640 L 768 640 L 768 512 L 896 768 L 768 1024 L 768 896 L 384 896 Z" fill="#5BA4D1"/>
+</svg>
