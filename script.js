@@ -319,12 +319,29 @@ updateActiveLink();
   const reader = document.querySelector('[data-a11y-action="reader"]');
   if (!reader || !('speechSynthesis' in window)) return;
   let speaking = false;
+  let selectedTarget = null;
   const setReaderState = (active) => { speaking = active; reader.classList.toggle('is-active', active); reader.setAttribute('aria-pressed', String(active)); reader.querySelector('span').textContent = active ? 'Detener lectura' : 'Leer página'; reader.querySelector('i').className = active ? 'bi bi-stop-circle' : 'bi bi-volume-up'; };
+  const rememberSelection = (event) => {
+    const element = event.target instanceof Element ? event.target : event.target.parentElement;
+    if (!element || element.closest('.a11y-widget')) return;
+    const controlledId = element.closest('[aria-controls]')?.getAttribute('aria-controls');
+    const controlled = controlledId ? document.getElementById(controlledId) : null;
+    const link = element.closest('a[href^="#"]');
+    const linked = link ? document.querySelector(link.getAttribute('href')) : null;
+    const detail = element.closest('details');
+    const card = element.closest('.service-accordion-item, .credentials-accordion-item, .skill-cluster, .project-card, .service-card, .process-step, .profile-pillar, .availability-block');
+    const section = element.closest('section');
+    selectedTarget = controlled || linked || detail || card || section || null;
+  };
   const stopReading = () => { window.speechSynthesis.cancel(); setReaderState(false); };
-  reader.addEventListener('click', () => {
+  const readSelection = () => {
     if (speaking) { stopReading(); return; }
-    const main = document.querySelector('main');
-    const text = (main ? main.innerText : document.body.innerText).replace(/\s+/g, ' ').trim();
+    if (!selectedTarget) {
+      reader.querySelector('span').textContent = 'Selecciona una sección';
+      window.setTimeout(() => { if (!speaking) reader.querySelector('span').textContent = 'Leer página'; }, 1800);
+      return;
+    }
+    const text = selectedTarget.innerText.replace(/\s+/g, ' ').trim();
     if (!text) return;
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = document.documentElement.lang === 'en' ? 'en-US' : 'es-HN';
@@ -334,7 +351,9 @@ updateActiveLink();
     setReaderState(true);
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utterance);
-  });
+  };
+  document.addEventListener('click', rememberSelection, true);
+  reader.addEventListener('click', readSelection);
   document.querySelector('[data-a11y-action="reset"]')?.addEventListener('click', stopReading);
   window.addEventListener('beforeunload', stopReading);
 })();
