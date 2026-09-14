@@ -1439,3 +1439,14 @@ body.legal-modal-open { overflow: hidden; }
 .credentials-panel .cert-card-content { min-height: 0; align-content: start; }
 .credentials-panel .cert-card h3, .credentials-panel .cert-issuer { min-height: 0; }
 .credentials-panel .cert-issuer, .credentials-panel .cert-facts, .credentials-panel .cert-button { margin-top: 0; margin-bottom: 0; }
+
+
+/* Match badges to the left-aligned single-column certificate layout */
+.credentials-panel .badges-grid { grid-template-columns: minmax(0, 1fr); align-items: start; grid-auto-rows: auto; }
+.credentials-panel .badge-card, .credentials-panel .badge-card-featured { grid-column: 1 / -1; width: 100%; min-height: 0; height: auto; align-self: start; align-content: start; justify-items: start; text-align: left; }
+.credentials-panel .badge-card-content { width: 100%; min-height: 0; align-content: start; justify-items: start; text-align: left; }
+.credentials-panel .badge-card h4, .credentials-panel .badge-facts, .credentials-panel .badge-link { justify-self: start; text-align: left; }
+.credentials-panel .badge-facts { grid-template-columns: 1fr; width: 100%; }
+.credentials-panel .badge-facts div { display: grid; grid-template-columns: 1fr; justify-items: start; gap: 1px; width: 100%; }
+.credentials-panel .badge-facts dt, .credentials-panel .badge-facts dd { width: 100%; text-align: left; }
+.credentials-panel .badge-facts, .credentials-panel .badge-link { margin-top: 0; margin-bottom: 0; }
