@@ -1344,3 +1344,9 @@ body.legal-modal-open { overflow: hidden; }
 /* Neutral gray navigation text across desktop and mobile menus */
 .nav-link, .nav-link:hover, .nav-link.active, .nav-contact,
 .nav-links .nav-link, .nav-links .nav-link:hover, .nav-links .nav-link.active { color: #A8A8A8; }
+
+
+/* Neutral gray hero description and title lead */
+.hero h1 { color: #A8A8A8; }
+.hero h1 .highlight { color: #96C9DD; }
+.hero-description { color: #A8A8A8; }
