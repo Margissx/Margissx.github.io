@@ -1548,3 +1548,10 @@ body { top: 0 !important; }
 .feedback-form button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: fit-content; margin-top: 4px; padding: 9px 14px; border: 1px solid #96C9DD; border-radius: 9px; background: #96C9DD; color: #ffffff; cursor: pointer; font: inherit; font-size: 10px; font-weight: 700; }
 .feedback-form button:hover, .feedback-form button:focus-visible { border-color: #A8A8A8; background: #A8A8A8; outline: none; }
 .feedback-form small { color: #A8A8A8; font-size: 9px; line-height: 1.45; }
+
+
+/* Environmental complaint form controls */
+.feedback-form input[type="file"] { padding: 7px 9px; color: #A8A8A8; font-size: 10px; cursor: pointer; }
+.feedback-form .terms-check { display: flex; align-items: flex-start; gap: 8px; margin-top: 4px; color: #A8A8A8; font-size: 10px; font-weight: 400; letter-spacing: 0; line-height: 1.5; text-transform: none; cursor: pointer; }
+.feedback-form .terms-check input[type="checkbox"] { flex: 0 0 auto; width: 15px; height: 15px; margin: 1px 0 0; padding: 0; accent-color: #96C9DD; cursor: pointer; }
+.feedback-form .terms-check span { flex: 1; }
