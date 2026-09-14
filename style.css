@@ -1431,3 +1431,11 @@ body.legal-modal-open { overflow: hidden; }
 /* Force every complementary certificate into the same column */
 .credentials-panel .cert-grid { grid-template-columns: minmax(0, 1fr); }
 .credentials-panel .cert-card, .credentials-panel .cert-card:nth-child(4), .credentials-panel .cert-card:nth-child(5) { grid-column: 1 / -1; }
+
+
+/* Remove inherited empty space from vertical certificates */
+.credentials-panel .cert-grid { align-items: start; grid-auto-rows: auto; }
+.credentials-panel .cert-card { min-height: 0; height: auto; align-self: start; align-content: start; }
+.credentials-panel .cert-card-content { min-height: 0; align-content: start; }
+.credentials-panel .cert-card h3, .credentials-panel .cert-issuer { min-height: 0; }
+.credentials-panel .cert-issuer, .credentials-panel .cert-facts, .credentials-panel .cert-button { margin-top: 0; margin-bottom: 0; }
