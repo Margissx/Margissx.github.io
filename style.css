@@ -1339,3 +1339,8 @@ body.legal-modal-open { overflow: hidden; }
 /* Header logo image */
 .brand-mark { width: 36px; height: 36px; border: 0; border-radius: 10px; background: transparent; }
 .brand-mark img { display: block; width: 36px; height: 36px; border: 0; object-fit: contain; }
+
+
+/* Neutral gray navigation text across desktop and mobile menus */
+.nav-link, .nav-link:hover, .nav-link.active, .nav-contact,
+.nav-links .nav-link, .nav-links .nav-link:hover, .nav-links .nav-link.active { color: #A8A8A8; }
