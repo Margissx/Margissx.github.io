@@ -1318,3 +1318,19 @@ body.legal-modal-open { overflow: hidden; }
   .legal-modal-header h3 { font-size: 19px; }
   .legal-modal-content { padding: 17px 18px 21px; font-size: 10px; }
 }
+
+
+/* White header and hero with custom celestial-blue type */
+.site-header { background: #ffffff; border-color: rgba(150, 201, 221, .42); }
+.brand, .brand-mark, .brand-dot { color: #96C9DD; }
+.nav-link, .nav-link:hover, .nav-link.active, .nav-contact { color: #96C9DD; }
+.nav-link::after { background: #96C9DD; }
+.menu-toggle span { background: #96C9DD; }
+.nav-links { background: #ffffff; border-color: rgba(150, 201, 221, .42); }
+.nav-links .nav-link:hover, .nav-links .nav-link.active { background: rgba(150, 201, 221, .16); color: #96C9DD; }
+.nav-links .nav-icon { color: #96C9DD; }
+.hero { background: #ffffff; color: #96C9DD; }
+.hero::before { background: none; }
+.hero::after { border-color: rgba(150, 201, 221, .34); box-shadow: 0 0 0 28px rgba(150, 201, 221, .07), 0 0 0 56px rgba(150, 201, 221, .035); }
+.hero .eyebrow, .hero h1, .hero h1 .highlight, .hero-description, .hero-meta, .hero-meta span, .hero-meta .meta-separator { color: #96C9DD; }
+.hero .status-dot { background: #96C9DD; }
