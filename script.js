@@ -199,3 +199,46 @@ updateActiveLink();
     });
   });
 })();
+
+
+// Services accordion: only one service stays open
+(() => {
+  const items = Array.from(document.querySelectorAll('.service-accordion-item'));
+  if (!items.length) return;
+
+  const closeItem = (item) => {
+    const trigger = item.querySelector('.service-accordion-trigger');
+    const content = item.querySelector('.service-accordion-content');
+    const toggle = item.querySelector('.service-accordion-toggle');
+    item.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+    content.setAttribute('aria-hidden', 'true');
+    content.style.maxHeight = '0px';
+    toggle.textContent = '+';
+  };
+
+  const openItem = (item) => {
+    const trigger = item.querySelector('.service-accordion-trigger');
+    const content = item.querySelector('.service-accordion-content');
+    const toggle = item.querySelector('.service-accordion-toggle');
+    item.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    content.setAttribute('aria-hidden', 'false');
+    content.style.maxHeight = content.scrollHeight + 'px';
+    toggle.textContent = '−';
+  };
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('.service-accordion-trigger');
+    trigger.addEventListener('click', () => {
+      const willOpen = !item.classList.contains('is-open');
+      items.forEach(closeItem);
+      if (willOpen) openItem(item);
+    });
+  });
+
+  window.addEventListener('resize', () => {
+    const openItemElement = items.find(item => item.classList.contains('is-open'));
+    if (openItemElement) openItem(openItemElement);
+  });
+})();

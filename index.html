@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=81">
+  <link rel="stylesheet" href="style.css?v=82">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     window.addEventListener("pageshow", () => {
@@ -1004,29 +1004,247 @@
       <p class="heading-note">Desarrollo, datos y soporte tecnológico para proyectos que necesitan crecer.</p>
     </div>
 
-    <div class="technical-services-table">
-      <table>
-        <thead><tr><th>Servicio</th><th>Descripción</th><th>Dirigido a</th><th>Costo</th></tr></thead>
-        <tbody><tbody>
-          <tr><td>Documentación Técnica</td><td>Elaboración de documentación para facilitar la comprensión y gestión de sistemas.</td><td>Empresas, instituciones y equipos de desarrollo.</td><td>Desde L 1,500</td></tr>
-          <tr><td>Analítica de Datos</td><td>Análisis de datos para generar información útil y apoyar decisiones.</td><td>Empresas, instituciones, investigadores y organizaciones.</td><td>Desde L 2,500</td></tr>
-          <tr class="service-maintenance"><td>Mantenimiento y Soporte Tecnológico — Básico</td><td>Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</td><td>Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</td><td>Desde L 2,500/mes</td></tr>
-          <tr><td>Base de Datos</td><td>Diseño y organización de bases de datos para gestionar información.</td><td>Empresas, instituciones, profesionales y proyectos digitales.</td><td>Desde L 3,000</td></tr>
-          <tr><td>Desarrollo de Portales Web</td><td>Desarrollo de sitios web para presencia y servicios digitales.</td><td>Empresas, profesionales, instituciones y emprendimientos.</td><td>Desde L 5,000</td></tr>
-          <tr class="service-maintenance"><td>Mantenimiento y Soporte Tecnológico — Profesional</td><td>Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</td><td>Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</td><td>Desde L 5,000/mes</td></tr>
-          <tr><td>Auditoría de Sistemas</td><td>Evaluación de sistemas para identificar riesgos, errores y oportunidades de mejora.</td><td>Empresas, instituciones y organizaciones.</td><td>Desde L 6,000</td></tr>
-          <tr class="service-maintenance"><td>Mantenimiento y Soporte Tecnológico — Continuo</td><td>Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</td><td>Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</td><td>Desde L 8,000/mes</td></tr>
-          <tr><td>Desarrollo de Sistemas de Datos e Información</td><td>Sistemas para gestionar y procesar información.</td><td>Empresas, instituciones e investigadores.</td><td>Desde L 9,000</td></tr>
-          <tr><td>Desarrollo de Sistemas de Analítica e Inteligencia de Negocios</td><td>Soluciones para analizar datos y apoyar decisiones.</td><td>Empresas e instituciones.</td><td>Desde L 12,000</td></tr>
-          <tr><td>Desarrollo de Sistemas Web</td><td>Plataformas web para gestionar procesos e información.</td><td>Empresas, instituciones y emprendimientos.</td><td>Desde L 15,000</td></tr>
-          <tr><td>Desarrollo de Sistemas Integrados y Automatizados</td><td>Sistemas para integrar y automatizar procesos.</td><td>Empresas e instituciones.</td><td>Desde L 18,000</td></tr>
-          <tr><td>Desarrollo de Sistemas de Escritorio</td><td>Aplicaciones para gestionar operaciones internas.</td><td>Empresas, oficinas e instituciones.</td><td>Desde L 20,000</td></tr>
-          <tr><td>Desarrollo de Aplicaciones Móviles</td><td>Aplicaciones para servicios y gestión móvil.</td><td>Empresas, emprendimientos e instituciones.</td><td>Desde L 25,000</td></tr>
-          <tr><td>Desarrollo de Sistemas Empresariales</td><td>Soluciones para gestionar procesos empresariales.</td><td>Empresas y organizaciones.</td><td>Desde L 30,000</td></tr>
-        </tbody></tbody></tbody>
-      </table>
+        <div class="services-accordion" id="services-accordion" aria-label="Servicios disponibles">
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-01">
+          <span class="service-accordion-name">Documentación Técnica</span>
+          <span class="service-accordion-price">Desde L 1,500</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-01" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Elaboración de documentación para facilitar la comprensión y gestión de sistemas.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones y equipos de desarrollo.</p>
+            <p><strong>Costo:</strong> Desde L 1,500</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-02">
+          <span class="service-accordion-name">Analítica de Datos</span>
+          <span class="service-accordion-price">Desde L 2,500</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-02" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Análisis de datos para generar información útil y apoyar decisiones.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones, investigadores y organizaciones.</p>
+            <p><strong>Costo:</strong> Desde L 2,500</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item service-maintenance">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-03">
+          <span class="service-accordion-name">Mantenimiento y Soporte Tecnológico — Básico</span>
+          <span class="service-accordion-price">Desde L 2,500/mes</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-03" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</p>
+            <p><strong>Costo:</strong> Desde L 2,500/mes</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-04">
+          <span class="service-accordion-name">Base de Datos</span>
+          <span class="service-accordion-price">Desde L 3,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-04" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Diseño y organización de bases de datos para gestionar información.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones, profesionales y proyectos digitales.</p>
+            <p><strong>Costo:</strong> Desde L 3,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-05">
+          <span class="service-accordion-name">Desarrollo de Portales Web</span>
+          <span class="service-accordion-price">Desde L 5,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-05" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Desarrollo de sitios web para presencia y servicios digitales.</p>
+            <p><strong>Dirigido a:</strong> Empresas, profesionales, instituciones y emprendimientos.</p>
+            <p><strong>Costo:</strong> Desde L 5,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item service-maintenance">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-06">
+          <span class="service-accordion-name">Mantenimiento y Soporte Tecnológico — Profesional</span>
+          <span class="service-accordion-price">Desde L 5,000/mes</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-06" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</p>
+            <p><strong>Costo:</strong> Desde L 5,000/mes</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-07">
+          <span class="service-accordion-name">Auditoría de Sistemas</span>
+          <span class="service-accordion-price">Desde L 6,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-07" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Evaluación de sistemas para identificar riesgos, errores y oportunidades de mejora.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones y organizaciones.</p>
+            <p><strong>Costo:</strong> Desde L 6,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item service-maintenance">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-08">
+          <span class="service-accordion-name">Mantenimiento y Soporte Tecnológico — Continuo</span>
+          <span class="service-accordion-price">Desde L 8,000/mes</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-08" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Mantenimiento, corrección y optimización de sistemas y sitios web.<br><strong>Modalidad:</strong> Mensual</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones, profesionales y negocios con soluciones tecnológicas existentes.</p>
+            <p><strong>Costo:</strong> Desde L 8,000/mes</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-09">
+          <span class="service-accordion-name">Desarrollo de Sistemas de Datos e Información</span>
+          <span class="service-accordion-price">Desde L 9,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-09" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Sistemas para gestionar y procesar información.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones e investigadores.</p>
+            <p><strong>Costo:</strong> Desde L 9,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-10">
+          <span class="service-accordion-name">Desarrollo de Sistemas de Analítica e Inteligencia de Negocios</span>
+          <span class="service-accordion-price">Desde L 12,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-10" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Soluciones para analizar datos y apoyar decisiones.</p>
+            <p><strong>Dirigido a:</strong> Empresas e instituciones.</p>
+            <p><strong>Costo:</strong> Desde L 12,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-11">
+          <span class="service-accordion-name">Desarrollo de Sistemas Web</span>
+          <span class="service-accordion-price">Desde L 15,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-11" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Plataformas web para gestionar procesos e información.</p>
+            <p><strong>Dirigido a:</strong> Empresas, instituciones y emprendimientos.</p>
+            <p><strong>Costo:</strong> Desde L 15,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-12">
+          <span class="service-accordion-name">Desarrollo de Sistemas Integrados y Automatizados</span>
+          <span class="service-accordion-price">Desde L 18,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-12" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Sistemas para integrar y automatizar procesos.</p>
+            <p><strong>Dirigido a:</strong> Empresas e instituciones.</p>
+            <p><strong>Costo:</strong> Desde L 18,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-13">
+          <span class="service-accordion-name">Desarrollo de Sistemas de Escritorio</span>
+          <span class="service-accordion-price">Desde L 20,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-13" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Aplicaciones para gestionar operaciones internas.</p>
+            <p><strong>Dirigido a:</strong> Empresas, oficinas e instituciones.</p>
+            <p><strong>Costo:</strong> Desde L 20,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-14">
+          <span class="service-accordion-name">Desarrollo de Aplicaciones Móviles</span>
+          <span class="service-accordion-price">Desde L 25,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-14" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Aplicaciones para servicios y gestión móvil.</p>
+            <p><strong>Dirigido a:</strong> Empresas, emprendimientos e instituciones.</p>
+            <p><strong>Costo:</strong> Desde L 25,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="service-accordion-item">
+        <button class="service-accordion-trigger" type="button" aria-expanded="false" aria-controls="servicio-detalle-15">
+          <span class="service-accordion-name">Desarrollo de Sistemas Empresariales</span>
+          <span class="service-accordion-price">Desde L 30,000</span>
+          <span class="service-accordion-toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="service-accordion-content" id="servicio-detalle-15" aria-hidden="true">
+          <div class="service-accordion-content-inner">
+            <p><strong>Descripción:</strong> Soluciones para gestionar procesos empresariales.</p>
+            <p><strong>Dirigido a:</strong> Empresas y organizaciones.</p>
+            <p><strong>Costo:</strong> Desde L 30,000</p>
+            <a class="service-request-button" href="#contacto">Solicitar servicio</a>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
 </section>
 
 <section class="services section section-light" id="servicios">
