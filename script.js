@@ -312,3 +312,29 @@ updateActiveLink();
   }));
   document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && panel.classList.contains('is-open')) { closePanel(); launcher.focus(); } });
 })();
+
+
+// Accessibility reader
+(() => {
+  const reader = document.querySelector('[data-a11y-action="reader"]');
+  if (!reader || !('speechSynthesis' in window)) return;
+  let speaking = false;
+  const setReaderState = (active) => { speaking = active; reader.classList.toggle('is-active', active); reader.setAttribute('aria-pressed', String(active)); reader.querySelector('span').textContent = active ? 'Detener lectura' : 'Leer página'; reader.querySelector('i').className = active ? 'bi bi-stop-circle' : 'bi bi-volume-up'; };
+  const stopReading = () => { window.speechSynthesis.cancel(); setReaderState(false); };
+  reader.addEventListener('click', () => {
+    if (speaking) { stopReading(); return; }
+    const main = document.querySelector('main');
+    const text = (main ? main.innerText : document.body.innerText).replace(/\s+/g, ' ').trim();
+    if (!text) return;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = document.documentElement.lang === 'en' ? 'en-US' : 'es-HN';
+    utterance.rate = 0.95;
+    utterance.onend = () => setReaderState(false);
+    utterance.onerror = () => setReaderState(false);
+    setReaderState(true);
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  });
+  document.querySelector('[data-a11y-action="reset"]')?.addEventListener('click', stopReading);
+  window.addEventListener('beforeunload', stopReading);
+})();
