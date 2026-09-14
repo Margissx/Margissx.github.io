@@ -1334,3 +1334,8 @@ body.legal-modal-open { overflow: hidden; }
 .hero::after { border-color: rgba(150, 201, 221, .34); box-shadow: 0 0 0 28px rgba(150, 201, 221, .07), 0 0 0 56px rgba(150, 201, 221, .035); }
 .hero .eyebrow, .hero h1, .hero h1 .highlight, .hero-description, .hero-meta, .hero-meta span, .hero-meta .meta-separator { color: #96C9DD; }
 .hero .status-dot { background: #96C9DD; }
+
+
+/* Header logo image */
+.brand-mark { width: 36px; height: 36px; border: 0; border-radius: 10px; background: transparent; }
+.brand-mark img { display: block; width: 36px; height: 36px; border: 0; object-fit: contain; }
