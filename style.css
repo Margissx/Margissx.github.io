@@ -1454,3 +1454,24 @@ body.legal-modal-open { overflow: hidden; }
 
 /* Plans section light gray background */
 .services { background: #F2F3F4; }
+
+
+/* Refined plans title, themed projects, and solid credential summaries */
+.services .section-heading h2 { color: #A8A8A8; }
+.services .section-heading h2 span { color: #96C9DD; }
+.credentials-accordion-summary, .credentials-accordion-item[open] > .credentials-accordion-summary { background: #ffffff; }
+.carousel-container .project-card { --project-accent: #96C9DD; background: #ffffff; border-top: 3px solid var(--project-accent); }
+.carousel-container .project-card:nth-child(1) { --project-accent: #6FAFC8; }
+.carousel-container .project-card:nth-child(2) { --project-accent: #76BEB8; }
+.carousel-container .project-card:nth-child(3) { --project-accent: #829BBC; }
+.carousel-container .project-card:nth-child(4) { --project-accent: #9A90BE; }
+.carousel-container .project-card:nth-child(5) { --project-accent: #78AA90; }
+.carousel-container .project-card:nth-child(6) { --project-accent: #B99A70; }
+.carousel-container .project-card .project-info h3, .carousel-container .project-card .project-type, .carousel-container .project-card .project-footer a { color: var(--project-accent); }
+.carousel-container .project-card::after { border-color: var(--project-accent); opacity: 1; }
+.carousel-container .project-card:nth-child(1) .project-visual { background: linear-gradient(135deg, #6FAFC8, #96C9DD); }
+.carousel-container .project-card:nth-child(2) .project-visual { background: linear-gradient(135deg, #76BEB8, #96C9DD); }
+.carousel-container .project-card:nth-child(3) .project-visual { background: linear-gradient(135deg, #829BBC, #96C9DD); }
+.carousel-container .project-card:nth-child(4) .project-visual { background: linear-gradient(135deg, #9A90BE, #96C9DD); }
+.carousel-container .project-card:nth-child(5) .project-visual { background: linear-gradient(135deg, #78AA90, #96C9DD); }
+.carousel-container .project-card:nth-child(6) .project-visual { background: linear-gradient(135deg, #B99A70, #96C9DD); }
