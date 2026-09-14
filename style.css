@@ -1567,3 +1567,11 @@ body { top: 0 !important; }
 .contact-captcha-wrap .g-recaptcha { min-height: 78px; }
 .contact-captcha-status { min-height: 13px; color: #A8A8A8; font-size: 9px; line-height: 1.4; }
 @media (max-width: 420px) { .contact-captcha-wrap { transform-origin: left top; transform: scale(.88); width: 285px; margin-bottom: -8px; } }
+
+
+/* Inline contact form inside the Inicio section */
+.inline-contact-form { margin-top: 24px; padding: 18px; border: 1px solid rgba(150, 201, 221, .5); border-radius: 16px; background: rgba(242, 243, 244, .55); box-shadow: 0 12px 28px rgba(168, 168, 168, .1); scroll-margin-top: 26px; }
+.inline-contact-form[hidden] { display: none; }
+.inline-contact-form.is-visible { animation: contact-form-reveal .24s ease both; }
+@keyframes contact-form-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 680px) { .inline-contact-form { margin-top: 18px; padding: 13px; } }

@@ -148,32 +148,54 @@ updateActiveLink();
 })();
 
 
-// Footer legal links and contact form open an internal document window
+// Footer legal links open an internal document window
 (() => {
   const toggles = document.querySelectorAll('.footer-legal-toggle');
-  const contactTriggers = document.querySelectorAll('.contact-form-trigger');
-  const contactTemplate = document.querySelector('#contact-form-template');
   const modal = document.querySelector('#legal-modal');
   const modalTitle = document.querySelector('#legal-modal-title');
   const modalContent = document.querySelector('#legal-modal-content');
-  if ((!toggles.length && !contactTriggers.length) || !modal || !modalTitle || !modalContent) return;
+  if (!toggles.length || !modal || !modalTitle || !modalContent) return;
   let lastTrigger = null;
-  let contactCaptchaLoad = null;
-  let contactWidgetId = null;
 
   const closeModal = () => {
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('legal-modal-open');
     modalContent.innerHTML = '';
-    contactWidgetId = null;
-    contactTriggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'));
     if (lastTrigger) lastTrigger.focus();
   };
 
-  const loadContactCaptcha = () => {
+  toggles.forEach((toggle) => toggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    const source = document.getElementById(toggle.getAttribute('aria-controls'));
+    const sourceContent = source?.querySelector('.privacy-policy-content');
+    if (!sourceContent) return;
+    lastTrigger = toggle;
+    modalTitle.textContent = toggle.textContent.trim();
+    modalContent.innerHTML = sourceContent.innerHTML;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('legal-modal-open');
+    modal.querySelector('.legal-modal-close').focus();
+  }));
+
+  modal.querySelectorAll('[data-legal-close="true"]').forEach((element) => element.addEventListener('click', closeModal));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+  });
+})();
+
+// Hero contact button reveals the form inside the Inicio section
+(() => {
+  const trigger = document.querySelector('.contact-form-trigger');
+  const panel = document.querySelector('#contact-form');
+  const template = document.querySelector('#contact-form-template');
+  if (!trigger || !panel || !template) return;
+  let captchaLoad = null;
+  let captchaWidgetId = null;
+
+  const loadCaptcha = () => {
     if (window.grecaptcha) return new Promise((resolve) => window.grecaptcha.ready(resolve));
-    if (contactCaptchaLoad) return contactCaptchaLoad;
-    contactCaptchaLoad = new Promise((resolve, reject) => {
+    if (captchaLoad) return captchaLoad;
+    captchaLoad = new Promise((resolve, reject) => {
       const existing = document.querySelector('script[data-contact-recaptcha]');
       if (existing) {
         existing.addEventListener('load', () => window.grecaptcha.ready(resolve), { once: true });
@@ -189,63 +211,49 @@ updateActiveLink();
       script.addEventListener('error', reject, { once: true });
       document.head.appendChild(script);
     });
-    return contactCaptchaLoad;
+    return captchaLoad;
   };
 
-  const setupContactForm = async () => {
-    const form = modalContent.querySelector('.contact-modal-form');
-    const captcha = modalContent.querySelector('.g-recaptcha');
-    const status = modalContent.querySelector('.contact-captcha-status');
-    if (!form || !captcha) return;
+  const setupCaptcha = async () => {
+    const form = panel.querySelector('.contact-modal-form');
+    const captcha = panel.querySelector('.g-recaptcha');
+    const status = panel.querySelector('.contact-captcha-status');
+    if (!form || !captcha || panel.dataset.captchaMounted === 'true') return;
     let captchaReady = false;
     form.addEventListener('submit', (event) => {
-      const response = captchaReady && contactWidgetId !== null ? window.grecaptcha.getResponse(contactWidgetId) : '';
+      const response = captchaReady && captchaWidgetId !== null ? window.grecaptcha.getResponse(captchaWidgetId) : '';
       if (!response) {
         event.preventDefault();
         if (status) status.textContent = 'Completa la verificación reCAPTCHA antes de enviar el mensaje.';
       }
     });
     try {
-      await loadContactCaptcha();
+      await loadCaptcha();
       if (!captcha.isConnected) return;
-      contactWidgetId = window.grecaptcha.render(captcha, {
+      captchaWidgetId = window.grecaptcha.render(captcha, {
         sitekey: captcha.dataset.sitekey,
         callback: () => { if (status) status.textContent = ''; },
         'expired-callback': () => { if (status) status.textContent = 'La verificación expiró. Complétala nuevamente.'; },
         'error-callback': () => { if (status) status.textContent = 'No fue posible cargar reCAPTCHA. Intenta nuevamente.'; }
       });
       captchaReady = true;
+      panel.dataset.captchaMounted = 'true';
     } catch (error) {
       if (status) status.textContent = 'No fue posible cargar reCAPTCHA. Revisa tu conexión e intenta nuevamente.';
     }
   };
 
-  const openModal = (trigger, title, sourceContent, isContact = false) => {
-    lastTrigger = trigger;
-    modalTitle.textContent = title;
-    modalContent.innerHTML = sourceContent;
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('legal-modal-open');
+  trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (panel.hidden) {
+      panel.innerHTML = template.innerHTML;
+      panel.hidden = false;
+      panel.setAttribute('aria-hidden', 'false');
+    }
     trigger.setAttribute('aria-expanded', 'true');
-    modal.querySelector('.legal-modal-close').focus();
-    if (isContact) setupContactForm();
-  };
-
-  toggles.forEach((toggle) => toggle.addEventListener('click', (event) => {
-    event.preventDefault();
-    const source = document.getElementById(toggle.getAttribute('aria-controls'));
-    const sourceContent = source?.querySelector('.privacy-policy-content');
-    if (sourceContent) openModal(toggle, toggle.textContent.trim(), sourceContent.innerHTML);
-  }));
-
-  contactTriggers.forEach((trigger) => trigger.addEventListener('click', (event) => {
-    event.preventDefault();
-    if (contactTemplate) openModal(trigger, 'Contáctame', contactTemplate.innerHTML, true);
-  }));
-
-  modal.querySelectorAll('[data-legal-close="true"]').forEach((element) => element.addEventListener('click', closeModal));
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+    panel.classList.add('is-visible');
+    setupCaptcha();
+    panel.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
   });
 })();
 
