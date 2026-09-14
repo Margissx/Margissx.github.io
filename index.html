@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=71">
+  <link rel="stylesheet" href="style.css?v=72">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     window.addEventListener("pageshow", () => {
@@ -1225,18 +1225,14 @@
       <p>© <span id="current-year">2026</span> Mary Gissel Alvarado Raudales. Diseñado con intención.</p>
     </div>
     <div class="footer-links">
-      <a href="#politica-privacidad">Política de Privacidad</a>
-      <a href="#terminos-condiciones">Términos y Condiciones <span class="privacy-policy-toggle" aria-hidden="true">+</span></a>
+      <a class="footer-legal-toggle" href="#politica-privacidad" aria-controls="politica-privacidad" aria-expanded="false">Política de Privacidad</a>
+      <a class="footer-legal-toggle" href="#terminos-condiciones" aria-controls="terminos-condiciones" aria-expanded="false">Términos y Condiciones <span class="privacy-policy-toggle" aria-hidden="true">+</span></a>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
   </div>
   <div class="container footer-legal">
-        <details class="privacy-policy legal-disclosure" id="politica-privacidad">
-                <summary>
-                  <span class="privacy-policy-summary-copy"><span class="privacy-policy-summary-title">Política de Privacidad</span></span>
-                  <span class="privacy-policy-toggle" aria-hidden="true">+</span>
-                </summary>
-                <div class="privacy-policy-content">
+        <div class="privacy-policy legal-disclosure footer-legal-panel" id="politica-privacidad" aria-hidden="true">
+        <div class="privacy-policy-content">
                   <p>Este portafolio es un sitio informativo profesional de Mary Gissel Alvarado Raudales. Su finalidad es presentar experiencia, proyectos, servicios y medios de contacto.</p>
                   <p>La información publicada —nombre profesional, perfil, proyectos, textos, imágenes, enlaces y redes sociales— se comparte públicamente con fines profesionales. Su uso debe respetar la autoría, la imagen y la privacidad de la titular.</p>
                   <h4>Contacto y servicios externos</h4>
@@ -1246,14 +1242,10 @@
                   <h4>Actualizaciones</h4>
                   <p>Esta política puede actualizarse cuando cambie el contenido del portafolio o sus medios de contacto. Última actualización: septiembre de 2026.</p>
                 </div>
-              </details>
+      </div>
         
-        <details class="privacy-policy legal-disclosure" id="terminos-condiciones">
-                <summary>
-                  <span class="privacy-policy-summary-copy"><span class="privacy-policy-summary-title">Términos y Condiciones</span></span>
-                  <span class="privacy-policy-toggle" aria-hidden="true">+</span>
-                </summary>
-                <div class="privacy-policy-content">
+        <div class="privacy-policy legal-disclosure footer-legal-panel" id="terminos-condiciones" aria-hidden="true">
+        <div class="privacy-policy-content">
                   <p>El acceso y uso de este portafolio implica la aceptación de los presentes Términos y Condiciones. Si no estás de acuerdo con ellos, te pedimos no utilizar ni reproducir el contenido del sitio.</p>
                   <h4>Finalidad del sitio</h4>
                   <p>Este portafolio tiene carácter informativo y profesional. Presenta la experiencia, los proyectos, los servicios y los medios de contacto de Mary Gissel Alvarado Raudales. La información publicada no constituye por sí misma una oferta contractual.</p>
@@ -1266,7 +1258,7 @@
                   <h4>Actualizaciones</h4>
                   <p>Estos términos pueden modificarse cuando cambien el contenido, los servicios o la forma de contacto del portafolio. Última actualización: septiembre de 2026.</p>
                 </div>
-              </details>
+      </div>
   </div>
 </footer>
 

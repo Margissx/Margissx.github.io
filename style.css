@@ -1270,3 +1270,23 @@ h1 { color: #A8A8A8; }
   .footer-links { justify-content: flex-start; }
   .footer-legal { grid-template-columns: 1fr; margin-top: 18px; }
 }
+
+
+/* Footer legal links control their content */
+.site-footer { background: #ffffff; color: #4B4B4B; border-top-color: rgba(168, 168, 168, .28); }
+.footer-logo { color: #4B4B4B; }
+.footer-logo img { border: 0; border-radius: 0; box-shadow: none; }
+.footer-logo:hover { color: var(--mint); }
+.footer-links a.footer-legal-toggle { color: #4B4B4B; cursor: pointer; }
+.footer-links a.footer-legal-toggle:hover { color: var(--mint); }
+.footer-legal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 22px; }
+.footer-legal-panel { display: block; margin: 0; padding: 0; border: 1px solid rgba(168, 168, 168, .28); border-radius: 12px; background: rgba(242, 243, 244, .42); }
+.footer-legal-panel[aria-hidden="true"] { display: none; }
+.footer-legal-panel[aria-hidden="false"] { display: block; }
+.footer-legal-panel .privacy-policy-content { padding: 13px; color: #4B4B4B; font-size: 10px; line-height: 1.55; }
+.footer-legal-panel .privacy-policy-content p { margin: 0 0 9px; }
+.footer-legal-panel .privacy-policy-content h4 { margin: 13px 0 5px; color: #4B4B4B; font-size: 10px; }
+.footer-legal-toggle[aria-expanded="true"] .privacy-policy-toggle { display: inline-block; transform: rotate(45deg); }
+@media (max-width: 680px) {
+  .footer-legal { grid-template-columns: 1fr; margin-top: 18px; }
+}

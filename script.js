@@ -146,3 +146,30 @@ updateActiveLink();
   window.addEventListener('resize', updateControls);
   updateControls();
 })();
+
+
+// Footer legal links reveal their corresponding content
+(() => {
+  const toggles = document.querySelectorAll('.footer-legal-toggle');
+  if (!toggles.length) return;
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener('click', (event) => {
+      event.preventDefault();
+      const targetId = toggle.getAttribute('aria-controls');
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
+      const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
+
+      toggles.forEach((otherToggle) => {
+        const otherPanel = document.getElementById(otherToggle.getAttribute('aria-controls'));
+        otherToggle.setAttribute('aria-expanded', 'false');
+        if (otherPanel) otherPanel.setAttribute('aria-hidden', 'true');
+      });
+
+      toggle.setAttribute('aria-expanded', String(willOpen));
+      panel.setAttribute('aria-hidden', String(!willOpen));
+      if (willOpen) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  });
+})();
