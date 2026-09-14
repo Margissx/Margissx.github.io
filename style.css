@@ -1426,3 +1426,8 @@ body.legal-modal-open { overflow: hidden; }
 .credentials-panel .cert-facts { grid-template-columns: 1fr; width: 100%; }
 .credentials-panel .cert-facts div { display: grid; grid-template-columns: 1fr; justify-items: start; gap: 1px; width: 100%; }
 .credentials-panel .cert-facts dt, .credentials-panel .cert-facts dd { width: 100%; text-align: left; }
+
+
+/* Force every complementary certificate into the same column */
+.credentials-panel .cert-grid { grid-template-columns: minmax(0, 1fr); }
+.credentials-panel .cert-card, .credentials-panel .cert-card:nth-child(4), .credentials-panel .cert-card:nth-child(5) { grid-column: 1 / -1; }
