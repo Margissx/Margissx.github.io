@@ -1450,3 +1450,7 @@ body.legal-modal-open { overflow: hidden; }
 .credentials-panel .badge-facts div { display: grid; grid-template-columns: 1fr; justify-items: start; gap: 1px; width: 100%; }
 .credentials-panel .badge-facts dt, .credentials-panel .badge-facts dd { width: 100%; text-align: left; }
 .credentials-panel .badge-facts, .credentials-panel .badge-link { margin-top: 0; margin-bottom: 0; }
+
+
+/* Plans section light gray background */
+.services { background: #F2F3F4; }
