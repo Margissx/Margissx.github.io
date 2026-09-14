@@ -1386,3 +1386,8 @@ body.legal-modal-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .service-accordion-content, .service-accordion-toggle, .service-request-button { transition: none; }
 }
+
+
+/* Vertical skill clusters on every screen */
+.skills-groups { grid-template-columns: 1fr; }
+.skill-cluster-wide { grid-column: auto; }
