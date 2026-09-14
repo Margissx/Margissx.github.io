@@ -148,39 +148,102 @@ updateActiveLink();
 })();
 
 
-// Footer legal links open an internal document window
+// Footer legal links and contact form open an internal document window
 (() => {
   const toggles = document.querySelectorAll('.footer-legal-toggle');
+  const contactTriggers = document.querySelectorAll('.contact-form-trigger');
+  const contactTemplate = document.querySelector('#contact-form-template');
   const modal = document.querySelector('#legal-modal');
   const modalTitle = document.querySelector('#legal-modal-title');
   const modalContent = document.querySelector('#legal-modal-content');
-  if (!toggles.length || !modal || !modalTitle || !modalContent) return;
+  if ((!toggles.length && !contactTriggers.length) || !modal || !modalTitle || !modalContent) return;
   let lastTrigger = null;
+  let contactCaptchaLoad = null;
+  let contactWidgetId = null;
 
   const closeModal = () => {
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('legal-modal-open');
+    modalContent.innerHTML = '';
+    contactWidgetId = null;
+    contactTriggers.forEach((trigger) => trigger.setAttribute('aria-expanded', 'false'));
     if (lastTrigger) lastTrigger.focus();
   };
 
-  toggles.forEach((toggle) => {
-    toggle.addEventListener('click', (event) => {
-      event.preventDefault();
-      const source = document.getElementById(toggle.getAttribute('aria-controls'));
-      const sourceContent = source?.querySelector('.privacy-policy-content');
-      if (!sourceContent) return;
-      lastTrigger = toggle;
-      modalTitle.textContent = toggle.textContent.trim();
-      modalContent.innerHTML = sourceContent.innerHTML;
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('legal-modal-open');
-      modal.querySelector('.legal-modal-close').focus();
+  const loadContactCaptcha = () => {
+    if (window.grecaptcha) return new Promise((resolve) => window.grecaptcha.ready(resolve));
+    if (contactCaptchaLoad) return contactCaptchaLoad;
+    contactCaptchaLoad = new Promise((resolve, reject) => {
+      const existing = document.querySelector('script[data-contact-recaptcha]');
+      if (existing) {
+        existing.addEventListener('load', () => window.grecaptcha.ready(resolve), { once: true });
+        existing.addEventListener('error', reject, { once: true });
+        return;
+      }
+      const script = document.createElement('script');
+      script.src = 'https://www.google.com/recaptcha/api.js?render=explicit';
+      script.async = true;
+      script.defer = true;
+      script.dataset.contactRecaptcha = 'true';
+      script.addEventListener('load', () => window.grecaptcha.ready(resolve), { once: true });
+      script.addEventListener('error', reject, { once: true });
+      document.head.appendChild(script);
     });
-  });
+    return contactCaptchaLoad;
+  };
 
-  modal.querySelectorAll('[data-legal-close="true"]').forEach((element) => {
-    element.addEventListener('click', closeModal);
-  });
+  const setupContactForm = async () => {
+    const form = modalContent.querySelector('.contact-modal-form');
+    const captcha = modalContent.querySelector('.g-recaptcha');
+    const status = modalContent.querySelector('.contact-captcha-status');
+    if (!form || !captcha) return;
+    let captchaReady = false;
+    form.addEventListener('submit', (event) => {
+      const response = captchaReady && contactWidgetId !== null ? window.grecaptcha.getResponse(contactWidgetId) : '';
+      if (!response) {
+        event.preventDefault();
+        if (status) status.textContent = 'Completa la verificación reCAPTCHA antes de enviar el mensaje.';
+      }
+    });
+    try {
+      await loadContactCaptcha();
+      if (!captcha.isConnected) return;
+      contactWidgetId = window.grecaptcha.render(captcha, {
+        sitekey: captcha.dataset.sitekey,
+        callback: () => { if (status) status.textContent = ''; },
+        'expired-callback': () => { if (status) status.textContent = 'La verificación expiró. Complétala nuevamente.'; },
+        'error-callback': () => { if (status) status.textContent = 'No fue posible cargar reCAPTCHA. Intenta nuevamente.'; }
+      });
+      captchaReady = true;
+    } catch (error) {
+      if (status) status.textContent = 'No fue posible cargar reCAPTCHA. Revisa tu conexión e intenta nuevamente.';
+    }
+  };
+
+  const openModal = (trigger, title, sourceContent, isContact = false) => {
+    lastTrigger = trigger;
+    modalTitle.textContent = title;
+    modalContent.innerHTML = sourceContent;
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('legal-modal-open');
+    trigger.setAttribute('aria-expanded', 'true');
+    modal.querySelector('.legal-modal-close').focus();
+    if (isContact) setupContactForm();
+  };
+
+  toggles.forEach((toggle) => toggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    const source = document.getElementById(toggle.getAttribute('aria-controls'));
+    const sourceContent = source?.querySelector('.privacy-policy-content');
+    if (sourceContent) openModal(toggle, toggle.textContent.trim(), sourceContent.innerHTML);
+  }));
+
+  contactTriggers.forEach((trigger) => trigger.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (contactTemplate) openModal(trigger, 'Contáctame', contactTemplate.innerHTML, true);
+  }));
+
+  modal.querySelectorAll('[data-legal-close="true"]').forEach((element) => element.addEventListener('click', closeModal));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
   });
