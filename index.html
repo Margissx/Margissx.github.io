@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=97">
+  <link rel="stylesheet" href="style.css?v=98">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
     window.addEventListener("pageshow", () => {
@@ -26,7 +26,7 @@
     });
   </script>
 </head>
-<body onload="const portfolioScript = document.createElement('script'); portfolioScript.setAttribute('src', 'script.js?v=87'); document.body.appendChild(portfolioScript);">
+<body>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
@@ -1512,5 +1512,31 @@
 </footer>
 
   <script src="script.js?v=83"></script>
+
+  <div class="a11y-widget" aria-label="Herramientas de accesibilidad">
+    <button class="a11y-launcher" id="a11y-launcher" type="button" aria-label="Abrir herramientas de accesibilidad" aria-expanded="false" aria-controls="a11y-panel">
+      <i class="bi bi-universal-access" aria-hidden="true"></i>
+    </button>
+    <section class="a11y-panel" id="a11y-panel" aria-hidden="true" aria-labelledby="a11y-title">
+      <div class="a11y-panel-header">
+        <h2 id="a11y-title">Accesibilidad</h2>
+        <button class="a11y-close" type="button" data-a11y-close aria-label="Cerrar herramientas de accesibilidad"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+      </div>
+      <div class="a11y-options" role="group" aria-label="Opciones de accesibilidad">
+        <button type="button" data-a11y-action="translate"><i class="bi bi-translate" aria-hidden="true"></i><span>Traducir a Inglés</span></button>
+        <button type="button" data-a11y-action="increase"><i class="bi bi-zoom-in" aria-hidden="true"></i><span>Aumentar texto</span></button>
+        <button type="button" data-a11y-action="decrease"><i class="bi bi-zoom-out" aria-hidden="true"></i><span>Disminuir texto</span></button>
+        <button type="button" data-a11y-action="grayscale"><i class="bi bi-circle-half" aria-hidden="true"></i><span>Escala de grises</span></button>
+        <button type="button" data-a11y-action="contrast"><i class="bi bi-brightness-high" aria-hidden="true"></i><span>Alto contraste</span></button>
+        <button type="button" data-a11y-action="negative"><i class="bi bi-circle" aria-hidden="true"></i><span>Contraste negativo</span></button>
+        <button type="button" data-a11y-action="light"><i class="bi bi-sun" aria-hidden="true"></i><span>Fondo claro</span></button>
+        <button type="button" data-a11y-action="underline"><i class="bi bi-link-45deg" aria-hidden="true"></i><span>Subrayar enlaces</span></button>
+        <button type="button" data-a11y-action="font"><i class="bi bi-type" aria-hidden="true"></i><span>Fuente legible</span></button>
+      </div>
+      <button class="a11y-reset" type="button" data-a11y-action="reset"><i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i><span>Restablecer</span></button>
+      <div id="google_translate_element" aria-hidden="true"></div>
+    </section>
+  </div>
+  <script src="script.js?v=98"></script>
 </body>
 </html>

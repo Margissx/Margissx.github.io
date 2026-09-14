@@ -245,3 +245,70 @@ updateActiveLink();
 
 // Credentials categories: keep only one panel open
 (()=>{const panels=[...document.querySelectorAll('.credentials-accordion-item')];panels.forEach(panel=>panel.addEventListener('toggle',()=>{const symbol=panel.querySelector('.credentials-toggle');if(symbol)symbol.textContent=panel.open?'−':'+';if(panel.open)panels.forEach(other=>{if(other!==panel)other.open=false})}))})();
+
+
+// Accessibility tools
+(() => {
+  const launcher = document.querySelector('#a11y-launcher');
+  const panel = document.querySelector('#a11y-panel');
+  if (!launcher || !panel) return;
+  const body = document.body;
+  const buttons = Array.from(panel.querySelectorAll('[data-a11y-action]'));
+  let textLevel = 0;
+  let translationReady = false;
+  const scaleValues = [1, 1.1, 1.2, 1.3];
+  const skip = new Set(['SCRIPT', 'STYLE', 'SVG', 'PATH']);
+  const updateButtonState = (action, active) => {
+    const button = panel.querySelector('[data-a11y-action="' + action + '"]');
+    if (button) { button.classList.toggle('is-active', active); button.setAttribute('aria-pressed', String(active)); }
+  };
+  const resizeText = () => {
+    const factor = scaleValues[textLevel];
+    document.querySelectorAll('body *').forEach((element) => {
+      if (skip.has(element.tagName) || element.closest('.a11y-widget')) return;
+      if (!element.textContent.trim()) return;
+      if (!element.dataset.a11yBaseSize) element.dataset.a11yBaseSize = getComputedStyle(element).fontSize;
+      const base = parseFloat(element.dataset.a11yBaseSize);
+      if (Number.isFinite(base)) element.style.fontSize = (base * factor) + 'px';
+    });
+    updateButtonState('increase', textLevel > 0);
+    updateButtonState('decrease', textLevel < 0);
+  };
+  const resizeDown = () => {
+    const factor = [1, .92, .84, .76][Math.abs(textLevel)];
+    document.querySelectorAll('body *').forEach((element) => {
+      if (skip.has(element.tagName) || element.closest('.a11y-widget')) return;
+      if (!element.textContent.trim()) return;
+      if (!element.dataset.a11yBaseSize) element.dataset.a11yBaseSize = getComputedStyle(element).fontSize;
+      const base = parseFloat(element.dataset.a11yBaseSize);
+      if (Number.isFinite(base)) element.style.fontSize = (base * factor) + 'px';
+    });
+    updateButtonState('increase', textLevel > 0); updateButtonState('decrease', textLevel < 0);
+  };
+  const setTextLevel = (next) => { textLevel = Math.max(-3, Math.min(3, next)); textLevel >= 0 ? resizeText() : resizeDown(); };
+  const clearTextSize = () => document.querySelectorAll('[data-a11y-base-size]').forEach((element) => { element.style.removeProperty('font-size'); delete element.dataset.a11yBaseSize; });
+  const openPanel = () => { panel.classList.add('is-open'); panel.setAttribute('aria-hidden', 'false'); launcher.setAttribute('aria-expanded', 'true'); };
+  const closePanel = () => { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true'); launcher.setAttribute('aria-expanded', 'false'); };
+  const chooseEnglish = () => { const combo = document.querySelector('.goog-te-combo'); if (combo) { combo.value = 'en'; combo.dispatchEvent(new Event('change')); translationReady = true; } };
+  const loadTranslation = () => {
+    if (window.google?.translate?.TranslateElement) { chooseEnglish(); return; }
+    window.googleTranslateElementInit = () => { new google.translate.TranslateElement({ pageLanguage: 'es', includedLanguages: 'es,en', autoDisplay: false }, 'google_translate_element'); setTimeout(chooseEnglish, 700); };
+    if (!document.querySelector('script[data-a11y-translate]')) { const script = document.createElement('script'); script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; script.async = true; script.dataset.a11yTranslate = 'true'; document.head.appendChild(script); }
+  };
+  launcher.addEventListener('click', () => panel.classList.contains('is-open') ? closePanel() : openPanel());
+  panel.querySelector('[data-a11y-close]').addEventListener('click', closePanel);
+  buttons.forEach((button) => button.addEventListener('click', () => {
+    const action = button.dataset.a11yAction;
+    if (action === 'increase') setTextLevel(Math.min(3, Math.max(0, textLevel) + 1));
+    if (action === 'decrease') setTextLevel(Math.max(-3, Math.min(0, textLevel) - 1));
+    if (action === 'translate') loadTranslation();
+    if (action === 'grayscale') { body.classList.toggle('a11y-grayscale'); updateButtonState(action, body.classList.contains('a11y-grayscale')); }
+    if (action === 'contrast') { body.classList.toggle('a11y-high-contrast'); updateButtonState(action, body.classList.contains('a11y-high-contrast')); }
+    if (action === 'negative') { body.classList.toggle('a11y-negative'); updateButtonState(action, body.classList.contains('a11y-negative')); }
+    if (action === 'light') { body.classList.toggle('a11y-light-background'); updateButtonState(action, body.classList.contains('a11y-light-background')); }
+    if (action === 'underline') { body.classList.toggle('a11y-underline-links'); updateButtonState(action, body.classList.contains('a11y-underline-links')); }
+    if (action === 'font') { body.classList.toggle('a11y-readable-font'); updateButtonState(action, body.classList.contains('a11y-readable-font')); }
+    if (action === 'reset') { body.classList.remove('a11y-grayscale','a11y-high-contrast','a11y-negative','a11y-light-background','a11y-underline-links','a11y-readable-font'); textLevel = 0; clearTextSize(); buttons.forEach((item) => { item.classList.remove('is-active'); item.setAttribute('aria-pressed', 'false'); }); const combo = document.querySelector('.goog-te-combo'); if (combo) { combo.value = 'es'; combo.dispatchEvent(new Event('change')); } }
+  }));
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && panel.classList.contains('is-open')) { closePanel(); launcher.focus(); } });
+})();
