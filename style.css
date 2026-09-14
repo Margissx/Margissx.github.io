@@ -1137,3 +1137,17 @@ h1 { color: #A8A8A8; }
 .welcome-code-string { color: var(--mint); }
 .welcome-code-punctuation { color: var(--ink); }
 .welcome-code-mark { color: var(--mint); }
+
+
+/* Privacy policy inside Contact */
+.privacy-policy-link { margin-top: 28px; }
+.privacy-policy-link a { display: inline-flex; align-items: center; gap: 8px; color: var(--mint); font-size: 13px; font-weight: 700; text-decoration: underline; text-decoration-color: rgba(27, 209, 232, .45); text-underline-offset: 4px; transition: color .2s ease, text-decoration-color .2s ease; }
+.privacy-policy-link a::after { content: "↓"; font-size: 14px; text-decoration: none; }
+.privacy-policy-link a:hover { color: var(--mint-bright); text-decoration-color: var(--mint-bright); }
+.privacy-policy { scroll-margin-top: 110px; margin-top: 20px; padding: 24px; border: 1px solid rgba(168, 168, 168, .22); border-left: 3px solid var(--mint); background: rgba(27, 209, 232, .055); }
+.privacy-policy-label { margin: 0 0 8px; color: var(--mint); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.privacy-policy h3 { margin: 0 0 16px; color: var(--muted); font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); }
+.privacy-policy h4 { margin: 20px 0 6px; color: var(--muted); font-size: 13px; }
+.privacy-policy p { max-width: 760px; margin: 0 0 12px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.privacy-policy p:last-child { margin-bottom: 0; }
+@media (max-width: 600px) { .privacy-policy { padding: 18px; } .privacy-policy p { font-size: 12px; } }
