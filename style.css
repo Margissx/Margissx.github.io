@@ -1575,3 +1575,7 @@ body { top: 0 !important; }
 .inline-contact-form.is-visible { animation: contact-form-reveal .24s ease both; }
 @keyframes contact-form-reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 680px) { .inline-contact-form { margin-top: 18px; padding: 13px; } }
+
+
+/* Contact trigger button */
+button.contact-form-trigger { font: inherit; cursor: pointer; }
