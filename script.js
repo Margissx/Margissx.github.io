@@ -242,3 +242,6 @@ updateActiveLink();
     if (openItemElement) openItem(openItemElement);
   });
 })();
+
+// Credentials categories: keep only one panel open
+(()=>{const panels=[...document.querySelectorAll('.credentials-accordion-item')];panels.forEach(panel=>panel.addEventListener('toggle',()=>{const symbol=panel.querySelector('.credentials-toggle');if(symbol)symbol.textContent=panel.open?'−':'+';if(panel.open)panels.forEach(other=>{if(other!==panel)other.open=false})}))})();
