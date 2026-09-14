@@ -1409,7 +1409,7 @@ body.legal-modal-open { overflow: hidden; }
 .services .service-card, .services .plan-card, .services .plan-card-featured, .services .plan-card-custom { background: #ffffff; }
 .services .section-heading h2 { color: #ffffff; }
 .services .section-heading h2 span { color: #96C9DD; }
-.services .section-heading .heading-note { color: #ffffff; }
+.services .section-heading .heading-note { color: #96C9DD; }
 
 
 /* Compact response time and modality below contact email */
