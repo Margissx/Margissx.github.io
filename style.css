@@ -1512,7 +1512,8 @@ body.a11y-readable-font, body.a11y-readable-font * { font-family: Arial, Verdana
 body.a11y-grayscale > header, body.a11y-grayscale > main, body.a11y-grayscale > footer { filter: grayscale(1); }
 body.a11y-negative > header, body.a11y-negative > main, body.a11y-negative > footer { filter: invert(1) hue-rotate(180deg); }
 body.a11y-grayscale, body.a11y-negative { filter: none; }
-body.a11y-high-contrast .a11y-widget, body.a11y-high-contrast .a11y-panel, body.a11y-light-background .a11y-widget, body.a11y-light-background .a11y-panel { display: block; visibility: visible; opacity: 1; z-index: 1500; }
+body.a11y-high-contrast .a11y-widget, body.a11y-light-background .a11y-widget { visibility: visible; opacity: 1; z-index: 1500; }
+body.a11y-high-contrast .a11y-panel, body.a11y-light-background .a11y-panel { visibility: visible; opacity: 1; z-index: 1500; }
 body.a11y-high-contrast .a11y-panel { background: #000000 !important; color: #ffffff !important; }
 body.a11y-high-contrast .a11y-options button, body.a11y-high-contrast .a11y-close { background: #000000 !important; color: #ffffff !important; }
 body.a11y-light-background .a11y-panel, body.a11y-light-background .a11y-options button, body.a11y-light-background .a11y-close { background: #ffffff !important; }
