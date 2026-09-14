@@ -115,7 +115,7 @@ h1 .highlight, h2 span { color: var(--mint); }
 
 .skills { background: var(--navy-deep); color: var(--white); }
 .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 55px; }
-.heading-note { max-width: 270px; margin: 0 0 3px; color: rgba(255,255,255,.48); font-size: 13px; line-height: 1.6; }
+.heading-note { max-width: 270px; margin: 0 0 3px; color: rgb(117, 193, 215); font-size: 13px; line-height: 1.6; }
 .skills-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
 .skill-card { position: relative; min-height: 310px; padding: 25px 21px 20px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); transition: transform .25s ease, background .25s ease; }
 .skill-card:hover { transform: translateY(-5px); background: rgba(255,255,255,.07); }
