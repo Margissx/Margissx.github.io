@@ -317,10 +317,14 @@ updateActiveLink();
 // Accessibility reader
 (() => {
   const reader = document.querySelector('[data-a11y-action="reader"]');
-  if (!reader || !('speechSynthesis' in window)) return;
+  if (!reader) return;
+  const speech = window.speechSynthesis;
+  const supported = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
   let speaking = false;
   let selectedTarget = null;
-  const setReaderState = (active) => { speaking = active; reader.classList.toggle('is-active', active); reader.setAttribute('aria-pressed', String(active)); reader.querySelector('span').textContent = active ? 'Detener lectura' : 'Leer página'; reader.querySelector('i').className = active ? 'bi bi-stop-circle' : 'bi bi-volume-up'; };
+  let chunks = [];
+  let chunkIndex = 0;
+  const setReaderState = (active, message) => { speaking = active; reader.classList.toggle('is-active', active); reader.setAttribute('aria-pressed', String(active)); reader.querySelector('span').textContent = message || (active ? 'Detener lectura' : 'Leer página'); reader.querySelector('i').className = active ? 'bi bi-stop-circle' : 'bi bi-volume-up'; };
   const rememberSelection = (event) => {
     const element = event.target instanceof Element ? event.target : event.target.parentElement;
     if (!element || element.closest('.a11y-widget')) return;
@@ -333,24 +337,46 @@ updateActiveLink();
     const section = element.closest('section');
     selectedTarget = controlled || linked || detail || card || section || null;
   };
-  const stopReading = () => { window.speechSynthesis.cancel(); setReaderState(false); };
+  const stopReading = () => { if (speech) speech.cancel(); chunks = []; chunkIndex = 0; setReaderState(false); };
+  const splitText = (text) => {
+    const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+    const result = [];
+    sentences.forEach((sentence) => {
+      let remaining = sentence.trim();
+      while (remaining.length > 220) {
+        let cut = remaining.lastIndexOf(' ', 220);
+        if (cut < 80) cut = 220;
+        result.push(remaining.slice(0, cut).trim());
+        remaining = remaining.slice(cut).trim();
+      }
+      if (remaining) result.push(remaining);
+    });
+    return result;
+  };
+  const speakNext = () => {
+    if (!speaking || chunkIndex >= chunks.length) { setReaderState(false); return; }
+    const utterance = new SpeechSynthesisUtterance(chunks[chunkIndex]);
+    const language = document.documentElement.lang === 'en' ? 'en-US' : 'es-ES';
+    utterance.lang = language;
+    utterance.rate = 0.92;
+    const voice = speech.getVoices().find((item) => item.lang.toLowerCase().startsWith(language.slice(0, 2)));
+    if (voice) utterance.voice = voice;
+    utterance.onend = () => { chunkIndex += 1; speakNext(); };
+    utterance.onerror = () => { setReaderState(false, 'No se pudo reproducir'); chunks = []; chunkIndex = 0; };
+    speech.resume();
+    speech.speak(utterance);
+  };
   const readSelection = () => {
+    if (!supported) { setReaderState(false, 'Voz no disponible'); return; }
     if (speaking) { stopReading(); return; }
-    if (!selectedTarget) {
-      reader.querySelector('span').textContent = 'Selecciona una sección';
-      window.setTimeout(() => { if (!speaking) reader.querySelector('span').textContent = 'Leer página'; }, 1800);
-      return;
-    }
+    if (!selectedTarget) { setReaderState(false, 'Selecciona una sección'); window.setTimeout(() => { if (!speaking) setReaderState(false); }, 1800); return; }
     const text = selectedTarget.innerText.replace(/\s+/g, ' ').trim();
     if (!text) return;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = document.documentElement.lang === 'en' ? 'en-US' : 'es-HN';
-    utterance.rate = 0.95;
-    utterance.onend = () => setReaderState(false);
-    utterance.onerror = () => setReaderState(false);
+    speech.cancel();
+    chunks = splitText(text);
+    chunkIndex = 0;
     setReaderState(true);
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.speak(utterance);
+    speakNext();
   };
   document.addEventListener('click', rememberSelection, true);
   reader.addEventListener('click', readSelection);
