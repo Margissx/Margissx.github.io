@@ -1193,3 +1193,17 @@ h1 { color: #A8A8A8; }
   .nav-links .nav-link:hover .nav-icon,
   .nav-links .nav-link.active .nav-icon { color: var(--mint-bright); transform: translateX(2px); }
 }
+
+
+/* Compact expandable skill groups */
+.cluster-summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; cursor: pointer; list-style: none; }
+.cluster-summary::-webkit-details-marker { display: none; }
+.cluster-summary .cluster-header { grid-column: 1 / -1; }
+.cluster-summary h3 { margin: 0; }
+.cluster-toggle { color: var(--mint); font-size: 18px; transition: transform .25s ease, color .25s ease; }
+.cluster-summary:hover .cluster-toggle { color: var(--blue); }
+.skill-cluster[open] .cluster-toggle { transform: rotate(180deg); }
+.skill-cluster[open] .cluster-summary { margin-bottom: 24px; }
+@media (max-width: 680px) {
+  .skill-cluster[open] .cluster-summary { margin-bottom: 18px; }
+}
