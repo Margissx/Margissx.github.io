@@ -1733,3 +1733,16 @@ body { color: var(--ink); background: #F2F3F4; }
 .legal-modal-content .mission-vision-item h4 { margin: 0 0 9px; color: #1BD1E8; font-size: 12px; font-weight: 700; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
 .legal-modal-content .mission-vision-item p { margin: 0; color: #9C9FA1; font-size: 12px; font-weight: 600; line-height: 1.75; }
 .legal-modal-content > h3 { color: #9C9FA1; font-size: 18px; font-weight: 700; line-height: 1.2; }
+
+
+/* Project icons, themed visual tabs and white code footer */
+.code-window-footer { box-sizing: border-box; background: #FFFFFF; border: 1px solid #96C9DD; border-radius: 0 0 12px 12px; color: #9C9FA1; }
+.code-window-footer strong { color: #1BD1E8; }
+.project-symbol { border: 0; background: rgba(255, 255, 255, .22); color: #FFFFFF; transform: rotate(-6deg); }
+.project-symbol i { display: block; font-size: 32px; line-height: 1; transform: rotate(6deg); }
+.project-visual-dashboard { background: linear-gradient(135deg, #1BD1E8, #96C9DD) !important; }
+.project-visual-automation { background: linear-gradient(135deg, #96C9DD, #E2E2E2) !important; }
+.project-visual-database { background: linear-gradient(135deg, #A8A8A8, #E2E2E2) !important; }
+.project-visual-predictive { background: linear-gradient(135deg, #9C9FA1, #A8A8A8) !important; }
+.project-visual-enterprise { background: linear-gradient(135deg, #E2E2E2, #F2F3F4) !important; }
+.project-visual-hotel { background: linear-gradient(135deg, #96C9DD, #1BD1E8) !important; }
