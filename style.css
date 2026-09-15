@@ -1714,3 +1714,8 @@ body { color: var(--ink); background: #F2F3F4; }
 @media (prefers-reduced-motion: reduce) {
   .profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card, .button { transition: none; }
 }
+
+/* Professional values are now presented from the footer information section */
+.legal-modal-content .professional-values { margin: 0; padding: 0; border: 0; background: transparent; box-shadow: none; }
+.legal-modal-content .professional-values-heading { margin-bottom: 20px; }
+.legal-modal-content .professional-values-grid { margin-top: 0; }
