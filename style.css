@@ -1593,3 +1593,14 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
 /* Responsive footer alignment and circular modal close button */
 .legal-modal-close { width: 34px; min-width: 34px; height: 34px; min-height: 34px; aspect-ratio: 1 / 1; flex: 0 0 34px; box-sizing: border-box; line-height: 1; }
 .footer-copyright { width: 100%; max-width: none; margin-inline: auto; justify-self: stretch; text-align: center; }
+
+/* Center plus signs inside every circular accordion control */
+.credentials-toggle,
+.service-accordion-toggle {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  line-height: 1;
+  text-align: center;
+}
