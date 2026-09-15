@@ -1655,3 +1655,10 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
   .site-footer .footer-links { max-width: 100%; margin-left: 0; }
   .site-footer .footer-accordion-summary { justify-content: flex-end; }
 }
+
+/* Align footer accordion labels and indicators on one visual baseline */
+.site-footer .footer-accordion-summary { align-items: center; line-height: 1; }
+.site-footer .footer-accordion-summary > span:first-child { display: inline-flex; align-items: center; line-height: 1; }
+.site-footer .footer-accordion-toggle { align-self: center; line-height: .8; position: relative; top: -2px; }
+.site-footer .footer-accordion-toggle::before { line-height: .8; transform: translateY(0); }
+.site-footer .footer-accordion[open] .footer-accordion-toggle::before { transform: rotate(180deg); }
