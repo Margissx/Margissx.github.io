@@ -1788,3 +1788,38 @@ main { overflow: hidden; }
   .project-info::before { left: 18px; }
   .project-footer { margin-top: 18px; }
 }
+
+
+/* Lightweight interaction layer: borders, states and restrained motion */
+.nav-link { position: relative; border: 1px solid transparent; border-radius: 999px; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+.nav-link:hover, .nav-link.active { border-color: rgba(150, 201, 221, .38); background: rgba(150, 201, 221, .10); }
+.nav-link:hover { transform: translateY(-1px); }
+.button { border: 1px solid rgba(150, 201, 221, .72); }
+.button:hover { border-color: #1BD1E8; }
+
+.profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card { border: 1px solid rgba(150, 201, 221, .22) !important; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background-color .25s ease; }
+.profile-pillar:hover, .professional-value:hover, .process-step:hover, .project-card:hover, .plan-card:hover, .service-accordion-item:hover, .faq-item:hover, .skill-cluster:hover, .badge-card:hover, .cert-card:hover { border-color: rgba(27, 209, 232, .52) !important; }
+
+.project-card { overflow: hidden; }
+.project-card .project-visual { position: relative; }
+.project-card .project-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, rgba(255, 255, 255, .16), transparent 45%); opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+.project-card:hover .project-visual::after { opacity: 1; }
+.project-symbol { transition: transform .3s cubic-bezier(.22, 1, .36, 1), background-color .3s ease, box-shadow .3s ease; }
+.project-card:hover .project-symbol { transform: rotate(0deg) scale(1.06); background: rgba(255, 255, 255, .30); box-shadow: 0 16px 30px rgba(156, 159, 161, .18); }
+
+.tag-cloud span { border: 1px solid rgba(150, 201, 221, .26); border-radius: 999px; transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+.tag-cloud span:hover { border-color: #96C9DD; background: rgba(150, 201, 221, .14); color: #9C9FA1; transform: translateY(-2px); }
+
+.skill-cluster summary, .credentials-accordion-summary, .service-accordion-summary { border-radius: 14px; transition: color .2s ease, background-color .2s ease, box-shadow .2s ease; }
+.skill-cluster[open] summary, .credentials-accordion-item[open] .credentials-accordion-summary, .service-accordion-item[open] .service-accordion-summary { background: rgba(150, 201, 221, .10); box-shadow: inset 3px 0 0 #1BD1E8; }
+.skill-cluster[open], .credentials-accordion-item[open], .service-accordion-item[open] { border-color: rgba(27, 209, 232, .52) !important; }
+.faq-item[open] { border-color: rgba(27, 209, 232, .52) !important; }
+
+.carousel-control { border: 1px solid rgba(150, 201, 221, .42); transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.carousel-control:hover { border-color: #1BD1E8; background: #FFFFFF; }
+.project-footer a, .badge-link, .cert-button, .professional-title-link { transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease; }
+.project-footer a:focus-visible, .badge-link:focus-visible, .cert-button:focus-visible, .professional-title-link:focus-visible { outline: 2px solid #1BD1E8; outline-offset: 4px; border-radius: 4px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
