@@ -1746,3 +1746,45 @@ body { color: var(--ink); background: #F2F3F4; }
 .project-visual-predictive { background: linear-gradient(135deg, #9C9FA1, #A8A8A8) !important; }
 .project-visual-enterprise { background: linear-gradient(135deg, #E2E2E2, #F2F3F4) !important; }
 .project-visual-hotel { background: linear-gradient(135deg, #96C9DD, #1BD1E8) !important; }
+
+
+/* White code workspace and refined visual system */
+.programming-animation { border: 0; background: #FFFFFF; color: #9C9FA1; box-shadow: 0 24px 48px rgba(156, 159, 161, .18), 0 0 0 1px rgba(150, 201, 221, .18); }
+.code-window-bar { box-sizing: border-box; min-height: 34px; border: 1px solid #96C9DD; border-radius: 16px 16px 0 0; background: #FFFFFF; color: #9C9FA1; }
+.code-window-title { color: #9C9FA1; }
+.code-window-brackets { color: #1BD1E8; }
+.code-body { box-sizing: border-box; padding: 14px 12px 10px; border: 1px solid #96C9DD; border-top: 0; background: #FFFFFF; color: #9C9FA1; }
+.code-line-number { color: #A8A8A8; }
+.code-keyword, .code-variable, .code-string, .code-function { color: #96C9DD; }
+.code-window-footer { border-radius: 0 0 16px 16px; }
+
+/* More depth and hierarchy without leaving the established palette */
+body { background: linear-gradient(135deg, #F2F3F4 0%, #FFFFFF 48%, #F2F3F4 100%); }
+main { overflow: hidden; }
+.hero { isolation: isolate; background: radial-gradient(circle at 84% 28%, rgba(27, 209, 232, .10), transparent 28%), linear-gradient(135deg, rgba(255, 255, 255, .74), rgba(242, 243, 244, .56)); }
+.hero::before { content: ''; position: absolute; z-index: -1; top: 10%; right: -7%; width: 300px; height: 300px; border-radius: 50%; background: rgba(150, 201, 221, .12); filter: blur(4px); pointer-events: none; }
+.section-light { background: rgba(255, 255, 255, .68); }
+.section-heading, .section-intro { position: relative; }
+.section-heading::after, .section-intro::after { content: ''; display: block; width: 58px; height: 4px; margin-top: 20px; border-radius: 99px; background: linear-gradient(90deg, #1BD1E8, #96C9DD); }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px; border-radius: 999px; background: rgba(150, 201, 221, .16); color: #9C9FA1; }
+.profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card { background: rgba(255, 255, 255, .86); box-shadow: 0 18px 42px rgba(156, 159, 161, .09); }
+.project-card { transition: transform .25s ease, box-shadow .25s ease; }
+.project-card:hover { box-shadow: 0 22px 48px rgba(156, 159, 161, .17); transform: translateY(-6px); }
+.project-info { position: relative; padding-top: 22px; }
+.project-info::before { content: ''; position: absolute; top: 0; left: 22px; width: 42px; height: 3px; border-radius: 99px; background: #96C9DD; }
+.project-type { color: #96C9DD; letter-spacing: .11em; }
+.project-footer { margin-top: 22px; padding-top: 14px; border-top: 1px solid rgba(150, 201, 221, .28); }
+.project-footer a { color: #9C9FA1; transition: color .2s ease, transform .2s ease; }
+.project-footer a:hover { color: #1BD1E8; transform: translateX(3px); }
+.carousel-control { background: #FFFFFF; color: #9C9FA1; box-shadow: 0 12px 28px rgba(156, 159, 161, .14); transition: color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.carousel-control:hover { color: #1BD1E8; box-shadow: 0 16px 32px rgba(156, 159, 161, .20); transform: translateY(-2px); }
+.skill-cluster summary, .credentials-accordion-summary, .service-accordion-summary { transition: background-color .2s ease, color .2s ease; }
+.skill-cluster summary:hover, .credentials-accordion-summary:hover, .service-accordion-summary:hover { background: rgba(150, 201, 221, .08); }
+.button { box-shadow: 0 10px 24px rgba(156, 159, 161, .12); }
+.button:hover { box-shadow: 0 14px 30px rgba(156, 159, 161, .18); transform: translateY(-2px); }
+@media (max-width: 720px) {
+  .hero::before { width: 220px; height: 220px; right: -22%; }
+  .section-heading::after, .section-intro::after { margin-top: 15px; }
+  .project-info::before { left: 18px; }
+  .project-footer { margin-top: 18px; }
+}
