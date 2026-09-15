@@ -1673,3 +1673,44 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
 @media (max-width: 960px) {
   .site-footer .footer-top-link { align-self: flex-end; margin-left: auto; text-align: right; }
 }
+
+/* Cohesive visual polish: clearer hierarchy, surfaces and responsive rhythm */
+:root {
+  --ink: #26353D;
+  --muted: #657780;
+  --line: #DCE7EA;
+  --mint: #2CB7C7;
+  --mint-bright: #149AAA;
+  --blue: #6D84F7;
+}
+body { color: var(--ink); background: #FBFDFD; }
+.site-header { border-color: rgba(44, 183, 199, .28); box-shadow: 0 14px 34px rgba(38, 53, 61, .10); }
+.nav-link, .nav-link:hover, .nav-link.active, .nav-contact, .nav-links .nav-link, .nav-links .nav-link:hover, .nav-links .nav-link.active { color: var(--ink); }
+.nav-link:hover, .nav-link.active { color: var(--mint-bright); }
+.hero h1, .section-heading h2, .section-intro h2, .profile-content h3, .section-heading h3 { color: var(--ink); letter-spacing: -.025em; }
+.hero-description, .lead, .heading-note, .profile-pillar p, .process-step p, .project-card p, .faq-item p { color: var(--muted); }
+.button { border-radius: 999px; transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, border-color .22s ease; }
+.button:focus-visible, .nav-link:focus-visible, .footer-top-link:focus-visible, .footer-legal-toggle:focus-visible, summary:focus-visible { outline: 3px solid rgba(44, 183, 199, .28); outline-offset: 3px; }
+.profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card { border: 1px solid var(--line); border-radius: 18px; background: rgba(255, 255, 255, .92); box-shadow: 0 10px 26px rgba(38, 53, 61, .06); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.profile-pillar:hover, .professional-value:hover, .process-step:hover, .project-card:hover, .plan-card:hover, .service-accordion-item:hover, .faq-item:hover, .skill-cluster:hover, .badge-card:hover, .cert-card:hover { border-color: rgba(44, 183, 199, .48); box-shadow: 0 16px 34px rgba(38, 53, 61, .10); transform: translateY(-3px); }
+.profile-pillar, .professional-value, .process-step { padding: 20px; }
+.project-card, .plan-card, .badge-card, .cert-card { overflow: hidden; }
+.project-card .project-visual { border-radius: 14px; }
+.service-accordion-item, .faq-item { overflow: hidden; }
+.service-accordion-trigger, .faq-item summary { color: var(--ink); }
+.service-accordion-trigger:hover, .service-accordion-item.is-open .service-accordion-trigger, .faq-item summary:hover { color: var(--mint-bright); }
+.section-heading, .section-intro { margin-bottom: clamp(28px, 4vw, 46px); }
+.section-heading h2, .section-intro h2 { line-height: 1.08; }
+.contact-grid { border-color: var(--line); background: rgba(255, 255, 255, .84); box-shadow: 0 18px 42px rgba(38, 53, 61, .08); }
+.footer-top-link { align-self: flex-end; margin-left: auto; text-align: right; }
+@media (max-width: 960px) {
+  .site-footer .footer-top-link { align-self: flex-end; margin-left: auto; text-align: right; }
+}
+@media (max-width: 720px) {
+  .profile-pillar, .professional-value, .process-step { padding: 16px; }
+  .section-heading, .section-intro { margin-bottom: 28px; }
+  .project-card:hover, .plan-card:hover, .badge-card:hover, .cert-card:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card, .button { transition: none; }
+}
