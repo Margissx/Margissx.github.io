@@ -1604,3 +1604,26 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
   line-height: 1;
   text-align: center;
 }
+
+/* Compact footer accordions */
+.footer-links { display: flex; flex-direction: column; align-items: stretch; width: 100%; gap: 12px; }
+.footer-accordions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: 100%; }
+.footer-accordion { min-width: 0; overflow: hidden; border: 1px solid rgba(168, 168, 168, .28); border-radius: 12px; background: #ffffff; }
+.footer-accordion-summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 45px; padding: 9px 12px; color: #A8A8A8; cursor: pointer; font-size: 10px; font-weight: 700; letter-spacing: .12em; list-style: none; }
+.footer-accordion-summary::-webkit-details-marker { display: none; }
+.footer-accordion-summary:hover { color: var(--mint); }
+.footer-accordion-toggle { display: grid; place-items: center; flex: 0 0 23px; width: 23px; height: 23px; box-sizing: border-box; border: 1px solid rgba(150, 201, 221, .7); border-radius: 50%; color: #96C9DD; font-size: 16px; font-weight: 500; line-height: 1; text-align: center; }
+.footer-accordion[open] .footer-accordion-toggle { background: #96C9DD; color: #ffffff; }
+.footer-accordion-content { display: grid; gap: 5px; max-height: 0; overflow: hidden; padding: 0 12px; opacity: 0; transition: max-height .28s ease, opacity .2s ease, padding .28s ease; }
+.footer-accordion[open] .footer-accordion-content { max-height: 220px; padding: 0 12px 10px; opacity: 1; }
+.footer-accordion-content .footer-legal-toggle { display: block; color: #A8A8A8; font-size: 10px; font-weight: 600; line-height: 1.35; }
+.footer-accordion-content .footer-legal-toggle:hover { color: var(--mint); }
+.footer-top-link { align-self: flex-end; color: #A8A8A8; font-size: 10px; font-weight: 700; }
+.footer-top-link:hover { color: var(--mint); }
+@media (max-width: 820px) { .footer-accordions { grid-template-columns: 1fr; } .footer-accordion-content { max-height: 0; } }
+@media (max-width: 680px) { .footer-top-link { align-self: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .footer-accordion-content { transition: none; } }
+
+.footer-accordion-toggle { font-size: 0; }
+.footer-accordion-toggle::before { content: '+'; font-size: 16px; }
+.footer-accordion[open] .footer-accordion-toggle::before { content: '−'; }
