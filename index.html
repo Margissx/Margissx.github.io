@@ -1546,6 +1546,10 @@
               <label for="feedback-name">Nombre</label><input id="feedback-name" name="Nombre" type="text" placeholder="Tu nombre" autocomplete="name" required>
               <label for="feedback-email">Correo electrónico</label><input id="feedback-email" name="Correo electrónico" type="email" placeholder="tu@correo.com" autocomplete="email" required>
               <label for="feedback-message">Mensaje</label><textarea id="feedback-message" name="Mensaje" rows="5" placeholder="Escribe aquí tu queja o recomendación" required></textarea>
+              <div class="contact-captcha-wrap">
+                <div class="g-recaptcha" data-sitekey="6LfC9LstAAAAABrAsKCZo0gIuxDl_9WQf9bUQUN2"></div>
+                <small class="contact-captcha-status" role="alert" aria-live="polite"></small>
+              </div>
               <button type="submit"><i class="bi bi-send" aria-hidden="true"></i><span>Enviar mensaje</span></button><small>El mensaje será enviado a giss98alvarado@gmail.com.</small>
             </form>
           </div>
@@ -1556,7 +1560,7 @@
             <p>La información proporcionada será tratada con confidencialidad y utilizada únicamente para la atención y seguimiento correspondiente.</p>
             <form class="feedback-form environmental-form" action="https://formsubmit.co/giss98alvarado@gmail.com" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="_subject" value="Nueva queja o incidente ambiental del portafolio">
-              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_next" value="https://margissx.github.io/#quejas-medio-ambientales">
               <label for="environmental-project">Nombre del proyecto o empresa <span aria-hidden="true">*</span></label>
@@ -1569,6 +1573,10 @@
                 <input id="environmental-terms" name="Acepto los términos y condiciones" type="checkbox" value="Acepto" required>
                 <span>Acepto los términos y condiciones y autorizo el uso de la información proporcionada para la atención y seguimiento de este reporte <span aria-hidden="true">*</span></span>
               </label>
+              <div class="contact-captcha-wrap">
+                <div class="g-recaptcha" data-sitekey="6LfC9LstAAAAABrAsKCZo0gIuxDl_9WQf9bUQUN2"></div>
+                <small class="contact-captcha-status" role="alert" aria-live="polite"></small>
+              </div>
               <button type="submit"><i class="bi bi-send" aria-hidden="true"></i><span>Enviar mensaje</span></button>
               <small>Los campos marcados con * son obligatorios. Este formulario utiliza reCAPTCHA para proteger el envío. La información será enviada a giss98alvarado@gmail.com.</small>
             </form>
@@ -1613,6 +1621,10 @@
               <input id="satisfaction-name" name="Nombre" type="text" placeholder="Tu nombre" autocomplete="name">
               <label for="satisfaction-email">Correo electrónico <span>(opcional)</span></label>
               <input id="satisfaction-email" name="Correo electrónico" type="email" placeholder="tu@correo.com" autocomplete="email">
+              <div class="contact-captcha-wrap">
+                <div class="g-recaptcha" data-sitekey="6LfC9LstAAAAABrAsKCZo0gIuxDl_9WQf9bUQUN2"></div>
+                <small class="contact-captcha-status" role="alert" aria-live="polite"></small>
+              </div>
               <button type="submit"><i class="bi bi-send" aria-hidden="true"></i><span>Enviar encuesta</span></button>
               <small>Las respuestas serán enviadas a giss98alvarado@gmail.com.</small>
             </form>
@@ -1685,7 +1697,7 @@
     </form>
   </template>
 <
-  <script src="script.js?v=112"></script>
+  <script src="script.js?v=113"></script>
 
 /body>
 </html>

@@ -193,8 +193,8 @@ updateActiveLink();
     return captchaLoad;
   };
 
-  const setupContactCaptcha = async () => {
-    const form = modalContent.querySelector('.contact-modal-form');
+  const setupFormCaptcha = async () => {
+    const form = modalContent.querySelector('form');
     const captcha = modalContent.querySelector('.g-recaptcha');
     const status = modalContent.querySelector('.contact-captcha-status');
     if (!form || !captcha) return;
@@ -203,7 +203,7 @@ updateActiveLink();
       const response = captchaReady && captchaWidgetId !== null ? window.grecaptcha.getResponse(captchaWidgetId) : '';
       if (!response) {
         event.preventDefault();
-        if (status) status.textContent = 'Completa la verificación reCAPTCHA antes de enviar el mensaje.';
+        if (status) status.textContent = 'Completa la verificación reCAPTCHA antes de enviar el formulario.';
       }
     });
     try {
@@ -230,7 +230,7 @@ updateActiveLink();
     trigger.setAttribute('aria-expanded', 'true');
     if (isContact) modalClose.setAttribute('aria-label', 'Cerrar formulario de contacto');
     modalClose.focus();
-    if (isContact) setupContactCaptcha();
+    if (modalContent.querySelector('.g-recaptcha')) setupFormCaptcha();
   };
 
   toggles.forEach((toggle) => toggle.addEventListener('click', (event) => {
