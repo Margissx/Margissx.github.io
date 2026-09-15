@@ -1823,3 +1823,8 @@ main { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Square treatment for navigation and FAQ surfaces */
+.nav-links, .nav-link, .menu-toggle, .nav-link::after { border-radius: 0; }
+.faq-item, .faq-item summary, .faq-item summary::after { border-radius: 0; }
