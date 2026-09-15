@@ -1627,3 +1627,13 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
 .footer-accordion-toggle { font-size: 0; }
 .footer-accordion-toggle::before { content: '+'; font-size: 16px; }
 .footer-accordion[open] .footer-accordion-toggle::before { content: '−'; }
+
+/* Footer accordion visual refinement */
+.footer-accordion { border: 0; border-radius: 0; background: transparent; box-shadow: none; overflow: visible; }
+.footer-accordion-summary { justify-content: flex-end; gap: 8px; min-height: 30px; padding: 5px 0; border: 0; outline: 0; color: #A8A8A8; font-size: 9px; font-weight: 600; letter-spacing: .14em; line-height: 1.2; text-align: right; }
+.footer-accordion-summary:hover, .footer-accordion-summary:focus, .footer-accordion-summary:focus-visible { border: 0; outline: 0; color: var(--mint); }
+.footer-accordion-toggle, .footer-accordion[open] .footer-accordion-toggle { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; width: auto; height: auto; min-width: 0; border: 0; border-radius: 0; background: transparent; color: currentColor; font-size: 0; line-height: 1; transform: none; }
+.footer-accordion-toggle::before { content: '⌄'; display: block; font-size: 13px; font-weight: 400; line-height: 1; transform: translateY(-1px); }
+.footer-accordion[open] .footer-accordion-toggle::before { content: '⌄'; transform: rotate(180deg) translateY(-1px); }
+.footer-accordion-content .footer-legal-toggle { font-size: 9px; }
+@media (max-width: 820px) { .footer-accordion-summary { min-height: 28px; padding: 4px 0; font-size: 8px; } .footer-accordion-toggle::before { font-size: 12px; } .footer-accordion-content .footer-legal-toggle { font-size: 9px; } }
