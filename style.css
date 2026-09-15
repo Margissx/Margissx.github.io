@@ -1264,7 +1264,7 @@ h1 { color: #A8A8A8; }
 /* Footer identity and legal links */
 .site-footer { padding: 28px 0 24px; }
 .footer-inner { align-items: center; gap: 26px; }
-.footer-brand { display: grid; gap: 10px; }
+.footer-brand { display: grid; gap: 10px; }.footer-name-block { display: grid; gap: 6px; }.footer-tagline { margin: 0 0 0 50px; max-width: 250px; color: #96C9DD; font-size: 10px; line-height: 1.45; }
 .footer-logo { display: inline-flex; align-items: center; gap: 10px; width: fit-content; color: #A8A8A8; font-family: var(--font-display); font-size: 14px; font-weight: 700; }
 .footer-logo:hover { color: var(--mint); }
 .footer-logo img { width: 40px; height: 40px; border-radius: 12px; object-fit: cover; box-shadow: 0 6px 14px rgba(168, 168, 168, .18); }
