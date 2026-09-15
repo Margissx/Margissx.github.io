@@ -1662,3 +1662,9 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
 .site-footer .footer-accordion-toggle { align-self: center; line-height: .8; position: relative; top: -2px; }
 .site-footer .footer-accordion-toggle::before { line-height: .8; transform: translateY(0); }
 .site-footer .footer-accordion[open] .footer-accordion-toggle::before { transform: rotate(180deg); }
+
+/* Footer dropdown icon */
+.site-footer .w-icon-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; align-self: center; flex: 0 0 auto; width: auto; min-width: 0; height: auto; margin: 0; padding: 0; border: 0; border-radius: 0; background: transparent; color: currentColor; font-size: 0; line-height: .8; position: relative; top: -2px; }
+.site-footer .w-icon-dropdown-toggle::before { content: '⌄'; display: block; font-size: 13px; font-weight: 400; line-height: .8; transform: none; }
+.site-footer .footer-accordion[open] .w-icon-dropdown-toggle::before { content: '⌄'; transform: rotate(180deg); }
+@media (max-width: 720px) { .site-footer .w-icon-dropdown-toggle::before { font-size: 12px; } }
