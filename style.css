@@ -1725,3 +1725,11 @@ body { color: var(--ink); background: #F2F3F4; }
 .site-header, .site-footer, .profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card, .contact-grid, .credentials-accordion-item, .footer-accordion { border: 0 !important; }
 .profile-pillar, .professional-value, .process-step, .project-card, .plan-card, .service-accordion-item, .faq-item, .skill-cluster, .badge-card, .cert-card, .contact-grid, .credentials-accordion-item, .footer-accordion { box-shadow: none; }
 .faq-item, .faq-item summary, .faq-item summary::before, .faq-item summary::after { border: 0 !important; }
+
+
+/* Readable mission and vision panel */
+.legal-modal-content .mission-vision-content { display: grid; gap: 14px; margin-top: 14px; }
+.legal-modal-content .mission-vision-item { padding: 18px; border: 0; border-radius: 14px; background: #F2F3F4; }
+.legal-modal-content .mission-vision-item h4 { margin: 0 0 9px; color: #1BD1E8; font-size: 12px; font-weight: 700; letter-spacing: .1em; line-height: 1.3; text-transform: uppercase; }
+.legal-modal-content .mission-vision-item p { margin: 0; color: #9C9FA1; font-size: 12px; font-weight: 600; line-height: 1.75; }
+.legal-modal-content > h3 { color: #9C9FA1; font-size: 18px; font-weight: 700; line-height: 1.2; }
