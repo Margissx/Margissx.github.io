@@ -1828,3 +1828,19 @@ main { overflow: hidden; }
 /* Square treatment for navigation and FAQ surfaces */
 .nav-links, .nav-link, .menu-toggle, .nav-link::after { border-radius: 0; }
 .faq-item, .faq-item summary, .faq-item summary::after { border-radius: 0; }
+
+
+/* Clean FAQ without visible card borders */
+.faq-item, .faq-item[open] { border: 0 !important; box-shadow: none !important; }
+
+/* Give skill numbers and category blocks breathing room inside their summary */
+.cluster-summary { padding-inline: 10px; }
+.cluster-summary .cluster-header { padding-inline: 5px; }
+.cluster-summary h3 { padding-left: 5px; }
+.skill-subgroup { margin-left: 10px; margin-right: 4px; }
+@media (max-width: 720px) {
+  .cluster-summary { padding-inline: 7px; }
+  .cluster-summary .cluster-header { padding-inline: 3px; }
+  .cluster-summary h3 { padding-left: 3px; }
+  .skill-subgroup { margin-left: 6px; margin-right: 2px; }
+}
