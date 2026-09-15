@@ -1668,3 +1668,8 @@ button.contact-form-trigger { font: inherit; cursor: pointer; }
 .site-footer .w-icon-dropdown-toggle::before { content: '⌄'; display: block; font-size: 13px; font-weight: 400; line-height: .8; transform: none; }
 .site-footer .footer-accordion[open] .w-icon-dropdown-toggle::before { content: '⌄'; transform: rotate(180deg); }
 @media (max-width: 720px) { .site-footer .w-icon-dropdown-toggle::before { font-size: 12px; } }
+
+/* Keep the back-to-top link at the right edge on small screens */
+@media (max-width: 960px) {
+  .site-footer .footer-top-link { align-self: flex-end; margin-left: auto; text-align: right; }
+}
