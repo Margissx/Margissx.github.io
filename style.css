@@ -1505,7 +1505,7 @@ body.legal-modal-open { overflow: hidden; }
 .a11y-options button i, .a11y-reset i { width: 18px; color: #96C9DD; font-size: 15px; text-align: center; }
 .a11y-options button:hover, .a11y-options button:focus-visible, .a11y-options button.is-active { border-color: #96C9DD; background: rgb(150, 201, 221,.12); color: #A8A8A8; outline: none; }
 .a11y-end-toggle { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; padding: 9px 10px; border: 1px solid rgb(168, 168, 168,.26); border-radius: 9px; color: #A8A8A8; cursor: pointer; font-size: 10px; line-height: 1.35; }
-.a11y-end-toggle input { flex: 0 0 auto; width: 15px; height: 15px; margin: 0; accent-color: #96C9DD; }
+.a11y-end-toggle input { flex: 0 0 auto; width: 15px; height: 15px; margin: 0; accent-color: #FFFFFF; }
 .a11y-end-toggle:focus-within { border-color: #96C9DD; box-shadow: 0 0 0 3px rgb(150, 201, 221,.16); }
 .a11y-widget.is-hidden-at-end { visibility: hidden; opacity: 0; pointer-events: none; transform: translateY(12px); }
 .a11y-reset { justify-content: center; margin-top: 11px; border-color: #96C9DD; background: #96C9DD; color: #FFFFFF; text-align: center; }
