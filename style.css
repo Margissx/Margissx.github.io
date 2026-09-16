@@ -1844,3 +1844,14 @@ main { overflow: hidden; }
   .cluster-summary h3 { padding-left: 3px; }
   .skill-subgroup { margin-left: 6px; margin-right: 2px; }
 }
+
+
+/* Center every expandable plus/minus control */
+.faq-item summary::after, .credentials-toggle, .service-accordion-toggle, .footer-accordion-toggle { display: inline-flex; align-items: center; justify-content: center; padding: 0; line-height: 1; text-align: center; }
+.faq-item summary::after { top: 17px; }
+.credentials-toggle, .service-accordion-toggle { line-height: 1; }
+.footer-accordion-toggle::before { display: inline-flex; align-items: center; justify-content: center; line-height: 1; transform: none; }
+.footer-accordion[open] .footer-accordion-toggle::before { transform: none; }
+
+/* Softer decorative circle behind the profile capsule heading */
+.profile .section-intro::after { border-color: rgba(150, 201, 221, .09); box-shadow: 0 0 0 22px rgba(150, 201, 221, .018); opacity: .62; filter: blur(.8px); }
