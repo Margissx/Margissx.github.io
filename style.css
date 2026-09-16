@@ -1505,7 +1505,8 @@ body.legal-modal-open { overflow: hidden; }
 .a11y-options button i, .a11y-reset i { width: 18px; color: #96C9DD; font-size: 15px; text-align: center; }
 .a11y-options button:hover, .a11y-options button:focus-visible, .a11y-options button.is-active { border-color: #96C9DD; background: rgb(150, 201, 221,.12); color: #A8A8A8; outline: none; }
 .a11y-end-toggle { display: flex; align-items: flex-start; gap: 8px; margin-top: 12px; padding: 9px 10px; border: 1px solid rgb(168, 168, 168,.26); border-radius: 9px; color: #A8A8A8; cursor: pointer; font-size: 10px; line-height: 1.35; }
-.a11y-end-toggle input { flex: 0 0 auto; width: 15px; height: 15px; margin: 0; accent-color: #FFFFFF; }
+.a11y-end-toggle input { flex: 0 0 auto; width: 15px; height: 15px; margin: 0; appearance: none; -webkit-appearance: none; border: 1px solid #96C9DD; border-radius: 4px; background: #FFFFFF; cursor: pointer; }
+.a11y-end-toggle input:checked { background-color: #FFFFFF; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.2 4.7 9 10 3' fill='none' stroke='%2396C9DD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-position: center; background-repeat: no-repeat; background-size: 11px 11px; }
 .a11y-end-toggle:focus-within { border-color: #96C9DD; box-shadow: 0 0 0 3px rgb(150, 201, 221,.16); }
 .a11y-widget.is-hidden-at-end { visibility: hidden; opacity: 0; pointer-events: none; transform: translateY(12px); }
 .a11y-reset { justify-content: center; margin-top: 11px; border-color: #96C9DD; background: #96C9DD; color: #FFFFFF; text-align: center; }
