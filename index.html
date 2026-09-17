@@ -1858,10 +1858,23 @@
         'plan-consulta-inicial': 'Consulta inicial',
         'plan-diagnostico-tecnico': 'Diagnóstico técnico',
         'plan-implementacion': 'Implementación',
-        'plan-personalizado': 'Personalizado'
+        'plan-personalizado': 'Personalizado',
+        'plan-emprendedor': 'Emprendedor',
+        'plan-profesional': 'Profesional',
+        'plan-empresarial': 'Empresarial'
       };
       var slugByTitle = {};
       Object.keys(titleBySlug).forEach(function (slug) { slugByTitle[titleBySlug[slug].toLowerCase()] = slug; });
+      var titleAliases = {
+        'desarrollo de sistemas de datos e información': 'sistemas-datos-informacion',
+        'desarrollo de sistemas de analítica e inteligencia de negocios': 'sistemas-analitica-inteligencia-negocios',
+        'desarrollo de sistemas web': 'sistemas-web',
+        'desarrollo de sistemas integrados y automatizados': 'sistemas-integrados-automatizados',
+        'desarrollo de sistemas de escritorio': 'sistemas-escritorio',
+        'desarrollo de aplicaciones móviles': 'aplicaciones-moviles',
+        'desarrollo de sistemas empresariales': 'sistemas-empresariales'
+      };
+      Object.keys(titleAliases).forEach(function (title) { slugByTitle[title] = titleAliases[title]; });
       var questionSets = {
         general: [
           ['goal', '¿Qué necesitas resolver?', 'Describe el objetivo principal de tu solicitud.'],
