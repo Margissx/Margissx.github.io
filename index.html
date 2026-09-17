@@ -2159,7 +2159,7 @@
         questionSetFor(slug).forEach(function (question) {
           var wrapper = document.createElement('div');
           wrapper.className = 'booking-field';
-          wrapper.innerHTML = '<label for="booking-question-' + question[0] + '">' + question[1] + ' <span aria-hidden="true">*</span></label><textarea id="booking-question-' + question[0] + '" data-question-id="' + question[0] + '" rows="3" required placeholder="' + question[2] + '"></textarea>';
+          wrapper.innerHTML = '<label for="booking-question-' + question[0] + '">' + question[1] + '</label><textarea id="booking-question-' + question[0] + '" data-question-id="' + question[0] + '" rows="3" placeholder="' + question[2] + '"></textarea>';
           questionContainer.appendChild(wrapper);
         });
       }
@@ -2243,29 +2243,33 @@
             questionContainer.querySelectorAll('[data-question-id]').forEach(function (field) { answers[field.getAttribute('data-question-id')] = field.value.trim(); });
             if (form.elements.description.value.trim().length < 10) { showStatus('Describe tu necesidad con al menos 10 caracteres.', true); return; }
             if (!API_BASE) {
-              var mailLines = [
-                'Nueva solicitud de conversación',
-                '',
-                'Servicio o plan: ' + selected.title,
-                'Fecha preferida: ' + form.elements.date.value,
-                '',
-                'Nombre: ' + form.elements.name.value.trim(),
-                'Correo electrónico: ' + form.elements.email.value.trim(),
-                '',
-                'Descripción:',
-                form.elements.description.value.trim(),
-                '',
-                'Preguntas del servicio o plan:',
-                Object.keys(answers).map(function (key) { return key + ': ' + answers[key]; }).join('\n'),
-                '',
-                'Información adicional:',
-                form.elements.additionalInfo.value.trim() || 'Sin información adicional.'
-              ];
-              var mailto = 'mailto:giss98alvarado@gmail.com?subject=' + encodeURIComponent('Nueva solicitud de conversación - ' + selected.title) + '&body=' + encodeURIComponent(mailLines.join('\n'));
-              showStatus('Se abrió tu correo con la solicitud lista para enviar a giss98alvarado@gmail.com.', false);
-              window.location.href = mailto;
-              return;
-            }
+                var formSubmitPayload = {
+                  _subject: 'Nueva solicitud de conversación - ' + selected.title,
+                  _template: 'table',
+                  _captcha: 'false',
+                  nombre: form.elements.name.value.trim(),
+                  correo: form.elements.email.value.trim(),
+                  servicio_o_plan: selected.title,
+                  fecha_preferida: form.elements.date.value,
+                  descripcion: form.elements.description.value.trim(),
+                  informacion_adicional: form.elements.additionalInfo.value.trim() || 'Sin información adicional.'
+                };
+                Object.keys(answers).forEach(function (key) { formSubmitPayload['Pregunta ' + key] = answers[key] || 'No respondida'; });
+                submit.disabled = true;
+                fetch('https://formsubmit.co/ajax/giss98alvarado@gmail.com', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                  body: JSON.stringify(formSubmitPayload)
+                })
+                  .then(function (response) { return response.json().then(function (body) { return { ok: response.ok, body: body }; }); })
+                  .then(function (result) {
+                    if (!result.ok) throw new Error(result.body.message || 'No se pudo enviar la solicitud.');
+                    form.innerHTML = '<div class="booking-success"><p class="booking-eyebrow">Solicitud enviada</p><h3>Gracias. Recibimos tu solicitud y te contactaremos para confirmar la conversación.</h3><button class="booking-submit" type="button" data-booking-close>Cerrar</button></div>';
+                    form.querySelector('[data-booking-close]').addEventListener('click', closeBooking);
+                  })
+                  .catch(function (error) { showStatus(error.message || 'No se pudo enviar la solicitud.', true); submit.disabled = false; });
+                return;
+              }
           var recaptchaToken;
           try { recaptchaToken = await getRecaptchaToken(); } catch (error) { showStatus(error.message || 'No se pudo validar reCAPTCHA. No se envió la solicitud.', true); return; }
           var payload = { name: form.elements.name.value.trim(), email: form.elements.email.value.trim(), description: form.elements.description.value.trim(), service: selected.slug, serviceName: selected.title, date: form.elements.date.value, timezone: 'America/Tegucigalpa', answers: answers, additionalInfo: form.elements.additionalInfo.value.trim(), recaptchaToken: recaptchaToken };
