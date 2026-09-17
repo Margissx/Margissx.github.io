@@ -2238,11 +2238,34 @@
         });
         form.addEventListener('submit', async function (event) {
           event.preventDefault();
-          if (!API_BASE) { showStatus('No se pudo enviar la solicitud en este momento.', true); return; }
           if (!validatePreferredDate()) return;
-          var answers = {};
-          questionContainer.querySelectorAll('[data-question-id]').forEach(function (field) { answers[field.getAttribute('data-question-id')] = field.value.trim(); });
-          if (form.elements.description.value.trim().length < 10) { showStatus('Describe tu necesidad con al menos 10 caracteres.', true); return; }
+            var answers = {};
+            questionContainer.querySelectorAll('[data-question-id]').forEach(function (field) { answers[field.getAttribute('data-question-id')] = field.value.trim(); });
+            if (form.elements.description.value.trim().length < 10) { showStatus('Describe tu necesidad con al menos 10 caracteres.', true); return; }
+            if (!API_BASE) {
+              var mailLines = [
+                'Nueva solicitud de conversación',
+                '',
+                'Servicio o plan: ' + selected.title,
+                'Fecha preferida: ' + form.elements.date.value,
+                '',
+                'Nombre: ' + form.elements.name.value.trim(),
+                'Correo electrónico: ' + form.elements.email.value.trim(),
+                '',
+                'Descripción:',
+                form.elements.description.value.trim(),
+                '',
+                'Preguntas del servicio o plan:',
+                Object.keys(answers).map(function (key) { return key + ': ' + answers[key]; }).join('\n'),
+                '',
+                'Información adicional:',
+                form.elements.additionalInfo.value.trim() || 'Sin información adicional.'
+              ];
+              var mailto = 'mailto:giss98alvarado@gmail.com?subject=' + encodeURIComponent('Nueva solicitud de conversación - ' + selected.title) + '&body=' + encodeURIComponent(mailLines.join('\n'));
+              showStatus('Se abrió tu correo con la solicitud lista para enviar a giss98alvarado@gmail.com.', false);
+              window.location.href = mailto;
+              return;
+            }
           var recaptchaToken;
           try { recaptchaToken = await getRecaptchaToken(); } catch (error) { showStatus(error.message || 'No se pudo validar reCAPTCHA. No se envió la solicitud.', true); return; }
           var payload = { name: form.elements.name.value.trim(), email: form.elements.email.value.trim(), description: form.elements.description.value.trim(), service: selected.slug, serviceName: selected.title, date: form.elements.date.value, timezone: 'America/Tegucigalpa', answers: answers, additionalInfo: form.elements.additionalInfo.value.trim(), recaptchaToken: recaptchaToken };
