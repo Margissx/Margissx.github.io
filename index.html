@@ -1833,6 +1833,7 @@
       var form = document.getElementById('booking-form');
       if (!modal || !form) return;
       var selected = null;
+      var lastValidDate = '';
       var RECAPTCHA_SITE_KEY = "6Les7sAtAAAAAKnv7RetuH4ZkQRYfKAzNoq_Mcup";
       var dateInput = document.getElementById('booking-date');
       var timeSelect = document.getElementById('booking-time');
@@ -1960,14 +1961,14 @@
         });
       }
       function dateIsAllowed(value) {
-        if (!value) return false;
-        var parts = value.split('-').map(Number);
-        var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
-        var today = new Date();
-        var todayUtc = new Date(Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()));
-        return date >= todayUtc && (date.getUTCDay() === 4 || date.getUTCDay() === 5);
-      }
-      function showStatus(message, isError) {
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+          var parts = value.split('-').map(Number);
+          var date = new Date(Date.UTC(parts[0], parts[1] - 1, parts[2], 12));
+          var todayParts = todayInTegucigalpa().split('-').map(Number);
+          var todayUtc = new Date(Date.UTC(todayParts[0], todayParts[1] - 1, todayParts[2], 12));
+          return date.getUTCFullYear() === parts[0] && date.getUTCMonth() === parts[1] - 1 && date.getUTCDate() === parts[2] && date >= todayUtc && (date.getUTCDay() === 4 || date.getUTCDay() === 5);
+        }
+          function showStatus(message, isError) {
         status.textContent = message || '';
         status.classList.toggle('is-error', Boolean(isError));
       }
@@ -2012,6 +2013,7 @@
         form.reset();
         renderQuestions(slug);
         dateInput.min = todayInTegucigalpa();
+        lastValidDate = '';
         resetTimes();
         showStatus('', false);
         apiNote.textContent = API_BASE ? '' : 'La API pública de reservas todavía necesita publicarse para activar el envío.';
@@ -2023,7 +2025,17 @@
       function closeBooking() { modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('booking-opened'); }
       document.querySelectorAll('.booking-open').forEach(function (button) { button.addEventListener('click', function () { openBooking(button); }); });
       document.querySelectorAll('[data-booking-close]').forEach(function (button) { button.addEventListener('click', closeBooking); });
-      dateInput.addEventListener('change', loadAvailability);
+      dateInput.addEventListener('change', function () {
+          var value = dateInput.value;
+          if (!dateIsAllowed(value)) {
+            dateInput.value = lastValidDate;
+            showStatus('Las consultas solo están disponibles jueves y viernes desde hoy.', true);
+            if (lastValidDate) loadAvailability(); else resetTimes('Selecciona un jueves o viernes');
+            return;
+          }
+          lastValidDate = value;
+          loadAvailability();
+        });
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
         if (!API_BASE) { showStatus('La API pública de reservas aún no está conectada.', true); return; }
