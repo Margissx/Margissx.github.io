@@ -1857,58 +1857,45 @@ main { overflow: hidden; }
 /* Softer decorative circle behind the profile capsule heading */
 .profile .section-intro::after { border-color: rgba(150, 201, 221, .09); box-shadow: 0 0 0 22px rgba(150, 201, 221, .018); opacity: .62; filter: blur(.8px); }
 
-
-/* Profile portrait */
+/* Centered profile portrait */
 .profile-photo-card {
   display: flex;
   align-items: center;
-  gap: 22px;
-  margin-bottom: 32px;
-  padding-bottom: 26px;
-  border-bottom: 1px solid rgba(33, 42, 49, .12);
+  justify-content: center;
+  margin: 0 auto 28px;
+  padding-bottom: 24px;
+  text-align: center;
 }
 .profile-photo {
   display: block;
-  width: 128px;
-  height: 128px;
-  flex: 0 0 128px;
-  border: 6px solid var(--white);
+  width: 138px;
+  height: 138px;
+  border: 7px solid transparent;
   border-radius: 50%;
+  background: linear-gradient(var(--cream, #f7f6f1), var(--cream, #f7f6f1)) padding-box, linear-gradient(135deg, var(--mint, #21c7db), var(--blue, #96c9dd)) border-box;
   object-fit: cover;
   object-position: 50% 34%;
-  box-shadow: 0 16px 34px rgba(33, 42, 49, .18);
+  box-shadow: 0 18px 38px rgba(33, 42, 49, .2), 0 0 0 10px rgba(150, 201, 221, .1);
+  filter: saturate(.94) contrast(1.03);
 }
-.profile-photo-copy {
-  min-width: 0;
-}
-.profile-photo-label {
-  margin: 0 0 7px;
-  color: var(--blue);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-.profile-photo-title {
-  margin: 0;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: clamp(19px, 2.3vw, 27px);
-  line-height: 1.15;
-}
-.profile-photo-tags {
-  margin: 9px 0 0;
-  color: var(--muted);
-  font-size: 13px;
+.profile-content p.lead {
+  max-width: 660px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(15px, 1.12vw, 18px);
+  line-height: 1.72;
 }
 @media (max-width: 700px) {
   .profile-photo-card {
-    align-items: flex-start;
-    gap: 16px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
   }
   .profile-photo {
-    width: 104px;
-    height: 104px;
-    flex-basis: 104px;
+    width: 116px;
+    height: 116px;
+  }
+  .profile-content p.lead {
+    font-size: 15px;
+    line-height: 1.68;
   }
 }
