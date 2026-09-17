@@ -2145,7 +2145,13 @@
     ]
   ]
 };
-      function questionSetFor(slug) {
+      function slugForButton(button) {
+          var card = button.closest('.service-accordion-item, .plan-card');
+          var titleElement = card && card.querySelector('.service-accordion-name, .plan-header h3');
+          var title = titleElement ? titleElement.textContent.trim().toLowerCase() : '';
+          return slugByTitle[title] || 'general';
+        }
+          function questionSetFor(slug) {
         return questionSets[slug] || questionSets.general;
       }
       function renderQuestions(slug) {
