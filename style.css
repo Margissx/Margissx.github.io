@@ -651,7 +651,8 @@ h1 { color: #A8A8A8; }
 .social-links { display: flex; flex-wrap: wrap; gap: 9px; }
 .social-links a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 11px 7px 7px; border: 1px solid rgb(168, 168, 168, .38); border-radius: 999px; background: rgb(255, 255, 255, .48); color: #A8A8A8; font-size: 10px; font-weight: 600; transition: border-color .2s ease, background .2s ease, color .2s ease, transform .2s ease; }
 .social-links a i { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--mint); color: #FFFFFF; font-size: 13px; }
-.social-links a:hover { border-color: var(--mint); background: rgb(150, 201, 221, .1); color: #A8A8A8; transform: translateY(-2px); }
+.social-links a .social-x-mark { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--mint); color: #FFFFFF; font-size: 13px; font-weight: 800; line-height: 1; }
+.social-links a:hover { border-color: var(--mint); background: transparent; color: #A8A8A8; transform: translateY(-2px); }
 .social-links a:nth-child(even) i { background: var(--blue); }
 
 @media (max-width: 520px) {
