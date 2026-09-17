@@ -1860,8 +1860,10 @@ main { overflow: hidden; }
 /* Centered profile portrait */
 .profile-photo-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
   margin: 0 auto 28px;
   padding-bottom: 24px;
   text-align: center;
@@ -1870,6 +1872,7 @@ main { overflow: hidden; }
   display: block;
   width: 138px;
   height: 138px;
+  flex: 0 0 auto;
   border: 7px solid transparent;
   border-radius: 50%;
   background: linear-gradient(var(--cream, #f7f6f1), var(--cream, #f7f6f1)) padding-box, linear-gradient(135deg, var(--mint, #21c7db), var(--blue, #96c9dd)) border-box;
