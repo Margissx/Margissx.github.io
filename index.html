@@ -2333,9 +2333,9 @@
         }
         showStatus('Consultando disponibilidad...', false);
         if (!API_BASE) {
-          showStatus('La agenda está lista, pero la API pública aún no está conectada.', true);
-          apiNote.textContent = 'Cuando se publique la API de reservas, este formulario enviará la solicitud sin cambiar los botones.';
-          resetTimes('API pendiente de publicación');
+          showStatus('', false);
+          apiNote.textContent = '';
+          resetTimes('Horarios no disponibles');
           return;
         }
         fetch(API_BASE + '/api/availability?date=' + encodeURIComponent(date) + '&service=' + encodeURIComponent(selected.slug))
@@ -2363,7 +2363,7 @@
         lastValidDate = '';
         resetTimes();
         showStatus('', false);
-        apiNote.textContent = API_BASE ? '' : 'La API pública de reservas todavía necesita publicarse para activar el envío.';
+        apiNote.textContent = '';
         submit.disabled = !API_BASE;
         modal.setAttribute('aria-hidden', 'false');
         document.body.classList.add('booking-opened');
