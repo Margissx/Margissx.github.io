@@ -1868,397 +1868,283 @@
       };
       Object.keys(titleAliases).forEach(function (title) { slugByTitle[title] = titleAliases[title]; });
       var questionSets = {
-        "general": [
-          [
-            "goal",
-            "¿Qué te gustaría resolver en la conversación?",
-            "Cuéntame brevemente qué necesitas aclarar o mejorar."
-          ],
-          [
-            "context",
-            "¿Qué está pasando actualmente?",
-            "Comparte el contexto que debería conocer antes de hablar contigo."
-          ]
-        ],
-        "documentacion-tecnica": [
-          [
-            "documentation_need",
-            "¿Qué parte de tu trabajo quieres explicar mejor?",
-            "Describe el proceso, sistema o conocimiento que hoy resulta difícil de entender."
-          ],
-          [
-            "documentation_audience",
-            "¿Quién necesita utilizar esa información?",
-            "Indica si serán clientes, usuarios, personal técnico o dirección."
-          ],
-          [
-            "documentation_outcome",
-            "¿Qué debería poder hacer la persona después de leerla?",
-            "Piensa en la acción o decisión que quieres facilitar."
-          ]
-        ],
-        "analitica-de-datos": [
-          [
-            "analytics_decision",
-            "¿Qué decisión quieres tomar con tus datos?",
-            "Cuéntame qué necesitas saber para actuar con más seguridad."
-          ],
-          [
-            "analytics_obstacle",
-            "¿Qué información te cuesta interpretar actualmente?",
-            "Describe dónde encuentras confusión, demora o falta de claridad."
-          ],
-          [
-            "analytics_result",
-            "¿Qué resultado te sería más útil recibir?",
-            "Por ejemplo, un reporte, indicadores, recomendaciones o un tablero."
-          ]
-        ],
-        "mantenimiento-soporte-basico": [
-          [
-            "basic_support_problem",
-            "¿Qué no está funcionando como esperas?",
-            "Describe el error, cambio o situación que quieres atender."
-          ],
-          [
-            "basic_support_impact",
-            "¿Cómo afecta ese problema a tu trabajo?",
-            "Cuéntame qué tareas, personas o clientes se ven afectados."
-          ],
-          [
-            "basic_support_priority",
-            "¿Qué debería quedar resuelto primero?",
-            "Indica la atención más importante para esta primera conversación."
-          ]
-        ],
-        "base-de-datos": [
-          [
-            "database_information",
-            "¿Qué información quieres organizar o consultar mejor?",
-            "Describe los datos que manejas y para qué los utilizas."
-          ],
-          [
-            "database_obstacle",
-            "¿Qué problema tienes al guardar, buscar o actualizar la información?",
-            "Ejemplos: duplicados, lentitud, pérdida de datos o dificultad para encontrar algo."
-          ],
-          [
-            "database_result",
-            "¿Qué te gustaría poder hacer con tus datos después?",
-            "Piensa en consultas, reportes, integraciones o decisiones."
-          ]
-        ],
-        "desarrollo-portales-web": [
-          [
-            "portal_purpose",
-            "¿Qué quieres que las personas puedan hacer en el portal?",
-            "Describe el objetivo principal para tus visitantes, clientes o equipo."
-          ],
-          [
-            "portal_content",
-            "¿Qué información o servicios quieres presentar?",
-            "Menciona las secciones, contenidos o trámites más importantes."
-          ],
-          [
-            "portal_success",
-            "¿Cómo sabrás que el portal está funcionando bien?",
-            "Indica el resultado que esperas conseguir con el sitio."
-          ]
-        ],
-        "mantenimiento-soporte-profesional": [
-          [
-            "professional_support_system",
-            "¿Qué sistema necesita cuidado o mejora?",
-            "Cuéntame para qué sirve y quién depende de él."
-          ],
-          [
-            "professional_support_changes",
-            "¿Qué cambios o riesgos quieres atender?",
-            "Describe errores, seguridad, rendimiento o nuevas necesidades."
-          ],
-          [
-            "professional_support_continuity",
-            "¿Qué tipo de acompañamiento esperas recibir?",
-            "Indica si necesitas seguimiento, mantenimiento o atención por incidentes."
-          ]
-        ],
-        "auditoria-de-sistemas": [
-          [
-            "audit_concern",
-            "¿Qué te preocupa actualmente de tu sistema?",
-            "Describe el riesgo, duda o situación que quieres revisar."
-          ],
-          [
-            "audit_focus",
-            "¿Qué te gustaría conocer al terminar la auditoría?",
-            "Por ejemplo, riesgos, errores, oportunidades o prioridades."
-          ],
-          [
-            "audit_access",
-            "¿Qué información podrías compartir para entender el caso?",
-            "Documentos, reportes, procesos, accesos o ejemplos."
-          ]
-        ],
-        "mantenimiento-soporte-continuo": [
-          [
-            "continuous_need",
-            "¿Qué parte de tu operación necesita acompañamiento constante?",
-            "Describe los sistemas o tareas que no quieres dejar sin seguimiento."
-          ],
-          [
-            "continuous_repetition",
-            "¿Qué problemas o tareas se repiten con frecuencia?",
-            "Cuéntame qué consume tiempo o vuelve a aparecer."
-          ],
-          [
-            "continuous_rhythm",
-            "¿Con qué frecuencia te gustaría revisar avances?",
-            "Semanal, quincenal, mensual o según necesidad."
-          ]
-        ],
-        "sistemas-datos-informacion": [
-          [
-            "information_goal",
-            "¿Qué información quieres centralizar o controlar mejor?",
-            "Describe lo que hoy está separado, disperso o difícil de consultar."
-          ],
-          [
-            "information_users",
-            "¿Quiénes utilizarían esta solución?",
-            "Indica las personas, áreas o clientes que participarían."
-          ],
-          [
-            "information_decisions",
-            "¿Qué decisiones debería ayudarte a tomar?",
-            "Menciona las acciones que quieres realizar con más claridad."
-          ]
-        ],
-        "sistemas-analitica-inteligencia-negocios": [
-          [
-            "bi_question",
-            "¿Qué pregunta importante quieres responder con el sistema?",
-            "Describe la decisión de negocio que necesitas apoyar."
-          ],
-          [
-            "bi_indicators",
-            "¿Qué resultados o indicadores quieres seguir?",
-            "Ejemplos: ventas, costos, tiempos, clientes o productividad."
-          ],
-          [
-            "bi_audience",
-            "¿Quién necesita ver y utilizar esa información?",
-            "Dirección, operaciones, ventas u otras áreas."
-          ]
-        ],
-        "sistemas-web": [
-          [
-            "web_process",
-            "¿Qué proceso quieres facilitar con un sistema web?",
-            "Cuéntame qué hacen hoy las personas y qué debería cambiar."
-          ],
-          [
-            "web_actions",
-            "¿Qué acciones deben poder realizar los usuarios?",
-            "Por ejemplo, solicitar, aprobar, consultar, pagar o dar seguimiento."
-          ],
-          [
-            "web_expectation",
-            "¿Qué resultado esperas obtener para tu organización?",
-            "Describe cómo debería mejorar el trabajo o la atención."
-          ]
-        ],
-        "sistemas-integrados-automatizados": [
-          [
-            "integrated_steps",
-            "¿Qué pasos de tu trabajo quieres conectar o automatizar?",
-            "Describe el proceso desde que comienza hasta que termina."
-          ],
-          [
-            "integrated_tools",
-            "¿Qué herramientas utilizas actualmente?",
-            "Menciona aplicaciones, archivos, correos o sistemas involucrados."
-          ],
-          [
-            "integrated_gain",
-            "¿Qué te gustaría ahorrar o evitar?",
-            "Tiempo, errores, duplicación de tareas, retrasos u otro problema."
-          ]
-        ],
-        "sistemas-escritorio": [
-          [
-            "desktop_task",
-            "¿Qué tarea interna quieres hacer más sencilla?",
-            "Describe la operación que hoy requiere más esfuerzo."
-          ],
-          [
-            "desktop_people",
-            "¿Quién utilizaría la aplicación en su trabajo?",
-            "Indica las áreas o personas que la usarían."
-          ],
-          [
-            "desktop_context",
-            "¿En qué situaciones debe funcionar la aplicación?",
-            "Cuéntame si se usará en oficina, fuera de línea o con equipos específicos."
-          ]
-        ],
-        "aplicaciones-moviles": [
-          [
-            "mobile_service",
-            "¿Qué servicio o experiencia quieres llevar al teléfono?",
-            "Describe lo que quieres ofrecer desde una aplicación móvil."
-          ],
-          [
-            "mobile_audience",
-            "¿Quiénes la utilizarían y en qué momento?",
-            "Cuéntame sobre tus clientes, usuarios o personal."
-          ],
-          [
-            "mobile_action",
-            "¿Qué acción debería ser fácil de hacer desde el celular?",
-            "Indica la tarea principal que quieres resolver."
-          ]
-        ],
-        "sistemas-empresariales": [
-          [
-            "enterprise_area",
-            "¿Qué área de tu organización quieres mejorar primero?",
-            "Describe el proceso o equipo que necesita apoyo."
-          ],
-          [
-            "enterprise_operation",
-            "¿Qué debería poder gestionar el sistema?",
-            "Menciona operaciones, aprobaciones, información o seguimiento."
-          ],
-          [
-            "enterprise_growth",
-            "¿Qué cambio esperas lograr en la organización?",
-            "Por ejemplo, más control, rapidez, coordinación o capacidad."
-          ]
-        ],
-        "plan-consulta-inicial": [
-          [
-            "initial_topic",
-            "¿Qué tema te gustaría conversar primero?",
-            "Resume la situación que quieres poner sobre la mesa."
-          ],
-          [
-            "initial_doubt",
-            "¿Qué duda o decisión quieres aclarar?",
-            "Indica qué te gustaría llevarte más claro de la conversación."
-          ]
-        ],
-        "plan-diagnostico-tecnico": [
-          [
-            "diagnosis_signal",
-            "¿Qué te hace pensar que algo necesita revisión?",
-            "Describe las señales, errores o dificultades que observas."
-          ],
-          [
-            "diagnosis_area",
-            "¿Dónde notas el mayor problema?",
-            "Sistema, datos, procesos, seguridad, equipo o atención."
-          ],
-          [
-            "diagnosis_result",
-            "¿Qué esperas recibir después del diagnóstico?",
-            "Prioridades, hallazgos, recomendaciones o un plan de acción."
-          ]
-        ],
-        "plan-implementacion": [
-          [
-            "implementation_idea",
-            "¿Qué quieres construir o poner en funcionamiento?",
-            "Describe la solución o mejora que tienes en mente."
-          ],
-          [
-            "implementation_outcome",
-            "¿Qué debería quedar funcionando al terminar?",
-            "Indica el resultado concreto que esperas obtener."
-          ],
-          [
-            "implementation_people",
-            "¿Quiénes participarán o utilizarán lo que construyamos?",
-            "Menciona el equipo, clientes o áreas involucradas."
-          ]
-        ],
-        "plan-personalizado": [
-          [
-            "custom_priority",
-            "¿Qué necesidad debería atender primero la propuesta?",
-            "Ordena el problema o resultado que más te importa."
-          ],
-          [
-            "custom_context",
-            "¿Qué características de tu organización debemos considerar?",
-            "Comparte el contexto, alcance o forma de trabajo."
-          ],
-          [
-            "custom_fit",
-            "¿Qué haría que la solución se sintiera realmente ajustada a ti?",
-            "Describe tus prioridades, restricciones o expectativas."
-          ]
-        ],
-        "plan-emprendedor": [
-          [
-            "entrepreneur_idea",
-            "¿Qué idea o proyecto quieres comenzar?",
-            "Describe el producto, servicio o iniciativa."
-          ],
-          [
-            "entrepreneur_client",
-            "¿A quién quieres ayudar o llegar primero?",
-            "Cuéntame quién sería tu cliente o público inicial."
-          ],
-          [
-            "entrepreneur_first_step",
-            "¿Qué primer paso necesitas dar?",
-            "Presencia digital, contacto, publicación, ventas u orientación."
-          ]
-        ],
-        "plan-profesional": [
-          [
-            "professional_goal",
-            "¿Qué quieres mejorar de tu presencia profesional?",
-            "Describe cómo te presentas hoy y qué te gustaría fortalecer."
-          ],
-          [
-            "professional_audience",
-            "¿Qué personas o clientes quieres atraer?",
-            "Indica el público con el que quieres conectar."
-          ],
-          [
-            "professional_result",
-            "¿Qué resultado te gustaría conseguir?",
-            "Más confianza, contactos, oportunidades, ventas o claridad."
-          ]
-        ],
-        "plan-empresarial": [
-          [
-            "business_area",
-            "¿Qué área de tu empresa necesita más apoyo?",
-            "Describe el equipo, proceso o servicio involucrado."
-          ],
-          [
-            "business_process",
-            "¿Qué proceso empresarial quieres ordenar o mejorar?",
-            "Cuéntame cómo funciona hoy y qué dificultad presenta."
-          ],
-          [
-            "business_change",
-            "¿Qué cambio tendría mayor valor para tu empresa?",
-            "Más control, eficiencia, coordinación, crecimiento u otro resultado."
-          ]
-        ]
-      };
-      function slugForButton(button) {
-        var article = button.closest('article');
-        var titleNode = article && article.querySelector('.service-accordion-name, .plan-header h3');
-        var title = titleNode ? titleNode.textContent.trim().toLowerCase() : '';
-        return slugByTitle[title] || 'general';
-      }
-      function questionSetFor(slug) {
-        return questionSets[slug] || questionSets.general;
-      }
+  "general": [
+    [
+      "goal",
+      "¿Qué necesitas resolver o mejorar?",
+      "Describe brevemente el servicio o apoyo que buscas."
+    ],
+    [
+      "context",
+      "¿Qué está pasando actualmente?",
+      "Comparte el contexto, problema o avance que debería conocer."
+    ]
+  ],
+  "documentacion-tecnica": [
+    [
+      "documentation_system",
+      "¿Qué sistema o proceso necesitas documentar?",
+      "Indica qué información técnica debe quedar clara y ordenada."
+    ],
+    [
+      "documentation_use",
+      "¿Quién usará la documentación y para qué?",
+      "Describe la tarea, soporte o decisión que debe facilitar."
+    ]
+  ],
+  "analitica-de-datos": [
+    [
+      "analytics_decision",
+      "¿Qué indicadores o decisión necesitas analizar?",
+      "Menciona los datos que necesitas entender para actuar."
+    ],
+    [
+      "analytics_sources",
+      "¿De dónde vienen tus datos y qué dificultad tienes hoy?",
+      "Indica si están en archivos, sistemas, bases de datos u otras fuentes."
+    ]
+  ],
+  "mantenimiento-soporte-basico": [
+    [
+      "basic_support_system",
+      "¿Qué sistema o equipo necesita soporte?",
+      "Indica qué solución tecnológica deseas revisar o mantener."
+    ],
+    [
+      "basic_support_problem",
+      "¿Cuál es el problema principal?",
+      "Describe el error, cambio o falla y desde cuándo ocurre."
+    ]
+  ],
+  "base-de-datos": [
+    [
+      "database_information",
+      "¿Qué datos necesitas organizar o consultar?",
+      "Describe la información que manejas y cómo la utilizas."
+    ],
+    [
+      "database_result",
+      "¿Qué necesitas hacer mejor con esos datos?",
+      "Menciona consultas, reportes, integraciones, respaldo o control."
+    ]
+  ],
+  "desarrollo-portales-web": [
+    [
+      "portal_purpose",
+      "¿Qué portal necesitas y para quién?",
+      "Indica si será para clientes, usuarios, personal u otra audiencia."
+    ],
+    [
+      "portal_actions",
+      "¿Qué información o acciones debe ofrecer?",
+      "Menciona las secciones, servicios, trámites o funciones principales."
+    ]
+  ],
+  "mantenimiento-soporte-profesional": [
+    [
+      "professional_support_system",
+      "¿Qué sistema o aplicación necesita mantenimiento?",
+      "Describe la solución tecnológica que quieres mejorar o sostener."
+    ],
+    [
+      "professional_support_scope",
+      "¿Qué soporte o mejoras necesitas priorizar?",
+      "Indica errores, actualizaciones, rendimiento o cambios pendientes."
+    ]
+  ],
+  "auditoria-de-sistemas": [
+    [
+      "audit_system",
+      "¿Qué sistema o proceso quieres auditar?",
+      "Indica qué parte de la solución tecnológica deseas revisar."
+    ],
+    [
+      "audit_concern",
+      "¿Qué riesgo, falla o decisión quieres aclarar?",
+      "Describe la preocupación concreta que debe atender la auditoría."
+    ]
+  ],
+  "mantenimiento-soporte-continuo": [
+    [
+      "continuous_support_scope",
+      "¿Qué sistemas o procesos necesitan soporte continuo?",
+      "Menciona las soluciones que deben mantenerse o supervisarse."
+    ],
+    [
+      "continuous_support_priority",
+      "¿Qué tareas deberían atenderse de forma recurrente?",
+      "Indica mantenimiento, actualizaciones, monitoreo o mejoras."
+    ]
+  ],
+  "sistemas-datos-informacion": [
+    [
+      "information_system",
+      "¿Qué sistema de datos o información necesitas?",
+      "Describe la información que quieres centralizar, controlar o consultar."
+    ],
+    [
+      "information_use",
+      "¿Quién lo utilizará y para qué proceso?",
+      "Indica las áreas, usuarios y decisiones que debe apoyar."
+    ]
+  ],
+  "sistemas-analitica-inteligencia-negocios": [
+    [
+      "bi_indicators",
+      "¿Qué indicadores o resultados de negocio necesitas seguir?",
+      "Menciona ventas, costos, tiempos, clientes, productividad u otros."
+    ],
+    [
+      "bi_sources_users",
+      "¿Qué fuentes de datos y usuarios tendrá el sistema?",
+      "Indica dónde están los datos y quién necesita analizarlos."
+    ]
+  ],
+  "sistemas-web": [
+    [
+      "web_process",
+      "¿Qué proceso quieres resolver con un sistema web?",
+      "Describe cómo se realiza hoy y qué debería mejorar."
+    ],
+    [
+      "web_actions",
+      "¿Qué acciones deben poder realizar los usuarios?",
+      "Menciona solicitudes, consultas, registros, seguimiento o pagos."
+    ]
+  ],
+  "sistemas-integrados-automatizados": [
+    [
+      "integrated_process",
+      "¿Qué proceso o herramientas quieres conectar?",
+      "Indica los sistemas, archivos o aplicaciones que intervienen."
+    ],
+    [
+      "integrated_automation",
+      "¿Qué tarea repetitiva o error quieres evitar?",
+      "Describe lo que deseas automatizar y el resultado esperado."
+    ]
+  ],
+  "sistemas-escritorio": [
+    [
+      "desktop_operation",
+      "¿Qué operación interna quieres simplificar?",
+      "Describe la tarea que hoy requiere más tiempo o esfuerzo."
+    ],
+    [
+      "desktop_users",
+      "¿Quién utilizará la aplicación y qué debe hacer?",
+      "Indica las áreas o personas y las funciones principales."
+    ]
+  ],
+  "aplicaciones-moviles": [
+    [
+      "mobile_service",
+      "¿Qué servicio o problema quieres resolver con una app móvil?",
+      "Describe la experiencia que quieres ofrecer desde el celular."
+    ],
+    [
+      "mobile_action",
+      "¿Quién la usará y cuál será la acción principal?",
+      "Indica los usuarios y la tarea más importante de la aplicación."
+    ]
+  ],
+  "sistemas-empresariales": [
+    [
+      "enterprise_process",
+      "¿Qué área o proceso empresarial quieres mejorar?",
+      "Describe la operación que necesita más control, rapidez o coordinación."
+    ],
+    [
+      "enterprise_scope",
+      "¿Qué debería gestionar el sistema?",
+      "Menciona usuarios, aprobaciones, datos, reportes o integraciones."
+    ]
+  ],
+  "plan-consulta-inicial": [
+    [
+      "consultation_goal",
+      "¿Qué necesitas orientar o definir?",
+      "Describe la decisión o próximo paso sobre el que buscas claridad."
+    ],
+    [
+      "consultation_context",
+      "¿Qué información ya tienes del proyecto o problema?",
+      "Comparte lo que ya intentaste, tienes disponible o necesitas revisar."
+    ]
+  ],
+  "plan-diagnostico-tecnico": [
+    [
+      "diagnosis_system",
+      "¿Qué sistema, proceso o datos quieres revisar?",
+      "Indica el alcance principal del diagnóstico técnico."
+    ],
+    [
+      "diagnosis_concern",
+      "¿Qué falla, riesgo o decisión quieres aclarar?",
+      "Describe el problema concreto que debe investigarse."
+    ]
+  ],
+  "plan-implementacion": [
+    [
+      "implementation_solution",
+      "¿Qué solución quieres construir o mejorar?",
+      "Describe el sistema, portal, aplicación o automatización que necesitas."
+    ],
+    [
+      "implementation_scope",
+      "¿Qué alcance o prioridad debe tener?",
+      "Indica la función más importante y cualquier límite de tiempo o recursos."
+    ]
+  ],
+  "plan-personalizado": [
+    [
+      "custom_need",
+      "¿Qué necesidad específica quieres resolver?",
+      "Relaciona tu solicitud con desarrollo, datos, soporte, auditoría o automatización."
+    ],
+    [
+      "custom_result",
+      "¿Qué resultado esperas y qué limitación debemos considerar?",
+      "Menciona el resultado principal, plazo, presupuesto o contexto relevante."
+    ]
+  ],
+  "plan-emprendedor": [
+    [
+      "entrepreneur_start",
+      "¿Qué quieres poner en marcha digitalmente?",
+      "Indica si necesitas un portal, sistema, aplicación, datos o automatización."
+    ],
+    [
+      "entrepreneur_priority",
+      "¿Qué necesitas resolver primero?",
+      "Describe la función o resultado más importante para comenzar."
+    ]
+  ],
+  "plan-profesional": [
+    [
+      "professional_goal",
+      "¿Qué solución tecnológica quieres mejorar o presentar?",
+      "Describe tu sistema, portal, aplicación o presencia digital actual."
+    ],
+    [
+      "professional_result",
+      "¿Qué resultado quieres conseguir?",
+      "Menciona clientes, procesos, datos u operaciones que la solución debe apoyar."
+    ]
+  ],
+  "plan-empresarial": [
+    [
+      "enterprise_goal",
+      "¿Qué proceso o sistema de tu organización necesita atención?",
+      "Indica el área, operación o solución tecnológica involucrada."
+    ],
+    [
+      "enterprise_result",
+      "¿Qué alcance, integración o mejora esperas?",
+      "Menciona usuarios, sistemas conectados, control, eficiencia o crecimiento."
+    ]
+  ]
+};
       function renderQuestions(slug) {
         questionContainer.innerHTML = '';
         questionSetFor(slug).forEach(function (question) {
