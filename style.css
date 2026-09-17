@@ -700,7 +700,7 @@ h1 { color: #A8A8A8; }
 .profile::after { background: linear-gradient(90deg, rgb(255, 255, 255, .9) 0%, rgb(255, 255, 255, .74) 45%, rgb(255, 255, 255, .5) 100%); }
 .profile .section-intro, .profile .profile-content { position: relative; overflow: hidden; }
 .profile .section-intro::before, .profile .profile-content::before { position: absolute; top: 0; right: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--mint), var(--blue), transparent); content: ""; }
-.profile .section-intro::after { position: absolute; right: -55px; bottom: -65px; width: 150px; height: 150px; border: 1px solid rgb(150, 201, 221, .22); border-radius: 50%; box-shadow: 0 0 0 22px rgb(150, 201, 221, .035); content: ""; }
+.profile .section-intro::after { display: none; content: none; }
 .profile .section-intro h2 { position: relative; z-index: 1; margin-bottom: 0; }
 .profile .profile-content { background: rgb(255, 255, 255, .82); }
 .profile-pillars { gap: 14px; }
@@ -1854,8 +1854,6 @@ main { overflow: hidden; }
 .footer-accordion-toggle::before { display: inline-flex; align-items: center; justify-content: center; line-height: 1; transform: none; }
 .footer-accordion[open] .footer-accordion-toggle::before { transform: none; }
 
-/* Softer decorative circle behind the profile capsule heading */
-.profile .section-intro::after { border-color: rgba(150, 201, 221, .09); box-shadow: 0 0 0 22px rgba(150, 201, 221, .018); opacity: .62; filter: blur(.8px); }
 
 /* Centered profile portrait */
 .profile-photo-card {
