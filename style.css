@@ -1968,3 +1968,11 @@ body.booking-opened { overflow: hidden; }
     body.modal-open { overflow: hidden; }
     @media (max-width: 620px) { .payment-info-modal { padding: 10px; } .payment-info-dialog { max-height: 94vh; padding: 22px 17px; border-radius: 17px; } .payment-info-actions { flex-direction: column; align-items: stretch; } .payment-info-actions button { width: 100%; } }
     
+
+    /* White focus state */
+    :where(a, button, input, select, textarea, summary, [tabindex]):focus,
+    :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid #FFFFFF !important;
+    outline-offset: 3px !important;
+    }
+    
