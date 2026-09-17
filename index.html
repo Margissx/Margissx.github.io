@@ -1795,20 +1795,13 @@
           </div>
         </div>
         <div class="booking-form-grid">
-          <div class="booking-field">
-            <label for="booking-date">Fecha <span aria-hidden="true">*</span></label>
-            <input id="booking-date" name="date" type="date" required>
-            <small>Disponible únicamente jueves y viernes.</small>
+            <div class="booking-field">
+              <label for="booking-date">Fecha preferida <span aria-hidden="true">*</span></label>
+              <input id="booking-date" name="date" type="date" required>
+              <small>Indica cuándo te gustaría conversar. La fecha se confirmará por correo.</small>
+            </div>
           </div>
-          <div class="booking-field">
-            <label for="booking-time">Hora <span aria-hidden="true">*</span></label>
-            <select id="booking-time" name="time" required disabled>
-              <option value="">Selecciona primero una fecha</option>
-            </select>
-            <small>Horario de Tegucigalpa: 08:00 a 16:30.</small>
-          </div>
-        </div>
-        <div class="booking-field">
+            <div class="booking-field">
           <label for="booking-description">Describe brevemente tu necesidad <span aria-hidden="true">*</span></label>
           <textarea id="booking-description" name="description" rows="3" minlength="10" required placeholder="Cuéntame qué te gustaría resolver o construir."></textarea>
         </div>
@@ -1818,7 +1811,6 @@
           <textarea id="booking-additional" name="additionalInfo" rows="4" placeholder="Comparte cualquier detalle que deba conocer."></textarea>
         </div>
         <p id="booking-status" class="booking-status" role="status" aria-live="polite"></p>
-        <p id="booking-api-note" class="booking-api-note" role="note"></p>
         <div class="booking-actions">
           <button class="booking-cancel" type="button" data-booking-close>Cancelar</button>
           <button class="booking-submit" id="booking-submit" type="submit">Enviar solicitud</button>
@@ -1836,10 +1828,8 @@
       var lastValidDate = '';
       var RECAPTCHA_SITE_KEY = "6Les7sAtAAAAAKnv7RetuH4ZkQRYfKAzNoq_Mcup";
       var dateInput = document.getElementById('booking-date');
-      var timeSelect = document.getElementById('booking-time');
       var questionContainer = document.getElementById('booking-questions');
       var status = document.getElementById('booking-status');
-      var apiNote = document.getElementById('booking-api-note');
       var submit = document.getElementById('booking-submit');
       var titleBySlug = {
         'documentacion-tecnica': 'Documentación técnica',
@@ -2319,90 +2309,59 @@
         status.textContent = message || '';
         status.classList.toggle('is-error', Boolean(isError));
       }
-      function resetTimes(message) {
-        timeSelect.innerHTML = '<option value="">' + (message || 'Selecciona primero una fecha') + '</option>';
-        timeSelect.disabled = true;
-      }
-      function loadAvailability() {
-        var date = dateInput.value;
-        resetTimes('Cargando horarios...');
-        if (!dateIsAllowed(date)) {
-          showStatus('Selecciona un jueves o viernes futuro.', true);
-          resetTimes('No hay horarios para esta fecha');
-          return;
-        }
-        showStatus('Consultando disponibilidad...', false);
-        if (!API_BASE) {
-          showStatus('', false);
-          apiNote.textContent = '';
-          resetTimes('Horarios no disponibles');
-          return;
-        }
-        fetch(API_BASE + '/api/availability?date=' + encodeURIComponent(date) + '&service=' + encodeURIComponent(selected.slug))
-          .then(function (response) { return response.json().then(function (body) { return { ok: response.ok, body: body }; }); })
-          .then(function (result) {
-            if (!result.ok) throw new Error(result.body.error || 'No se pudo consultar la disponibilidad.');
-            var available = (result.body.slots || []).filter(function (slot) { return slot.available; });
-            timeSelect.innerHTML = '<option value="">Selecciona una hora</option>';
-            available.forEach(function (slot) {
-              var option = document.createElement('option'); option.value = slot.time; option.textContent = slot.time; timeSelect.appendChild(option);
-            });
-            timeSelect.disabled = available.length === 0;
-            showStatus(available.length ? 'Elige una hora disponible.' : 'No hay horarios disponibles para esta fecha.', !available.length);
-          })
-          .catch(function (error) { resetTimes('No se pudo cargar'); showStatus(error.message, true); });
-      }
-      function openBooking(button) {
-        var slug = slugForButton(button);
-        selected = { slug: slug, title: titleBySlug[slug] || 'Solicitud de consulta' };
-        document.getElementById('booking-selection').textContent = selected.title;
-        renderQuestions(slug);
-        form.reset();
-        renderQuestions(slug);
-        dateInput.min = todayInTegucigalpa();
-        lastValidDate = '';
-        resetTimes();
-        showStatus('', false);
-        apiNote.textContent = '';
-        submit.disabled = !API_BASE;
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('booking-opened');
-        document.getElementById('booking-name').focus();
-      }
-      function closeBooking() { modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('booking-opened'); }
-      document.querySelectorAll('.booking-open').forEach(function (button) { button.addEventListener('click', function () { openBooking(button); }); });
-      document.querySelectorAll('[data-booking-close]').forEach(function (button) { button.addEventListener('click', closeBooking); });
-      dateInput.addEventListener('change', function () {
+      function validatePreferredDate() {
           var value = dateInput.value;
           if (!dateIsAllowed(value)) {
             dateInput.value = lastValidDate;
-            showStatus('Las consultas solo están disponibles jueves y viernes desde hoy.', true);
-            if (lastValidDate) loadAvailability(); else resetTimes('Selecciona un jueves o viernes');
-            return;
+            showStatus(lastValidDate ? 'Selecciona un jueves o viernes válido.' : 'Selecciona un jueves o viernes desde hoy.', true);
+            return false;
           }
           lastValidDate = value;
-          loadAvailability();
+          showStatus('', false);
+          return true;
+        }
+          function openBooking(button) {
+          var slug = slugForButton(button);
+          selected = { slug: slug, title: titleBySlug[slug] || 'Solicitud de consulta' };
+          document.getElementById('booking-selection').textContent = selected.title;
+          renderQuestions(slug);
+          form.reset();
+          renderQuestions(slug);
+          dateInput.min = todayInTegucigalpa();
+          lastValidDate = '';
+          showStatus('', false);
+          submit.disabled = false;
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.classList.add('booking-opened');
+          document.getElementById('booking-name').focus();
+        }
+          function closeBooking() { modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('booking-opened'); }
+      document.querySelectorAll('.booking-open').forEach(function (button) { button.addEventListener('click', function () { openBooking(button); }); });
+      document.querySelectorAll('[data-booking-close]').forEach(function (button) { button.addEventListener('click', closeBooking); });
+      dateInput.addEventListener('change', function () {
+          validatePreferredDate();
         });
-      form.addEventListener('submit', async function (event) {
-        event.preventDefault();
-        if (!API_BASE) { showStatus('La API pública de reservas aún no está conectada.', true); return; }
-        var answers = {};
-        questionContainer.querySelectorAll('[data-question-id]').forEach(function (field) { answers[field.getAttribute('data-question-id')] = field.value.trim(); });
-        if (form.elements.description.value.trim().length < 10) { showStatus('Describe tu necesidad con al menos 10 caracteres.', true); return; }
-        var recaptchaToken;
-        try { recaptchaToken = await getRecaptchaToken(); } catch (error) { showStatus(error.message || 'No se pudo validar reCAPTCHA. No se envió la solicitud.', true); return; }
-        var payload = { name: form.elements.name.value.trim(), email: form.elements.email.value.trim(), description: form.elements.description.value.trim(), service: selected.slug, serviceName: selected.title, date: form.elements.date.value, time: form.elements.time.value, timezone: 'America/Tegucigalpa', answers: answers, additionalInfo: form.elements.additionalInfo.value.trim(), recaptchaToken: recaptchaToken };
-        submit.disabled = true;
-        fetch(API_BASE + '/api/appointments', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-          .then(function (response) { return response.json().then(function (body) { return { ok: response.ok, status: response.status, body: body }; }); })
-          .then(function (result) {
-            if (!result.ok) throw new Error(result.body.error || 'No se pudo enviar la solicitud.');
-            form.innerHTML = '<div class="booking-success"><p class="booking-eyebrow">Solicitud recibida</p><h3>Gracias. Recibimos tu solicitud de consulta. Te contactaré por correo para confirmar los detalles.</h3><p>ID de reserva: <strong>' + result.body.id + '</strong></p><button class="booking-submit" type="button" data-booking-close>Cerrar</button></div>';
-            form.querySelector('[data-booking-close]').addEventListener('click', closeBooking);
-          })
-          .catch(function (error) { showStatus(error.message, true); submit.disabled = false; });
-      });
-      document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeBooking(); });
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+          if (!API_BASE) { showStatus('No se pudo enviar la solicitud en este momento.', true); return; }
+          if (!validatePreferredDate()) return;
+          var answers = {};
+          questionContainer.querySelectorAll('[data-question-id]').forEach(function (field) { answers[field.getAttribute('data-question-id')] = field.value.trim(); });
+          if (form.elements.description.value.trim().length < 10) { showStatus('Describe tu necesidad con al menos 10 caracteres.', true); return; }
+          var recaptchaToken;
+          try { recaptchaToken = await getRecaptchaToken(); } catch (error) { showStatus(error.message || 'No se pudo validar reCAPTCHA. No se envió la solicitud.', true); return; }
+          var payload = { name: form.elements.name.value.trim(), email: form.elements.email.value.trim(), description: form.elements.description.value.trim(), service: selected.slug, serviceName: selected.title, date: form.elements.date.value, timezone: 'America/Tegucigalpa', answers: answers, additionalInfo: form.elements.additionalInfo.value.trim(), recaptchaToken: recaptchaToken };
+          submit.disabled = true;
+          fetch(API_BASE + '/api/contact-requests', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+            .then(function (response) { return response.json().then(function (body) { return { ok: response.ok, status: response.status, body: body }; }); })
+            .then(function (result) {
+              if (!result.ok) throw new Error(result.body.error || 'No se pudo enviar la solicitud.');
+              form.innerHTML = '<div class="booking-success"><p class="booking-eyebrow">Solicitud recibida</p><h3>Gracias. Recibimos tu solicitud y te contactaré para confirmar la conversación y la fecha.</h3><p>ID de solicitud: <strong>' + result.body.id + '</strong></p><button class="booking-submit" type="button" data-booking-close>Cerrar</button></div>';
+              form.querySelector('[data-booking-close]').addEventListener('click', closeBooking);
+            })
+            .catch(function (error) { showStatus(error.message, true); submit.disabled = false; });
+        });
+          document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeBooking(); });
     }());
   </script>
 
