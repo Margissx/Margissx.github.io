@@ -2264,7 +2264,7 @@
                   .then(function (response) { return response.json().then(function (body) { return { ok: response.ok, body: body }; }); })
                   .then(function (result) {
                     if (!result.ok) throw new Error(result.body.message || 'No se pudo enviar la solicitud.');
-                    form.innerHTML = '<div class="booking-success"><p class="booking-eyebrow">Solicitud enviada</p><h3>Gracias. Recibimos tu solicitud y te contactaremos para confirmar la conversación.</h3><button class="booking-submit" type="button" data-booking-close>Cerrar</button></div>';
+                    form.innerHTML = '<div class="booking-success"><p class="booking-eyebrow">Solicitud enviada</p><h3>Gracias. Recibí tu solicitud y yo misma me pondré en contacto contigo para confirmar la conversación.</h3><button class="booking-submit" type="button" data-booking-close>Cerrar</button></div>';
                     form.querySelector('[data-booking-close]').addEventListener('click', closeBooking);
                   })
                   .catch(function (error) { showStatus(error.message || 'No se pudo enviar la solicitud.', true); submit.disabled = false; });
