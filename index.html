@@ -2145,6 +2145,9 @@
     ]
   ]
 };
+      function questionSetFor(slug) {
+        return questionSets[slug] || questionSets.general;
+      }
       function renderQuestions(slug) {
         questionContainer.innerHTML = '';
         questionSetFor(slug).forEach(function (question) {
