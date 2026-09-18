@@ -1976,3 +1976,13 @@ body.booking-opened { overflow: hidden; }
     outline-offset: 3px !important;
     }
     
+
+    /* Center footer accordion controls and remove open focus line */
+    .site-footer .footer-accordion-summary,
+    .site-footer .footer-accordion-summary:focus,
+    .site-footer .footer-accordion-summary:focus-visible { justify-content: center; text-align: center; outline: 0 !important; box-shadow: none !important; }
+    .site-footer .footer-accordion-summary > span:first-child { display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+    .site-footer .w-icon-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; margin: 0; padding: 0; position: static; line-height: 1; text-align: center; }
+    .site-footer .w-icon-dropdown-toggle::before { content: '+'; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; font-size: 16px; line-height: 1; transform: none; }
+    .site-footer .footer-accordion[open] .w-icon-dropdown-toggle::before { content: '−'; transform: none; }
+    
