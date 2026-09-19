@@ -1979,3 +1979,9 @@ body.booking-opened { overflow: hidden; }
     .site-footer .w-icon-dropdown-toggle::before { content: '+'; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; font-size: 16px; line-height: 1; transform: none; }
     .site-footer .footer-accordion[open] .w-icon-dropdown-toggle::before { content: '−'; transform: none; }
     
+
+/* Six certification cards use a balanced three-column layout on desktop. */
+@media (min-width: 951px) {
+  .cert-grid:has(.cert-card:nth-child(6)) .cert-card:nth-child(4),
+  .cert-grid:has(.cert-card:nth-child(6)) .cert-card:nth-child(5) { grid-column: span 2; }
+}
