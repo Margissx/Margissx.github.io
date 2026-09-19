@@ -1985,3 +1985,6 @@ body.booking-opened { overflow: hidden; }
   .cert-grid:has(.cert-card:nth-child(6)) .cert-card:nth-child(4),
   .cert-grid:has(.cert-card:nth-child(6)) .cert-card:nth-child(5) { grid-column: span 2; }
 }
+
+
+.credentials-panel .cert-issuer-label { display: block; margin-bottom: 2px; color: #A8A8A8; font-size: 8px; font-weight: 700; letter-spacing: .08em; line-height: 1.2; text-transform: uppercase; }
