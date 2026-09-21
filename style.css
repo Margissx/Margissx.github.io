@@ -761,8 +761,8 @@ h1 { color: #A8A8A8; }
 .plan-header { display: flex; align-items: start; justify-content: space-between; gap: 20px; padding-bottom: 18px; border-bottom: 1px solid rgb(168, 168, 168, .34); }
 .plan-label { display: block; margin-bottom: 5px; color: var(--mint); font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .plan-card h3 { margin: 0; font-size: 23px; }
-.plan-price { flex: 0 0 auto; color: #A8A8A8; font-family: var(--font-display); font-size: 22px; font-weight: 700; letter-spacing: -.04em; white-space: nowrap; }
-.plan-price small { display: block; color: #A8A8A8; font-size: 9px; font-weight: 600; letter-spacing: .06em; text-align: right; text-transform: uppercase; }
+.plan-price { flex: 0 0 auto; align-self: flex-start; color: #A8A8A8; font-family: inherit; font-size: 23px; font-weight: 700; letter-spacing: 0; line-height: 1.2; text-align: right; white-space: nowrap; }
+.plan-price small { display: inline; color: inherit; font-family: inherit; font-size: inherit; font-weight: inherit; letter-spacing: inherit; text-align: inherit; text-transform: none; }
 .plan-includes { margin: 18px 0 9px; color: #A8A8A8; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .plan-features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; margin: 0; padding: 0; list-style: none; }
 .plan-features li { position: relative; padding-left: 14px; color: #A8A8A8; font-size: 10px; line-height: 1.5; }
@@ -779,7 +779,7 @@ h1 { color: #A8A8A8; }
 @media (max-width: 520px) {
   .plan-card { padding: 22px 18px; }
   .plan-header { display: grid; gap: 10px; }
-  .plan-price small { text-align: left; }
+  .plan-price { text-align: left; }
   .plan-features { grid-template-columns: 1fr; }
 }
 
